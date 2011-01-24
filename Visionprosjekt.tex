@@ -1,0 +1,471 @@
+\documentclass [12pt,norsk]{article}
+\include{innstillinger}
+\include{makroer}
+
+\newcommand{\RapportFra}{\textbf{\MakeUppercase{Rapport fra 6. semestersprosjekt våren 2011}}}
+\newcommand{\Gruppe}{IA5-3-10}
+\newcommand{\Emne}{Industriell programmering} 
+\newcommand{\Emnekode}{IA3106} 
+\newcommand{\Tittel}{Prosjekt: Fyllestasjon for bokser vha. vision-kamera} 
+\hypersetup{pdftitle={\Tittel}}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Forside
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\thispagestyle{fancy}{
+\lhead{\hspace*{-23mm}\includegraphics[width=54mm]{logobilder/svart_logo.jpg}\\
+\Large \textbf{Høgskolen i Telemark}\\
+\normalfont \normalsize\textbf{Avdeling for teknologiske fag}\\
+Bachelorutdanningen}
+\chead{}\lfoot{}
+\rhead{\sistKompilert} % Midlertidig!
+\cfoot{\includegraphics[scale=1]{logobilder/pi.jpg} \textbf{Avdeling for teknologiske fag}\\
+Adresse: Pb 203, 3901 Porsgrunn, telefon 35 02 62 00, www.hit.no/TF \\ \hrule 
+Bachelorutdanning - Masterutdanning - Ph.D.-utdanning}
+\rfoot{}
+}
+
+
+\noindent\\
+\RapportFra        \\
+\Emnekode{ } \Emne \\
+\Gruppe
+
+\vspace{25mm}
+
+\begin{center}
+    \huge \textbf{\Tittel}\\ 
+\end{center}
+\vspace{25mm}
+\begin{center}
+    \includegraphics[scale=1]{bilder/oye.jpg}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Sammendragsside på norsk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}{
+\cfoot{\textbf{Høgskolen tar ikke ansvar for denne studentrapportens resultater og konklusjoner}\\
+\includegraphics[scale=1]{logobilder/pi.jpg} Avdeling for teknologiske fag}}
+
+\noindent \RapportFra \\
+\begin{tabbing}
+    \textbf{Emne: }   \= \textit{\Emnekode { } \Emne }\\
+    \textbf{Tittel: } \> \textit{\Tittel}
+\end{tabbing}
+\noindent\\
+Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
+\noindent\\
+\begin{tabbing}
+    \noindent \textbf{Prosjektgruppe: }     \= 
+    \textit{\Gruppe }\hspace{35mm}          \= 
+    \textbf{Tilgjengelighet: }\hspace{3mm}  \= 
+    \textit{Åpen}               \\
+    \noindent                   \\
+    \textbf{Gruppedeltakere:}   \\
+    \textit{André Skare Berg}   \\
+    \textit{Espen Løkseth}      \\
+    \textit{Kristian Torsvik}   \\
+    \noindent                   \\
+    \textbf{Hovedveileder:}     \> \textit{Morten Pedersen} \> \textbf{Sensor:}          \> \textit{Morten Pedersen} \\
+    \textbf{Biveileder: }       \> \textit{}                \> \textbf{Prosjektpartner:} \> \textit{} 
+\end{tabbing}
+
+\noindent\\
+\textbf{Godkjent for arkivering: }\hrulefill \\
+
+\noindent\storboks{
+\textbf{Sammendrag:}\\
+<Skriv sammendraget her (maks 250 ord)>\\
+
+Philips sort-hvitt TV apparater hadde tradisjon for å bruke LF utgangsrør som ekstra Lyd-MF forsterker. I WS38 brukes MF røret også til LF forsterker, det er dessuten modulator ved sending. MF røret i Torn.Fub1 brukes også til modulator, og mange andre transceivere har faktisk lignende koplinger. RX oscillator rør i WS38 skiftes i frekvens under sending og brukes til å drive PA-rør. Torn E.b. mangler litt LF forsterkning, men det passet ikke å bruke noen av HF rørene til ekstra LF forsterker, en må bruke et ekstra DAF91 eller DAF96. 
+\blanklinje
+Med moderne rør blir design av inngangskretsene mindre kritisk å gjøre helt riktig; en kan få høyere forsterkning på kritiske bånd (10, 12 og 15m), på de andre båndene velger en et LC-forhold som gir lavere gain (jfr. Drake 2-B). Med gode antenner har en bruk for 12dB mere følsomhet på 10m enn på 80m, men uten å ta spesielle forholdsregler kan det lett bli til at en får lite forsterkning på 10m og altfor mye på lavere frekvenser (ca 20dB mere gain på 80m enn på 10m). Hvis mottakeren har optimal forsterkning på 80m, mangler den ca. 32dB for å være optimal på 10m. Vi ender helst opp med det kjente dilemmaet at mottakeren blir lett overstyrt på 80 og 40m.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+% Eventuell sammendragsside på engelsk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\setlength{\textheight}{230mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Forord}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\headheight}{6mm}
+\renewcommand{\footrulewidth}{0.4pt}
+\thispagestyle{fancy}{\lhead{Høgskolen i Telemark}
+\chead{}\cfoot{}\rhead{\currenttitle}\lfoot{\Gruppe}\rfoot{\thepage}}
+
+It's not "<that"> I don't like "<Computer"> Modern as a font for chapter and (sub)-section titles, but it is a very wide font, and for longer titles it will extend into the margin or onto a second line, which looks very ugly. Also\leftmark using a sans-serif font\sectionmark for titles adds a little variety to the text without compromising legibility.
+
+
+\vfill
+\noindent Porsgrunn, \today.
+\vspace{25mm}
+
+
+\begin{center}
+    \begin{tabular}{ll} 
+    \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+    Espen Løkseth       & Kristian Torsvik \\[25mm]   
+    \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+    André Skare Berg    & Mathias Wilhelmsen                              
+    \end{tabular} 
+\end{center}
+\vspace{30mm}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Nomenklaturliste}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{10mm}
+\begin{tabular}{l@{\hspace{15mm}-\hspace{15mm}}l} 
+    USB     & Univ...             \\
+    PC      & Det sier seg selv.  \\
+    HDMI    & Ettellerannet       \\
+    KK      & Kretskonkurranse
+\end{tabular} 
+
+
+
+
+
+
+
+\let\a\contentsname
+\renewcommand*\contentsname{\MakeUppercase{\a}}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Innholdsliste
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}{
+\rhead{\a}}
+\pdfbookmark[1]{\a}{toc} % Legg til toc i PDF-bokmerker
+\tableofcontents
+
+
+
+
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection \ #1}{}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Innledning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}{
+\rhead{\leftmark}}
+
+Brevet er sendt til statsminister, helseminister, helse- og omsorgskomite og en rekke andre som skal ha befatning med sjukehussaka.
+
+- Det er skapt en misoppfatning av at en i Møre og Romsdal ønsker ett felles sjukehus for Nordmøre og Romdal. Dette er feil. Både i fylkespartier, på Mørebenken og i alle utredninger og analyser pekes det på at det skal være to sjukehus i Nordmøre og Romsdal, og at Molde bør få nytt sjukehus. Det er helt unødvendig med nye utredninger om dette, og vi forstår ikke hvorfor statsråden kan overse alt det arbeidet som har vært gjennomført, de lovnader som har vært gitt og de vedtak som er fattet, sier Britt Flo i Molde Næringsforum til Rbnett.\blanklinje
+Se \reff{fig:Struts}.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=0.50\textwidth]{bilder/Struts.jpg}
+	\caption{En fin struts!}
+	\label{fig:Struts}
+\end{figure}
+
+
+
+
+\subsection{Rekdalen}
+\textbf{Gran Canaria, (Sunnmørsposten): Med bar overkropp og shortsen trukket så langt opp som overhodet mulig, leder Kjetil Rekdal øktene på Gran Canaria.}
+
+
+I fjor reagerte leserne med stor entusiasme da Sunnmørsposten kom i skade for å publisere et bilde av Rekdal midt på treningsfeltet.
+
+
+
+\begin{table}[h]
+    \begin{minipage}[b]{0.5\linewidth}
+        \caption{Tabeller side ved side}
+        \label{tab:stuff}
+        \centering
+        \begin{tabular}{|l|l|l|c|}
+          \hline
+          stuff & stuff & stuff & stuff \\ \hline
+          stuff & stuff & stuff & stuff\\
+          \hline
+        \end{tabular}
+    \end{minipage}
+    \hspace{0.5cm}
+    \begin{minipage}[b]{0.5\linewidth}
+        \caption{En liten test}
+        \centering
+        \begin{tabular}{|l|l|l|c|}
+          \hline
+          stuff & stuff & stuff & stuff \\ \hline
+          stuff & stuff & stuff & stuff\\
+          \hline
+        \end{tabular}
+        \label{tab:stuff2}
+    \end{minipage}
+\end{table}
+
+Reaksjonene har tydeligvis falt i god jord hos Rekdal. Posituren er nemlig nøyaktig lik på årets treningsleir!
+
+- Dette er gratis soling, det! Jeg har hverken tid eller lyst til å ligge på bassengkanten hele dagen slik alle andre gjør. Så da må jeg benytte meg av de sjansene jeg har til å få litt farge, sier Kjetil Rekdal.
+Se på \reft{tab:stuff}.
+
+Ikke alle virker å sette pris Rekdals offensive soling. Eller kanskje er det akkurat det de gjør, om man skal tolke klubbdirektør Henrik Hoffs vurdering.
+
+- Jeg synes det er helt forferdelig å se på! Derfor prøver jeg å løpe så mye og hardt at jeg ikke klarer å se på Kjetil samtidig, sier klubbdirektøren og bryter ut i latter.
+
+Han og flere andre i apparatet rundt klubben kjører nemlig - i alle fall tilsynelatende ut fra kroppspråket - harde kondisjonsøkter under A-lagstreningene.
+
+Men det er ikke bare Henrik Hoff som reagerer. Også spillerne stusser på Rekdals sjarmoffensiv.
+
+- Vi begynner å bli vant til det nå, men det er klart at man blir litt distrahert, sier Peter Orry Larsen. 
+
+
+
+
+
+\begin{enumerate}[leftmargin=*, label={Kapittel \arabic* }, align=left]
+  \setcounter{enumi}{1}
+  \setlength{\itemsep}{0pt}
+    \item   Handler om ditt.
+    \item   Handler om datt.
+    \item   Handler om noe annet.
+    \item   Molde slet seg til seier i Ole Gunnar Solskjærs første kamp som manager. Men seieren satt langt inne. 2. divisjonslaget Kristiansund skapte store problemer for Molde og ledet 3-1 langt ut i 2. omgang.
+Mot slutten kom Molde sterkt, og seierssangen "<Stille i Molde"> stilnet etter hvert blant de nesten 900 på tribunene. 
+  \item   Dette er det siste kapitlet.
+\end{enumerate}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Systembeskrivelse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Nordmennene imponerte i 1. omgang i hopprennet i polske Zakopane lørdag. Bjørn Einar Romøren landet på 133,5 meter - noe som holdt til en foreløpig 2. plass. Simon Ammann leverte den sterkeste innsatsen i 1. omgang med et hopp på 135,5 meter. 
+
+
+
+\subsection{Hopp}
+Tom Hilde havnet på 6. plass, mens Johan Remen Evensen og Anders Bardal hoppet seg inn blant de ti beste med en foreløpig 8 og 9. plass. 
+
+
+\subsubsection{Subsubsection-overskrift}
+Ole Marius Ingvaldsen gjorde det også bra og er på 17.-plass. Rune Velta ble nummer 36 og må nøye seg med ett hopp. \cite{bib:Aycock:2002}
+
+
+
+
+\subsubsection{Subsubsection-overskrift}
+\begin{figure}[h]
+	\centering
+		\includegraphics{logobilder/pi.jpg}
+	\caption{$\approx 3.1415926535897932384626433832795$}
+	\label{fig:pi}
+\end{figure}
+
+
+\subsection{Mottak av værastellitter}
+Mottakning av værsatellitter som går i bane over polene, såkalte polarbane værsatellitter er mye enklere enn hva mange tror. Alt man trenger er en egnet mottaker, en egnet antenne, en PC med lydkort og et program for å dekode signalene som satellittene sender ut.
+Først litt om selve værsatellittene:
+En polarbanesatellitt beveger seg i ca. 850 km høyde, og bruker litt over 100 minutter på et omløp rundt jorden. Jorden roterer mens satellitten går i fast bane i forhold til jordens akse.
+\blanklinje   
+ Formel\,\pref{eq:int} er ok. Se på \reffo{eq:int}. Formel\,\pref{eq:intF} viser linjeintegralet av $\vec{F}\cdot \vec{T}$ langs kurven $C$.
+
+\begin{equation}
+    \dparDiff{F}{x} = F_x
+    \label{eq:int}
+\end{equation}
+\begin{equation}
+    \FTint
+    \label{eq:intF}
+\end{equation}
+
+
+
+Figur 1 viser hvordan en satellitt beveger seg i et omløp rundt jorden. Mens satellitten beveger seg forover dekker den et 3000 km bredt område som vist som et lyst felt på figuren. Den røde linja viser nøyaktig over hvilke områder satellitten beveger seg.
+
+
+\begin{table}[ht] 
+    \caption{Nonlinear Model Results} 
+    \centering      
+    \begin{tabular}{c c c c}  
+        \hline\hline                        
+        Case & Method\#1 & Method\#2 & Method\#3 \\ [0.5ex] 
+        \hline                    
+        1 & 50 & 837 & 970  \\  
+        2 & 47 & 877 & 230  \\ 
+        3 & 31 & 25  & 415  \\ 
+        4 & 35 & 144 & 2356 \\ 
+        5 & 45 & 300 & 556 \\ [1ex]  
+        \hline   
+    \end{tabular} 
+    \label{table:nonlin} 
+\end{table} 
+
+Figur 2 viser hvordan sju påfølgende omløp beveger seg i forhold til jordens akse. Satellittens bane ligger ca. 10 grader mot vest i forhold til en lengdegrad. \blanklinje
+For hvert omløp roterer jorden 26 grader, slik at hver satellitt gjør 14 omløp på et døgn.  Pilene i figuren viser hvilken vei satellitten beveger seg. Tettheten av linjene viser at alle satellittbaner vil dekke polområdene.
+
+
+% Figurer side ved side
+\begin{figure}[ht]
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[height=4cm]{bilder/kylling.jpg}
+        \caption{Før}
+        \label{fig:figure1}
+    \end{minipage}
+    \hspace{0.5cm}
+    \begin{minipage}[b]{0.5\linewidth}
+        \centering
+        \includegraphics[height=4cm]{bilder/stekt.jpg}
+        \caption{Etter (den andre ble spist av katten). }
+        \label{fig:figure2}
+    \end{minipage}
+\end{figure}
+
+
+
+Satellittenes høyde over bakken er tilpasset slik at den passerer over det samme området til nesten samme tid hver dag. Banen kalles da solsynkronisert. Solsynkroniseringen av NOAA satellittene gir god dekning over USA om morgenen og om ettermiddagen, amerikansk tid. På grunn av Norges plassering i forhold til USA vil de beste passasjene bli noen timer seinere. Selv om jorden bare roterer en gang under satellitten hvert døgn gir den to serier med data. I perioder av døgnet vil det være mange satellittpassasjer som gir gode bilder av Norge.
+Sammenlignet med Norges plassering beveger satellitten seg mot vest for hvert omløp. Polarbanesatellitter beveger seg med stor hastighet over himmelhvelvingen, enten mot nord eller mot sør. Mens den beveger seg gjør satellitten sine målinger og sender dem som en kontinuerlig strøm av data til jorda. Dataene som sendes til jorden sendes som APT eller HRPT. APT (Automatic Picture Transmition) er et analogt dataformat som begrenser seg til visuell tolkning. APT krever relativt enkelt utstyr for å lese ned data fra satellittene. HRPT (High Resolution Picture Transmition) er et digitalt dataformat. Dette krever et mer avansert mottakningssystem. Fordelen med HRPT er at dataene kan brukes til beregning av ulike meteorlogiske størrelser.
+
+%For å kunne nyttegjøre seg av dataene med den beste kvaliteten er man avhengig av å kunne "se" satellitten mens den passerer over våre områder. Vi kan da lese ned data fra sydspissen av Italia og helt opp til nord for Svalbard.
+%Vi skal her konsentrere oss om mottakning av værsatellittenes APT sendinger, fordi man ikke trenger noe spesial utstyr for å motta disse sendingene. APT sendingene fra NOAA værsatellittene består av en tone på 2400 Hz som blir amplitudemodulert slik at en høy amplitude gir et lyst punkt i bildet, og en lav amplitude gir et mørkt  punkt i bildet. Ved å variere amplituden kan satellitten gjengi mørke og lyse områder på jorden. Den amplitudemodulerte tonen på 2400 Hz blir så frekvensmodulert inn på bærebølgen. På NOAA værsatellittene er bærebølgens frekvens enten 137.500 MHz eller 137.620 MHz, avhengig av hvilken satellitt man ønsker å motta bilder fra. APT sendingene fra NOAA værsatellittene har et frekvensutsving på ca. +/- 17 kHz, dette sammen med et Doppler skift* på ca. +/- 4.5 kHz  gjør at APT signalene vi mottar her på jorden fra NOAA værsatellittene har en båndbredde på ca. 43 kHz.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Et hovedkapittel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Lorem ipsum}
+\lipsum[1-2]
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Konklusjon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Elevene ved Møre barne- og ungdomsskule på Herøy på Sunnmøre fikk gjerne svinge seg i dansen under fredagens nyttårsball - men ikke to og to.} \cite{Rbnett} %\cite{bib:Aycock:2002}
+\blanklinje
+Ledelsen ved den kristne friskolen i Herøy satte foten ned for pardans under elevene sitt nyttårsball, skriver Sunnmørsposten. \cite{bib:Power:2002}
+
+-Vi ser annerledes på dette enn mange offentlige skoler, og det er vi stolte av. Skolen har et opphav som gjør at vi står i en tradisjon der pardans ikke har vært naturlig, sier rektor Arve Fiskerstrand.
+
+Rektoren peker i tillegg på at pardans kan oppleves problematisk av flere grunner.\cite{Knuth92}
+
+\noindent Sjå på \reff{fig:sinus}!
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.7]{bilder/sinus.eps}
+	\caption{Et EPS-bilde i \LaTeX}
+	\label{fig:sinus}
+\end{figure}
+
+- Det viktigste er at vi mener pardans er mer ekskluderende enn inkluderende i et slikt arrangement. Mange tør ikke, har ikke lyst og vil føle seg utenfor, sier han.
+
+Rektoren avviser at forbudet har å gjøre med at de frykter at dansen kan føre til usømmelig atferd, eller at de ser på dans som syndig.\cite{Simpson}
+
+Skolen som er stiftet av Sunnmøre Indremisjon, har 107 elever fra 1. til 10. klassetrinn, og det var 6. til 10.-klasse som var på ball fredag%. \cite{bib:Aycock:2002}\cite{lamport94}
+
+
+
+
+
+
+
+
+%%%%%%%% Dersom ref er lagret i egen fil, Visionprosjekt.bib
+%%%%%%\newpage
+%%%%%%\bibliographystyle{plain}
+%%%%%%\bibliography{Visionprosjekt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \Referanser
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}
+
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1994,
+  Lokalisert 22.01.2011: 
+  \texttt{http://www.math.drofnats.edu/riemann.ps}
+
+\bibitem{Simpson}
+  Olaf Simpson,
+  \emph{\LaTeX: A document}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1904,
+  Lokalisert 22.01.2011: 
+  \texttt{http://www.vg.no}
+
+\bibitem{Rbnett}
+  Romsdals budstikke,
+  \emph{Pardans forbudt på nyttårsball}.
+  rbnett.no,
+  22.01.2011,
+  Lokalisert 22.01.2011: 
+  \texttt{http://www.rbnett.no/nyheter/article301829.ece}
+
+\end{thebibliography}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Vedlegg
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[leftmargin=*, label={Vedlegg \Alph*:}, align=left]
+ \setlength{\itemsep}{0pt}
+  \item   Lavpassfilter.vi
+  \item   Linear scaling.vi
+  \item   Model.vi
+  \item   PI-reg.vi
+  \item   Real.vi
+  \item   Task\_1.vi
+  \item   Task\_2\_og\_3.vi
+  \item   Task\_4.vi
+  \item   Task\_5\_og\_6.v
+  \item   Task\_9\_10.vi
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
+
+
+
