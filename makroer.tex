@@ -92,7 +92,7 @@
 
 
 %Diverse
-\newcommand{\pref}[1]{(\ref{#1})} 
+\newcommand{\pref}[1]{\hyperref[#1]{(\ref*{#1})}}
 \newcommand{\vfantom}[1]{\vphantom{\rule{0pt}{#1}}} 
 
 
@@ -104,9 +104,19 @@
 
 
 % Fra Industielle programmeringssystemer
-\newcommand{\reff}[1]{figur\,\ref{#1}}
-\newcommand{\reffo}[1]{formel\,(\ref{#1})}
-\newcommand{\reft}[1]{tabell\,\ref{#1}}
+\newcommand{\reff}[1]{\hyperref[#1]{figur\,\ref*{#1}}}
+\newcommand{\refb}[1]{\hyperref[#1]{figur\,\ref*{#1}}}
+\newcommand{\reffo}[1]{\hyperref[#1]{formel\,(\ref*{#1})}}
+\newcommand{\reft}[1]{\hyperref[#1]{tabell\,\ref*{#1}}}
+\newcommand{\refv}[1]{\hyperref[#1]{vedlegg \ref*{#1}}}
+
+\newcommand{\refF}[1]{\hyperref[#1]{Figur\,\ref*{#1}}}
+\newcommand{\refB}[1]{\hyperref[#1]{Figur\,\ref*{#1}}}
+\newcommand{\refFo}[1]{\hyperref[#1]{Formel\,(\ref*{#1})}}
+\newcommand{\refT}[1]{\hyperref[#1]{Tabell\,\ref*{#1}}}
+\newcommand{\refV}[1]{\hyperref[#1]{Vedlegg \ref*{#1}}}
+
+
 
 
 \newcommand{\Referanser}[1]{\clearpage
