@@ -1,41 +1,34 @@
 %%****************************************
 %%*                                      *
-%%* TU Berlin                            *
-%%* MDT                                  *
+%%* Telemark University College                            *
+%%* EIK                                  *
 %%*                                      *
 %%****************************************
-%% LaTeX-class for writing theses
-%%**************************************************************
-%% Version: filename    rev date       time     last modified by
-%%     $Id$
-%%**************************************************************
-%% (The "Id" tag above is updated automatically if
-%% 	svn propset svn:keywords "Id" <filename>
-%% was set.)
-%%*******************************************
+%% LaTeX-class for writing project reports
 % -------------------------------Identification------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{MDT-SADA}[2007/01/31 Vorlage fuer TU Berlin MDT Studien- und Diplomarbeiten]
+\ProvidesClass{HiT-report}[2011/01/31 Template for writing reports at Telemark University]
 
-% Workaround for MiKTeX 2.5 \ifpdfoutput handling
-\let\doifdefined\relax
+% % TODO: Probably not needed anymore.
+% % Workaround for MiKTeX 2.5 \ifpdfoutput handling
+% \let\doifdefined\relax
 
 % --------------------------- declaration of options ------------------------------------
-% nologo-option
-\newif\if@nologo
-\@nologofalse
-\DeclareOption{nologo} {%
-  \@nologotrue%
-  \renewcommand{\MDTlogo}{}%
-  \renewcommand{\TUlogo}{}%
-}%
+% % nologo-option (not used since we alway want to have the logo)
+% \newif\if@nologo
+% \@nologofalse
+% \DeclareOption{nologo} {%
+%   \@nologotrue%
+%   \renewcommand{\MDTlogo}{}%
+%   \renewcommand{\TUlogo}{}%
+% }%
 
-% english-option Umschaltung auf Englisch (genauer britisches Englisch)
-\newif\if@english
-\@englishfalse
-\DeclareOption{english} {%
-  \@englishtrue%
-  \PassOptionsToClass{british}{scrbook}
+% norwegian-option: switches to Norwegian ((British) English is the default)
+\newif\if@norsk
+\@norskfalse
+\DeclareOption{norsk} {%
+  \@norsktrue%
+  \PassOptionsToClass{norsk}{report}
 }%
 
 % onlytoc-option
@@ -43,7 +36,7 @@
 \@onlytocfalse
 \DeclareOption{onlytoc}{\@onlytoctrue}
 
-\newcommand{\extraBookmark}[2]{\ifpdfoutput{\pdfbookmark[1]{#1}{#2}}{}}
+\newcommand{\extraBookmark}[2]{\pdfbookmark[1]{#1}{#2}}
 \newif\if@print
 \@printfalse
 \DeclareOption{print}{%
@@ -56,96 +49,86 @@
 \newif\if@index
 \@indexfalse
 \DeclareOption{index} {%
-  \@nologotrue%
+  \@indextrue%
   \renewcommand{\RequireIndex}{\RequirePackage{makeidx}\makeindex}%
 }%
 
-% Alle uebrigen Optionen werden an scrbook weitergereicht
+% utf8-option TODO: document this new option
+\newif\if@utf
+\@utffalse
+\DeclareOption{utf}{\@onlytoctrue}
+
+
+
+% TODO used book instead of report for now
+% All remaining options are passed to the 'report' package
 \DeclareOption*{%
-    \typeout{Option \CurrentOption\space is passed to package scrbook!}
-    \PassOptionsToClass{\CurrentOption}{scrbook}
+    \typeout{Option \CurrentOption\space is passed to package report!}
+    \PassOptionsToClass{\CurrentOption}{book}
 }%
 
 % --------------------------- execution of options ------------------------------------
 \ProcessOptions\relax
-\LoadClass[halfparskip,DIV13,BCOR2cm]{scrbook}
+\LoadClass[a4paper]{book}
 
 % ----------------------------- package loading ---------------------------------------
 
-%%Behandlung der pdf-Option. Dies wird eingefuehrt, um Uebersetzungszeit
-%% zu sparen, wenn nur ein .ps erzeugt werden soll.
-\ifpdfoutput{
-    \RequirePackage[pdftex]{graphicx}
-}{%\else
-    \RequirePackage[dvips]{graphicx}
-}%\fi
+%% pdf-options
+\RequirePackage{graphicx}
 \graphicspath{{logos/}{bilder/}}
-\newcommand{\MDTlogo}{\includegraphics[height=2cm]{MDT-logo}}
-\newcommand{\TUlogo}{\includegraphics[height=2cm]{TU-logo_gruen}}
-\ifpdfoutput{
-    \if@print
-        \RequirePackage[pdftex,plainpages=false,pdfpagelabels,pdfborder={0 0 0},hyperfootnotes=false]{hyperref}
-        \renewcommand{\TUlogo}{\includegraphics[height=2cm]{TU-logo_sw}}
-    \else
-        \RequirePackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=blue,plainpages=false,pdfpagelabels,hyperfootnotes=false]{hyperref}
-    \fi
-}{%\else
-    \RequirePackage[dvips]{hyperref}
-    \if@print\renewcommand{\TUlogo}{\includegraphics[height=2cm]{TU-logo_sw}}\else\fi
-}%\fi
-\ifpdfoutput{}{%
-    \IfFileExists{logos/MDT-logo.eps}%
-        {}%
-        {\renewcommand{\MDTlogo}{\fbox{\parbox[b][2cm][c]{2cm}{Logo\\MDT}}}}%
-    \IfFileExists{logos/TU-logo_gruen.eps}%
-        {}%
-        {\renewcommand{\TUlogo}{\fbox{\parbox[b][2cm][c]{2cm}{Logo\\TU Berlin}}}}%
-}%
+\newcommand{\TFlogo}{\includegraphics[height=2cm]{TF-logo}}
+\newcommand{\HiTlogo}{\includegraphics[height=2cm]{HiT-logo}}
+  \if@print
+  \RequirePackage[pdftex,plainpages=false,pdfpagelabels,pdfborder={0 0 0},hyperfootnotes=false]{hyperref}
+  \renewcommand{\HiTlogo}{\includegraphics[height=2cm]{HiT-logo_bw}}
+  \else
+  \RequirePackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=blue,plainpages=false,pdfpagelabels,hyperfootnotes=false]{hyperref}
+  \fi
+
 \RequirePackage{lmodern}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
-\RequirePackage[latin1]{inputenc}
+\RequirePackage[\if@utf utf8 \else latin1\fi]{inputenc}
 \RequirePackage{ifthen}
 \RequirePackage{url}
 \RequirePackage[automark]{scrpage2}
-\RequirePackage[\if@english british\else ngerman\fi]{babel}
+\RequirePackage[\if@norsk norsk\else british\fi]{babel}
 %\RequirePackage{lastpage}
 %\RequirePackage[ngerman,num]{isodate}
 \RequirePackage{longtable}
-\RequirePackage{caption} % fuer mehr Caption-Optionen
-\RequirePackage{setspace} % fuer Zeilenabstandsanpassung
-%Umbruch auch an Unterstrichen
-%\lccode`\_=`\_
+\RequirePackage{caption} % for more Caption options
+\RequirePackage{setspace} % for setting the line spacsing
 \RequireIndex
 
 \addtolength{\voffset}{0.7cm}
 
 %Redefinitionen---------------------------------
-%Literaturverzeichnis statt nur Literatur
-%\renewcommand{\refname}{Literaturverzeichnis}
-\if@english \else \AtBeginDocument{\renewcommand*\figurename{Bild}}\fi
+% %Literaturverzeichnis statt nur Literatur
+% %\renewcommand{\refname}{Literaturverzeichnis}
+% \if@english \else \AtBeginDocument{\renewcommand*\figurename{Bild}}\fi
 
 %Umgebungen------------------------------------
 \newcommand{\includeBild}[3]%
 {\ifthenelse%
         {\equal{#1}{}}%
         {\mbox{\parbox[b][5cm][c]{0.7\textwidth}{\begin{center}no picture\end{center}}}}%
-        {\ifpdfoutput%
-            {\mbox{\includegraphics[#3]{#1}}}%
-            {\IfFileExists%
-                {bilder/#1.eps}%
-                {\mbox{\includegraphics[#3]{#1}}}%
-                {\fbox{\parbox[b][5cm][c]{0.7\textwidth}{%
-                    \begin{center}%
-                        \path{#1.eps} nicht gefunden,\bigskip\\
-                        {\footnotesize\path{#1.{pdf,png,jpg}}\\
-                        (\ldots wird nicht in \jobname.dvi angezeigt!)}%
-                    \end{center}%
-                        }%
-                }%
-            }%
-        }%
-}%
+        {\mbox{\includegraphics[#3]{#1}}}%
+%         {\ifpdfoutput%
+%             {\mbox{\includegraphics[#3]{#1}}}%
+%             {\IfFileExists%
+%                 {bilder/#1.eps}%
+%                 {\mbox{\includegraphics[#3]{#1}}}%
+%                 {\fbox{\parbox[b][5cm][c]{0.7\textwidth}{%
+%                     \begin{center}%
+%                         \path{#1.eps} nicht gefunden,\bigskip\\
+%                         {\footnotesize\path{#1.{pdf,png,jpg}}\\
+%                         (\ldots wird nicht in \jobname.dvi angezeigt!)}%
+%                     \end{center}%
+%                         }%
+%                 }%
+%             }%
+%         }%
+% }%
     \captionsetup{indent=0pt,width=.9\textwidth}%
     \caption{#2}%
           \ifthenelse%
@@ -209,7 +192,7 @@
     \extraBookmark{Titelseite}{titleanc}%
     \thispagestyle{empty}%
     \begin{titlepage}%
-        \MDTlogo\hfill\TUlogo\\%
+        \TFlogo\hfill\HiTlogo\\%
     \vfill%
     \begin{center}%
       %Titel und Untertitel%
@@ -224,7 +207,7 @@
         \vfill%
         \begin{minipage}[t]{0.25\textwidth}%
             \flushright\Large%
-            \if@english Supervisor\else Betreuer\fi:~%
+            \if@norsk Supervisor\else Betreuer\fi:~%
         \end{minipage}%
         \vspace{0pt}~%
         \begin{minipage}[t]{0.45\textwidth}%
@@ -233,7 +216,7 @@
         \end{minipage}%
                 \vfill%
                     {\Large%
-                    \if@english
+                    \if @norsk
                         Technische Universität Berlin\\%
                         School of Electrical Engineering and Computer Science\\%
                         Department of Energy and Automation Technology\\%
@@ -270,7 +253,7 @@
 \newcommand{\inhaltsverzeichnis}
 {%
     \tableofcontents%
-    \extraBookmark{\if@english Contents\else Inhaltsverzeichnis\fi}{tocanc}%
+    \extraBookmark{\if @norsk Contents\else Inhaltsverzeichnis\fi}{tocanc}%
     \if@onlytoc\clearmydoublepage\else\fi%
 }
 
@@ -285,11 +268,11 @@
     %\setheadsepline{.4pt}%
     %\automark{subsection}%
     \pagestyle{scrheadings}%
-    \deftripstyle{myChapterStyle}{}{}{}{#1}{}{\pagemark}
-    \renewcommand*{\chapterpagestyle}{myChapterStyle}
+    % \deftripstyle{myChapterStyle}{}{}{}{#1}{}{\pagemark}
+    % \renewcommand*{\chapterpagestyle}{myChapterStyle}
 }
 
-\newcommand{\clearmydoublepage}{\newpage{\pagestyle{myChapterStyle}\cleardoublepage}}
+% \newcommand{\clearmydoublepage}{\newpage{\pagestyle{myChapterStyle}\cleardoublepage}}
 
 \newlength{\FormelTabellenWeite}
 \newenvironment{formelzeichen}[1][0.1]
@@ -297,13 +280,13 @@
     \@openrightfalse%
     \setlength{\FormelTabellenWeite}{\textwidth}%
     \addtolength{\FormelTabellenWeite}{-#1\textwidth}%
-    \addchap*{\if@english Symbols\else Formelzeichen\fi}%
-    \extraBookmark{\if@english Symbols\else Formelzeichen\fi}{formulaanc}%
+   % \addchap*{\if@norsk Symbols\else Formelzeichen\fi}%
+    \extraBookmark{\if@norsk Symbols\else Formelzeichen\fi}{formulaanc}%
     \begin{longtable}{p{#1\textwidth}p{\FormelTabellenWeite}}
 }{%
     \end{longtable}%
     \@openrighttrue%
-    \clearmydoublepage
+%    \clearmydoublepage
 }%
 
 \newenvironment{abkuerzungen}[1][0.2]
@@ -311,19 +294,19 @@
     \@openrightfalse%
     \setlength{\FormelTabellenWeite}{\textwidth}%
     \addtolength{\FormelTabellenWeite}{-#1\textwidth}%
-    \addchap*{\if@english Glossary\else Glossar\fi}%
-    \extraBookmark{\if@english Glossary\else Glossar\fi}{abranc}%
+   % \addchap*{\if @norsk Glossary\else Glossar\fi}%
+    \extraBookmark{\if @norsk Glossary\else Glossar\fi}{abranc}%
     \begin{longtable}{p{#1\textwidth}p{\FormelTabellenWeite}}
 }{%
     \end{longtable}%
     \@openrighttrue%
-    \clearmydoublepage
+  %  \clearmydoublepage
 }%
 
 \newenvironment{literaturverzeichnis}
 {\begin{thebibliography}{99}%
-    \addcontentsline{toc}{chapter}{\if@english Bibliography\else Literatur\fi}%
-%	\extraBookmark{\if@english Bibliography\else Literatur\fi}{litanc}
+    \addcontentsline{toc}{chapter}{\if @norsk Bibliography\else Literatur\fi}%
+%	\extraBookmark{\if @norsk Bibliography\else Literatur\fi}{litanc}
 }
 {\end{thebibliography}}
 
