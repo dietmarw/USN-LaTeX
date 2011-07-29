@@ -1,0 +1,143 @@
+%% sample template file for a PhD Thesis
+%%
+%% Choose format: either a4 or b5 by uncommenting the respective line
+\documentclass[11pt,a4paper,openright]{book} %% use when print out is also in A4
+% \documentclass[12pt,a4paper,openright]{book} %% use when print-out is scaled down to B5
+% \documentclass[11pt,b5paper,openright]{book} %% use when print-out is in B5
+
+%% Character input setup, choose one of the following
+%% to be able to use western european special chars directly
+\usepackage[utf8]{inputenc}  %% for modern UTF-8 OSes (Linux,Win7)
+% \usepackage[latin1]{inputenc}  %% for outdated latin1 based systems (WinXP)
+
+\usepackage{graphicx}         %% needed for inclusion of graphics
+\graphicspath{{fig/}}         %% this is were the images reside
+
+\usepackage[british]{babel}   %% some british specific settings
+
+\usepackage[T1]{fontenc}      %% recommended for readable pdf
+\usepackage{lmodern}          %% use vector fonts
+\usepackage{amsmath,mathptmx} %% we need lots of math features
+\usepackage{url}              %% helps displaying URLs
+\usepackage{hyperref}         %% generate links in the PDF
+\usepackage{longtable}        %% for tables then can go over several pages
+
+%% Bibliography setup %%
+%%% default is "number-only" style
+\bibliographystyle{plain}
+%%% If you want to use "author-date" style
+%%% where `\citet{Foo2011}` generates "Foo et al. (2011)"
+%%% and   `\citep{Foo2011}` generates "(Foo et al. 2011)"
+%%% then comment the line above and use
+% \usepackage{natbib}
+%%% or
+%%% if you want to use "author-number" style then use
+% \usepackage[numbers]{natbib}
+%%% instead.
+
+\usepackage{lipsum} % just for providing fill text used in this template
+
+\begin{document}
+\frontmatter  %% switches to roman page numbers
+\begin{titlepage}
+  \vspace*{\stretch{2}}
+  % Title
+  \begin{center}
+    \LARGE{The Title of the PhD thesis}
+  \end{center}
+  \vspace*{\stretch{0.5}}
+  % Author
+  \begin{center}
+    \Large{John Smith}
+  \end{center}
+  \vspace*{\stretch{0.5}}
+  % Submission statement (DO NOT CHANGE)
+  \begin{center}
+    \large{Thesis submitted to the Telemark University College for the degree of philosophiae doctor~(PhD)}
+  \end{center}
+  \vspace*{\stretch{2}}
+\end{titlepage}\cleardoublepage
+%\maketitle\thispagestyle{empty} %% We don't want a page number on the title page
+\pdfbookmark[0]{Titlepage}{title} % Sets a PDF bookmark for the title page
+
+% Dedication page if wished:
+\vspace*{\stretch{1}}
+\pdfbookmark[0]{Dedication}{dedication} % Sets a PDF bookmark for the dedication
+\begin{flushright}
+\large{\emph{Dedicated to the teachers of TUC ;-)}}
+
+\end{flushright}
+\vspace*{\stretch{2}}
+
+
+
+\chapter*{Preface}
+\label{sec:preface}
+\lipsum[1-3]
+
+\chapter*{Summary}
+\label{sec:summary}
+\lipsum[1-3]
+
+\tableofcontents
+
+\chapter*{Nomenclature}
+\label{sec:summary}
+bla
+
+\begin{longtable}{ll}
+  \textbf{Symbol} & \textbf{Explanation}\endhead\\
+  A/D	& Analogue-Digital-Converter \\
+  CMR	& Common Mode Rejection \\
+  foo	& Foo \\
+  bar 	& Bar
+\end{longtable}
+
+
+\mainmatter
+\part{Overview}
+\label{part:overview}
+\chapter{Introduction}
+\label{intro}
+\
+\section{Background}
+\label{sec:back}
+\lipsum
+
+\chapter{Theory}
+\label{intro}
+\
+\section{Mathematical model}
+\label{sec:back}
+\lipsum
+
+
+~\nocite{*}
+
+\cleardoublepage
+\phantomsection
+\bibliography{vancouver.bib}
+\addcontentsline{toc}{chapter}{Bibliography}
+
+
+\appendix
+\renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
+
+\part{Published and Submitted Papers}
+\label{part:papers}
+
+
+\chapter{Title of Paper A}
+\label{paper-a}
+
+Short descriptive text of paper follows here.
+
+The paper itself will needs to be included in the published form as pdf on the next pages.
+
+\chapter{Title of Paper B}
+\label{paper-b}
+Short descriptive text of paper follows here.
+
+The paper itself will needs to be included in the published form as pdf on the next pages.
+
+\end{document}
