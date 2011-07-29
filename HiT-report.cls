@@ -26,10 +26,7 @@
 % norwegian-option: switches to Norwegian ((British) English is the default)
 \newif\if@norsk
 \@norskfalse
-\DeclareOption{norsk} {%
-  \@norsktrue%
-  \PassOptionsToClass{norsk}{report}
-}%
+\DeclareOption{norsk}{\@norsktrue}
 
 % onlytoc-option
 \newif\if@onlytoc
@@ -75,29 +72,29 @@
 
 %% pdf-options
 \RequirePackage{graphicx}
-\graphicspath{{logos/}{bilder/}}
+\graphicspath{{logos/}{bilder/}{figs/}}
 \newcommand{\TFlogo}{\includegraphics[height=2cm]{TF-logo}}
 \newcommand{\HiTlogo}{\includegraphics[height=2cm]{HiT-logo}}
-  \if@print
-  \RequirePackage[pdftex,plainpages=false,pdfpagelabels,pdfborder={0 0 0},hyperfootnotes=false]{hyperref}
-  \renewcommand{\HiTlogo}{\includegraphics[height=2cm]{HiT-logo_bw}}
-  \else
-  \RequirePackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=blue,plainpages=false,pdfpagelabels,hyperfootnotes=false]{hyperref}
-  \fi
+\if@print
+\RequirePackage[pdftex,plainpages=false,pdfpagelabels,pdfborder={0 0 0},hyperfootnotes=false]{hyperref}
+\renewcommand{\HiTlogo}{\includegraphics[height=2cm]{HiT-logo_bw}}
+\else
+\RequirePackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=blue,plainpages=false,pdfpagelabels,hyperfootnotes=false]{hyperref}
+\fi
 
-\RequirePackage{lmodern}
+\RequirePackage{lmodern} % vector fonts
 \RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage[\if@utf utf8 \else latin1\fi]{inputenc}
 \RequirePackage{ifthen}
 \RequirePackage{url}
-\RequirePackage[automark]{scrpage2}
 \RequirePackage[\if@norsk norsk\else british\fi]{babel}
-%\RequirePackage{lastpage}
-%\RequirePackage[ngerman,num]{isodate}
+% \RequirePackage{lastpage}
+% \RequirePackage[ngerman,num]{isodate}
 \RequirePackage{longtable}
 \RequirePackage{caption} % for more Caption options
 \RequirePackage{setspace} % for setting the line spacsing
+\RequirePackage{fancyhdr}
 \RequireIndex
 
 \addtolength{\voffset}{0.7cm}
@@ -182,57 +179,77 @@
 % #5 Abgabedatum
 % #6 Betreuer
 \newcommand{\titelseite}[6]{%
-% pdf document settings:
-      \hypersetup{%
-        pdftitle = {#3},%
-        pdfsubject = {#4},%
-        pdfauthor = {#1},%
-        pdfcreator = {\LaTeX\ with package \flqq hyperref\frqq}%
-    }%
-    \extraBookmark{Titelseite}{titleanc}%
-    \thispagestyle{empty}%
-    \begin{titlepage}%
-        \TFlogo\hfill\HiTlogo\\%
-    \vfill%
-    \begin{center}%
-      %Titel und Untertitel%
-     \begin{spacing}{2.5}
-         {\textbf{{\Huge #3}\ifthenelse{\equal{#4}{}}{}{\\{\vspace*{3ex}\LARGE #4}}}}%
-         \\[6ex]%
-     \end{spacing}%
-         {\Large #1\\ \# #2}\\%
-        \vfill%
-        \vfill%
-            {\LARGE #5}\\%
-        \vfill%
-        \begin{minipage}[t]{0.25\textwidth}%
-            \flushright\Large%
-            \if@norsk Supervisor\else Betreuer\fi:~%
-        \end{minipage}%
-        \vspace{0pt}~%
-        \begin{minipage}[t]{0.45\textwidth}%
-            \flushleft\Large%
-            #6%
-        \end{minipage}%
-                \vfill%
-                    {\Large%
-                    \if @norsk
-                        Technische Universität Berlin\\%
-                        School of Electrical Engineering and Computer Science\\%
-                        Department of Energy and Automation Technology\\%
-                        Chair of Electronic Measurement and Diagnostic Technology%
-                    \else
-                        Technische Universität Berlin\\%
-                        Fakultät IV -- Elektrotechnik und Informatik\\%
-                        Institut für Energie- und Automatisierungstechnik\\%
-                        Fachgebiet Elektronische Mess- und Diagnosetechnik\\%
-                    \fi%
-                    }%
-        \end{center}%
-%
-        \end{titlepage}%
+  % pdf document settings:
+  \hypersetup{%
+    pdftitle = {#3},%
+    pdfsubject = {#4},%
+    pdfauthor = {#1},%
+    pdfcreator = {\LaTeX\ with package \flqq hyperref\frqq}%
+  }%
+  \extraBookmark{Titelseite}{titleanc}%
+  %
+  \begin{titlepage}%
+    \thispagestyle{fancy}%
+    \lhead{\hspace*{-23mm}\includegraphics[width=54mm]{HiT-logo}
+    }%  \textbf{\Large \if@norsk Høgskolen i Telemark \else Telemark University College \fi}\\
+     % \textbf{\if@norsk Avdeling for teknologiske fag \else Faculty of Technology\fi}\\
+    %\if@norsk Bachelorutdanningen M.Sc. Programme\else B.Sc. Programme\fi}
+    \chead{}
+    \rhead{}
+    \lfoot{}
+    \cfoot{\includegraphics[scale=1]{TF-logo}%
+      \if@norsk%
+      \textbf{Avdeling for teknologiske fag}\\
+      Adresse: Pb 203, 3901 Porsgrunn, telefon 3502\,6200, www.hit.no \\ \hrule
+      Bachelorutdanning - Masterutdanning - Ph.D.-utdanning
+      \else%
+      \textbf{Faculty of Technology}\\
+      Contact: PO box 203, 3901 Porsgrunn, Norway, phone +47 3502\,6200, www.hit.no \\ \hrule
+      B.Sc. Programme - Master Programme - Ph.D. Programme
+    }
+    \rfoot{}
+
+    % \TFlogo\hfill\HiTlogo\\%
+    % \vfill%
+    % \begin{center}%
+    %   % Titel und Untertitel%
+    %   \begin{spacing}{2.5}
+    %     {\textbf{{\Huge #3}\ifthenelse{\equal{#4}{}}{}{\\{\vspace*{3ex}\LARGE #4}}}}%
+    %     \\[6ex]%
+    %   \end{spacing}%
+    %   {\Large #1\\ \# #2}\\%
+    %   \vfill%
+    %   \vfill%
+    %   {\LARGE #5}\\%
+    %   \vfill%
+    %   \begin{minipage}[t]{0.25\textwidth}%
+    %     \flushright\Large%
+    %     \if@norsk Supervisor\else Betreuer\fi:~%
+    %   \end{minipage}%
+    %   \vspace{0pt}~%
+    %     \begin{minipage}[t]{0.45\textwidth}%
+    %       \flushleft\Large%
+    %       #6%
+    %     \end{minipage}%
+    %     \vfill%
+    %     {\Large%
+    %       \if @norsk
+    %       Technische Universität Berlin\\%
+    %       School of Electrical Engineering and Computer Science\\%
+    %       Department of Energy and Automation Technology\\%
+    %       Chair of Electronic Measurement and Diagnostic Technology%
+    %       \else
+    %       Technische Universität Berlin\\%
+    %       Fakultät IV -- Elektrotechnik und Informatik\\%
+    %       Institut für Energie- und Automatisierungstechnik\\%
+    %       Fachgebiet Elektronische Mess- und Diagnosetechnik\\%
+    %       \fi%
+    %     }%
+    %   \end{center}%
+    %
+    \end{titlepage}%
     \cleardoublepage
-    \makeHead{#1, \#\,#2}%
+%    \makeHead{#1, \#\,#2}%
 }
 
 % Eidesstattliche Erklärung
