@@ -13,7 +13,7 @@
 % \usepackage[latin1]{inputenc}  %% for outdated latin1 based systems (WinXP)
 
 \usepackage{graphicx}         %% needed for inclusion of graphics
-\graphicspath{{fig/}}         %% this is were the images reside
+\graphicspath{{figs/}}         %% this is were the images reside
 
 \usepackage[british]{babel}   %% some british specific settings
 
@@ -21,7 +21,7 @@
 \usepackage{lmodern}          %% use vector fonts
 \usepackage{amsmath,mathptmx} %% we need lots of math features
 \usepackage{url}              %% helps displaying URLs
-\usepackage{hyperref}         %% generate links in the PDF
+\usepackage[pdfborder={0 0 0}]{hyperref} %% generate links in the PDF (but no boxes around them)
 \usepackage{longtable}        %% for tables then can go over several pages
 
 %% Bibliography setup %%
@@ -55,18 +55,18 @@
   \vspace*{\stretch{0.5}}
   % Submission statement (DO NOT CHANGE)
   \begin{center}
-    \large{Thesis submitted to the Telemark University College for the degree of philosophiae doctor~(PhD)}
+    \large{Thesis submitted to the Telemark University College\\ for the degree of philosophiae doctor~(PhD)}
   \end{center}
   \vspace*{\stretch{2}}
 \end{titlepage}\cleardoublepage
-%\maketitle\thispagestyle{empty} %% We don't want a page number on the title page
+% \maketitle\thispagestyle{empty} %% We don't want a page number on the title page
 \pdfbookmark[0]{Titlepage}{title} % Sets a PDF bookmark for the title page
 
 % Dedication page if wished:
 \vspace*{\stretch{1}}
 \pdfbookmark[0]{Dedication}{dedication} % Sets a PDF bookmark for the dedication
 \begin{flushright}
-\large{\emph{Dedicated to the teachers of TUC ;-)}}
+  \large{\emph{Dedicated to the teachers of TUC ;-)}}
 
 \end{flushright}
 \vspace*{\stretch{2}}
@@ -75,18 +75,22 @@
 
 \chapter*{Preface}
 \label{sec:preface}
+\addcontentsline{toc}{chapter}{Preface}
 \lipsum[1-3]
 
 \chapter*{Summary}
 \label{sec:summary}
+\addcontentsline{toc}{chapter}{Summary}
 \lipsum[1-3]
 
-\tableofcontents
 
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
 \listoffigures % out-comment when not wished
+\addcontentsline{toc}{section}{List of Figures}
 
 \listoftables  % out-comment when not wished
-
+\addcontentsline{toc}{section}{List of Tables}
 
 \chapter*{Nomenclature}
 \label{sec:summary}
@@ -105,19 +109,82 @@ bla
 \part{Overview}  %% DO NOT USE \part FOR MONOGRAPHY
 \label{part:overview}
 \chapter{Introduction}
-\label{intro}
-\
+\label{ch:intro}
+\lipsum[4]
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{HiT-logo}
+  \caption{The HiT logo in colour}
+  \label{fig:hit-logo}
+\end{figure}
+\lipsum[4]
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{HiT-logo_bw}
+  \caption{The HiT logo in black and white}
+  \label{fig:hit-logo-bw}
+\end{figure}
+\lipsum
+
 \section{Background}
 \label{sec:back}
+\lipsum[4]
+\begin{equation}
+  e = m c^2
+\end{equation}
 \lipsum
 
 \chapter{Theory}
-\label{intro}
-\
+\label{ch:theory}
+
+\section{Maxwell's Equations}
+\label{sec:theory}
+\indent The differential forms of Maxwell's equations as found by Heaviside, while completely valid, are now considered somewhat archaic, and have been replaced by the more useful (equivalent) integral forms. Each law is named according to the person(s) who originally discovered the connections represented by the equation. Here are the four equations:
+\begin{eqnarray}
+  \text{Gauss' law for electricity:}& \displaystyle \oint{\vec{E}\cdot\mathrm{d}\vec{A}}&=\frac{Q_{enc}}{\epsilon_0}\\
+  \text{Gauss' law for magnetism:}& \displaystyle \oint{\vec{B}\cdot\mathrm{d}\vec{A}}&=0\\
+  \text{Faraday's law:}& \displaystyle\oint{\vec{E}\cdot\mathrm{d}\vec{s}}&=-\frac{\emph{d}\phi_b}{\mathrm{d}t}\\
+  \text{Ampere-Maxwell law:}& \displaystyle\oint{\vec{B}\cdot\mathrm{d}\vec{s}}&=\mu_0\epsilon_0\frac{\emph{d}\phi_e}{\mathrm{d}t}+\mu_0 i_{enc}
+\end{eqnarray}
+Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
+
 \section{Mathematical model}
 \label{sec:back}
-\lipsum
+\lipsum[8]
+\begin{table}[!ht]
+  \centering
+  \begin{tabular}{|r|l|}
+    \hline
+    7C0 & hexadecimal \\
+    3700 & octal \\ \cline{2-2}
+    11111000000 & binary \\
+    \hline \hline
+    1984 & decimal \\
+    \hline
+  \end{tabular}
+  \caption{The different number systems}
+\end{table}
 
+\lipsum[4]
+
+\begin{table}[!ht]
+  \centering
+    \begin{tabular}{ | l | l | l | p{5cm} |}
+    \hline
+    Day & Min Temp & Max Temp & Summary \\ \hline
+    Monday & 11C & 22C & A clear day with lots of sunshine.
+    However, the strong breeze will bring down the temperatures. \\ \hline
+    Tuesday & 9C & 19C & Cloudy with rain, across many northern regions. Clear spells
+    across most of Scotland and Northern Ireland,
+    but rain reaching the far northwest. \\ \hline
+    Wednesday & 10C & 21C & Rain will still linger for the morning.
+    Conditions will improve by early afternoon and continue
+    throughout the evening. \\
+    \hline
+    \end{tabular}
+  \caption{The weather forecast}
+\end{table}
+\lipsum{100-150}
 
 ~\nocite{*}
 
