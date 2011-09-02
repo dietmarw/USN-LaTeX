@@ -1,9 +1,11 @@
 %% sample template file for a PhD Thesis
 %%
 %% Choose format: either a4 or b5 by uncommenting the respective line
-\documentclass[11pt,a4paper,openright]{book} %% use when print out is also in A4
-% \documentclass[12pt,a4paper,openright]{book} %% use when print-out is scaled down to B5
-% \documentclass[11pt,b5paper,openright]{book} %% use when print-out is in B5
+\documentclass[11pt,openright]{book} %% use when print out will not be further scaled
+% \documentclass[12pt,openright]{book} %% use instead when print-out is scaled down to B5
+
+\usepackage[a4paper]{geometry} %% use wider a4paper definition from geometry package
+% \usepackage[b5paper]{geometry} %% use instead when print-out is in B5
 
 %% Character input setup, choose one of the following
 %% to be able to use western european special chars directly
@@ -40,10 +42,10 @@
 \begin{document}
 \frontmatter  %% switches to roman page numbers
 \begin{titlepage}
-  \vspace*{\stretch{2}}
+  \vspace*{\stretch{1}}
   % Title
   \begin{center}
-    \LARGE{The Title of the PhD thesis}
+    \Huge{The Title of the PhD thesis}
   \end{center}
   \vspace*{\stretch{0.5}}
   % Author
@@ -81,6 +83,11 @@
 
 \tableofcontents
 
+\listoffigures % out-comment when not wished
+
+\listoftables  % out-comment when not wished
+
+
 \chapter*{Nomenclature}
 \label{sec:summary}
 bla
@@ -95,7 +102,7 @@ bla
 
 
 \mainmatter
-\part{Overview}
+\part{Overview}  %% DO NOT USE \part FOR MONOGRAPHY
 \label{part:overview}
 \chapter{Introduction}
 \label{intro}
@@ -123,7 +130,7 @@ bla
 \appendix
 \renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
 
-\part{Published and Submitted Papers}
+\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPHY
 \label{part:papers}
 
 
