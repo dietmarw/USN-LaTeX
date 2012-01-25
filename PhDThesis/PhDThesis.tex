@@ -13,16 +13,17 @@
 % \usepackage[latin1]{inputenc}  %% for outdated latin1 based systems (WinXP)
 
 \usepackage{graphicx}         %% needed for inclusion of graphics
-\graphicspath{{figs/}}         %% this is were the images reside
+\graphicspath{{figs/}}        %% this is were the images reside
 
 \usepackage[british]{babel}   %% some british specific settings
 
-\usepackage[T1]{fontenc}      %% recommended for readable pdf
+\usepackage[T1]{fontenc}      %% recommended for readable PDF
 \usepackage{lmodern}          %% use vector fonts
 \usepackage{amsmath,mathptmx} %% we need lots of math features
 \usepackage{url}              %% helps displaying URLs
 \usepackage[pdfborder={0 0 0}]{hyperref} %% generate links in the PDF (but no boxes around them)
 \usepackage{longtable}        %% for tables then can go over several pages
+\usepackage{pdfpages}         %% for inclusion of PDF documents
 
 %% Bibliography setup %%
 %%% default is "number-only" style
@@ -197,7 +198,7 @@ Note: $\oint$ is used to specify a closed loop integral, also known as a line in
 \appendix
 \renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
 
-\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPHY
+\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPH
 \label{part:papers}
 
 
@@ -206,12 +207,32 @@ Note: $\oint$ is used to specify a closed loop integral, also known as a line in
 
 Short descriptive text of paper follows here.
 
-The paper itself will needs to be included in the published form as pdf on the next pages.
+The paper itself needs to be included in the published form as PDF on the next pages.
+This can be done using the \texttt{pdfpages} package by adding the command:
+
+\begin{verbatim}
+\includepdf{pages=-,openright}{Filename}
+\end{verbatim}
+
+You can ommit the \texttt{.pdf} when specifying the \texttt{Filename}. Also you should include always include the option \texttt{openright} since it would look strange to have the paper starting at the back of the cover page.
+
+There are more options like only adding specific pages:
+\begin{verbatim}
+\includepdf{pages=2-6,openright}{Filename.pdf}
+\end{verbatim}
+
+For more options see Appendix~\ref{paper-b} where the most important pages of the \texttt{pdfpages} manual were inlcuded using \texttt{pdfpages}.
+
+
+%%% Command to include a PDF file directly including all pages:
+
 
 \chapter{Title of Paper B}
 \label{paper-b}
 Short descriptive text of paper follows here.
 
-The paper itself will needs to be included in the published form as pdf on the next pages.
+Here we included the first five pages of the \texttt{pdfpages} manual itself.
+
+\includepdf[pages=1-5,openright]{figs/pdfpages}
 
 \end{document}
