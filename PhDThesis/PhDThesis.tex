@@ -21,22 +21,28 @@
 \usepackage{lmodern}          %% use vector fonts
 \usepackage{amsmath,mathptmx} %% we need lots of math features
 \usepackage{url}              %% helps displaying URLs
-\usepackage[pdfborder={0 0 0}]{hyperref} %% generate links in the PDF (but no boxes around them)
+\usepackage[hidelinks=true]{hyperref} %% generate links in the PDF (but no boxes around them)
 \usepackage{longtable}        %% for tables then can go over several pages
 \usepackage{pdfpages}         %% for inclusion of PDF documents
 
 %% Bibliography setup %%
-%%% default is "number-only" style
-\bibliographystyle{plain}
-%%% If you want to use "author-date" style
-%%% where `\citet{Foo2011}` generates "Foo et al. (2011)"
-%%% and   `\citep{Foo2011}` generates "(Foo et al. 2011)"
+%%% default is the "numberic" style
+\usepackage[style=numeric, sorting=none]{biblatex}
+%%% If you want to use "author-year" style
+%%% where `\cite{Foo2011}` generates "Foo et al. (2011)"
+%%% and   `\parentcite{Foo2011}` generates "(Foo et al. 2011)"
 %%% then comment the line above and use
-% \usepackage{natbib}
+%\usepackage[style=authoryear]{biblatex}
 %%% or
-%%% if you want to use "author-number" style then use
-% \usepackage[numbers]{natbib}
+%%% if you want to use "alphabetic" style then use
+%%% where `cite[Foo2011]` generates "[Foo11]"
+%%% then comment the line above and use
+%\usepackage[style=alphabetic]{biblatex}
 %%% instead.
+
+%% load the bib file:
+\addbibresource{PhDThesis.bib}
+
 
 \usepackage{lipsum} % just for providing fill text used in this template
 
@@ -94,7 +100,7 @@
 \addcontentsline{toc}{section}{List of Tables}
 
 \chapter*{Nomenclature}
-\label{sec:summary}
+\label{sec:nomenclature}
 bla
 
 \begin{longtable}{ll}
@@ -121,8 +127,8 @@ bla
 \lipsum[4]
 \begin{figure}[!ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{HiT-logo_bw}
-  \caption{The HiT logo in black and white}
+  \includegraphics[width=0.8\textwidth]{HiT-logo-en}
+  \caption{English variant of the TUC logo.}
   \label{fig:hit-logo-bw}
 \end{figure}
 \lipsum
@@ -150,7 +156,7 @@ bla
 Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
 
 \section{Mathematical model}
-\label{sec:back}
+\label{sec:mathmodel}
 \lipsum[8]
 \begin{table}[!ht]
   \caption{The different number systems}
@@ -187,12 +193,17 @@ Note: $\oint$ is used to specify a closed loop integral, also known as a line in
 \end{table}
 \lipsum{100-150}
 
+% A dummy command that causes all bibliographyentries to be displayed
+% even though there were not cited in the document. Used for demonstration
+% purposes only in this template file.
 ~\nocite{*}
 
 \cleardoublepage
-\phantomsection
-\bibliography{vancouver.bib}
-\addcontentsline{toc}{chapter}{Bibliography}
+
+% The bibliography should be displayed here...
+\printbibliography[heading=bibintoc]
+% You rather like to call the bibliography "References"? Then use this instead:
+%\printbibliography[heading=bibintoc, title={References}]
 
 
 \appendix
