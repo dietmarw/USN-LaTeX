@@ -6,12 +6,14 @@ These logos are converted from the original Adobe Illustrator format file from:
 
 * https://www.usn.no/om-hsn/presserom/logo-design-og-grafiske-elementer/
 
-Converting them to SVG and PDF meant a huge difference in file size
-(a few kB instead of 1.1 MB).
+Converting them to [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
+and [PDF](https://en.wikipedia.org/wiki/Portable_Document_Format) meant a huge
+difference in file size (a few kB instead of 1.1 MB).
 
 You can get all logos at once by simply downloading the [`master.zip`](../../../archive/master.zip) and you will find them
 under the `logos` subdirectory.
 
+> For those of you still dependent on Microsoft PowerPoint, which does neither support SVG nor PDF, there is also an [EMF](https://en.wikipedia.org/wiki/Windows_Metafile#Variants) format available. Or better even try using [LibreOffice](https://www.libreoffice.org/) instead which supports **all** formats.
 
 File name        | Image
 -----------------|---------------------------------------------------------------------------------------------
