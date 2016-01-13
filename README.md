@@ -1,5 +1,6 @@
 # USN-LaTeX file repository
-This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* templates for the use at the [University College of Southeast Norway (Høgskolen i Sørøst-Norway - *HSN*)](http://www.usn.no)
+This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* templates for the use at the
+[University College of Southeast Norway - USN (Høgskolen i Sørøst-Norge - *HSN*)](http://www.usn.no)
 
 ## Installation and usage of the project template
 Currently only the PhDThesis template is in a usable state and can be found
