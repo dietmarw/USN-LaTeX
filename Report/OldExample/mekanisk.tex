@@ -1,0 +1,163 @@
+\documentclass[Visionprosjekt.tex]{subfiles} 
+\NormalTopp
+\begin{document} 
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mekanisk konstruksjon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Det meste av materiellet brukt i denne oppgaven er hentet fra høgskolens lager. Transportbåndet, med motor,  kommer fra et utrangert produksjonsanlegg hos REC Wafer Norway AS. 
+
+Av tilbehør til transportbåndet er det laget et koplingsbrett, festebraketter for sensorer, fyllestasjoner og endeplattformer. (Heretter omtalt som «tilbehør».) Det er lagt vekt på god materialkvalitet, slik at anlegget vil tåle lang tids bruk.  Fullstendig materialliste finns i \refv{ved:materialliste}.
+
+Videre vil kapitlet dokumentere valg av mekaniske og elektromekaniske løsninger for transportbåndsystemet.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Materialbruk og utførelse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Transportbåndets gods er laget i aluminium. Dersom båndet skulle stått i et fuktig eller korrosivt miljø, ville det vært nødvendig å ta hensyn til de  spesielle elektriske egenskapene til aluminium. Aluminium er edlere enn andre vanlige metaller. Korrosjon vil derfor oppstå på  metaller som er i kontakt med aluminium.
+I slike tilfeller skal forskjellige typer metall isoleres fra hverandre, til dette brukes ofte et teflonbelegg. Transportbåndsystemet skal kun brukes innendørs, og det er derfor ikke tatt hensyn til isolasjon mellom de ulike metallene. %Som en avhjelpning er det brukt én type metall så langt det er mulig.
+
+Det meste av tilbehøret er laget i  aluminium. Fordeler med aluminium er at det er enkelt å jobbe med, veier lite  og det er god tilgang til det påHiT. Plattformer og de fleste festebraketter er lagd av 1,5\,mm-plater. Stativet til fyllestasjonen trengte en noe kraftigere konstruksjon, og er derfor lagd av 2\,mm-plater. 
+I de tilfeller der enda kraftigere deler er påkrevd, er det benyttet stål. Dette gjelder kamerafestet, 
+braketter for kabelkanal, koplingsbrett, sylinder og pneumatikkventil. 
+
+
+%Langs rammen til båndet er det et 8\,mm bredt spor, hvor det er innsatt flathodede skuer for å feste tilbehør til båndet. Det er benyttet 6\,mm-bolter. 
+
+Fyllestasjonen\footnote{Fyllestasjonen er laget av overingeniør Eivind Fjelldalen ved \HiT.} består av to $1\,\sfrac{1}{2}$-liters brusflasker, impellerhus og to impellere. Selve impellerhuset er laget i kryssfinér og er innkapslet i to tykke pleksiglassplater på hver side. Fra impellerne føres pelletsene til  beholderne via to rør.
+
+%Den mekaniske delen av prosjektet har tatt noe lengre tid enn planlagt. Dette skyldes i hovedsak at det har bitt fokusert på å fremstille alle deler i riktig kvalitet, samt noe dårlig utvalg av skruer.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Elektrisk oppkopling}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Transportbåndsystemet er en flyttbar modell, men oppkoplingen er utført etter krav til fastmontert anlegg, grunnet økt læringsutbytte. Slik anlegget er koplet opp, vil det også tilfredsstille krav til flyttbart utstyr. Rapporten vil i de neste underkapitlene gå nærmere inn på den elektriske oppkoplingen, med fokus på sikkerhet og normer.
+
+
+
+
+
+\subsubsection{Vern}\label{subsub:vern}
+
+Modellen  er sikret  mot kortslutning, overbelastning og jordfeil. Det er brukt en jordfeilautomat med C-karakteristikk og nominell utløserstrøm $I_n= 6$\,A for overbelastning.  Utløserstrømmen for jordfeilbryteren er $I_\Delta=30$\,mA. På grunn av den lave motoreffekten er det valgt å kjøre både hoved- og styrestrøm gjennom dette vernet.
+
+Kravet til utkopling ved jordfeil i anlegg som er fast montert og der kursen ikke kan belastes med noe annet enn det som er montert, er 300\,mA.  Kravet til utløserstrøm i stikkontaktkurser er 30\,mA. Gruppen har valgt å benytte $I_\Delta=30$\,mA, siden et slikt vern var tilgjengelig. Dersom anlegget koples til en kurs sikret med et jordfeilvern med $I_\Delta=30$\,mA, vil det ikke være selektivitet mht. jordfeil. Siden det ikke  kan garanteres at anlegget til en hver tid vil være tilkoplet en kurs med jordfeilbryter, er det valgt å montere et jordfeilvern direkte i anlegget. Dette vil også gjøre øke anleggets berøringssikkerhet.
+
+Transportbåndmotoren er sikret mot overbelastning med et elektronisk motorvern i frekvensomformeren. Dette stilles inn på motorens nominelle driftsstrøm. %Overbelastning under normal drift kan være et signal om at motorens lagre er slitt. 
+
+
+Alle enheter og ledere som fører  24\,V er kortslutningsbeskyttet med en kvikk glassikring på 2\,A, siden dette er strømforsyningens maksimale belastning på 24\,V-uttaket. %NEK 400 gir ingen retningslinjer for så lave spenninger.
+
+
+
+
+\subsubsection{Utjevningsforbindelse}
+
+%En viktig del av dette prosjektet er sikkerhetssystemer. 
+Mellom  koplingsbrettet og transportbåndet er det lagt en  utjevningsforbindelse  for å hindre at en farlig potensialforskjell skal kunne oppstå.   
+Utjevningslederen er lagt med liten grad av mekanisk beskyttelse, og skal i følge NEK 400:542.3 i slike tilfeller ha et tverrsnitt på minimum  4\,mm$^2$ på grunn av mekanisk styrke \cite{NEK400}. I dette tilfellet er det valgt en leder med tverrsnitt 6\,mm$^2$, pga. at denne var tilgjengelig.
+
+Alle deler med 230\,V strømforsyning er jordet med samme tverrsnitt på jordleder som på strømførende ledere. Jordingen tilfredsstiller derfor krav til jording av kabler med lite tverrsnitt. \cite{NEK400}
+
+
+
+\subsubsection{Valg av kabler}
+
+Alle styreledninger (24\,V) på koplingsbrettet er RK\,0,75\,mm$^2$, kobber. Disse ledningene er, på grunn av kort lengde, beskyttet mot kortslutning. 
+Det er derfor tilstrekkelig å beskytte mot kortslutning i styrestrømsdelen av anlegget. 
+
+Hovedstrømslederne (230\,V)  er RK\,1,5\,mm$^2$, grunnet krav til minstetverrsnitt, beskrevert i NEK 400 tabell 52E. %Frekvensomformeren vil begrense belastningen som kan tilkobles trefasekontakten, som beskrevet i avsnitt \ref{subsub:vern}.
+
+%Dersom det settes inn uttak for tilkopling av variabel last, slik som en (ny) stikkontakt, vil det være nødvendig å sikre kabler mot overbelastning.  Det vil da være nødvendig med 1,5\,mm$^2$ til alle kabler som fører 230\,V.   
+
+Korte avstander mellom belastninger og vern fører til at det ikke er nødvendig å ta hensyn til spenningsfall i anlegget. 
+
+
+
+\subsubsection{Støyskjerming}
+
+Frekvensomformeren er  en stor kilde til elektromagnetisk støy. For å hindre elekromagnetisk utstråling, er kabelen mellom frekvensomformeren og motoren skjermet. Skjermen er koplet til jord i begge ender. %Det skal sies at kabelen ikke er fysisk symmetrisk, noe som vil føre til mer støy enn ved en symmetrisk kabel. Dette bør utbedres dersom modellen skal benyttes i senere studentprosjekter.
+
+De tre releene og magnetventilen vil sette opp kraftige negative spenningspulser over spolene når strømmen i kretsene blir brutt. Disse pulsene kan  forstyrre\footnote{Uten beskyttelsesdiodene tok kameraet bilde hver gang magnetventilen mistet spenningen.}/ødelegge følsomt elektronisk utstyr. Dioder er derfor koblet over alle de fire spolene i sperreretningen.
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Tidsforbruk}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Ved arbeid med denne oppgaven, har det gått med mye mer tid enn planlagt til mekaniske arbeid. Produksjon plattformer, braketter, fester har tatt lenger tid enn antatt. Dette har forsinket framdriften ved prosjektet svær mye.
+%
+%Kun noen få braketter er fabrikklagde. Det aller meste av festemateriell er laget unikt for denne modellen. Det har derfor vært nødvendig å lage det meste av delene på sentralverkstedet ved Høgskolen i Telemark.
+%
+%Nøyaktighet og bruk av tid er avgjørende for rett kvalitet hva gjelder materiell. Transportbåndmodellen er laget for lang levetid og for muligheter for modifikasjon.
+%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Forslag til utvidelser av transportbåndsystemet}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Det er ønsket at transportbåndsystemet skal kunne utvides eller brukes som en del i en større enhet. Ved hjelp av et ekstra transportbånd og en enkel robot, vil det være mulig å lage en større enhet med fornuftig funksjon. Ved produksjon og oppkopling ble det  tatt  hensyn til videre utvidelser.
+
+Alle påmonterte deler er festet med skruer. Dette gjør det enkelt å flytte eller bytte ut materiell. Aktuelle utvidelser av modellen kan være tilbygg eller en kombinasjon av flere transportbåndsystemer. %\red{Utvidelsene vil i hovedsak være aktuelle dersom det ønskes en mer komplisert programmeringssekvens i et senere prosjekt.}
+Videre vil rapporten beskrive noen aktuelle utvidelser av transportbåndsystemet.
+
+
+
+
+
+\subsubsection{Enkel utvidelse}
+
+Ved HiT er det våren 2011 laget to modeller med liknende virkemåter. Modellene bruker forskjellige typer teknologi for identifisering av beholderne, henholdsvis vision og RFID. En kombinasjoin av disse, vil i  læringssammenheng være interessant. Den enkleste formen for utvidelse av transportbåndsystemet er å benytte to transportbånd, hvor det ene plasseres delvis ved siden av det andre. Da kan  sylinderen skyve beholderne over til det neste båndet hvor fylling- og sorteringsprosessen kan fortsette. 
+
+Å sette sammen to eller flere bånd, vil koplingsmessig være  enkelt, grunnet bussteknologien som er benyttet. Bussystemer er beskrevet i kapittel \ref{sec:feltbuss}. %Det eneste som må gjøres er å koble brettene til en felles Profibus-kabel.
+
+
+
+\subsubsection{Utbytting av endestasjonene}
+
+En alternativ utvidelse av modellen er å lage en enhet (robot) for plassering/stabling av ferdig fylte bokser. Enheten monteres der endeplattformene  er plassert. % Endestasjonen bør  kunne plassere minst fire beholdere på riktig plass. 
+Plassering av beholdere på den nye endestasjonen kan gjøres enten med elektromotorer eller med luftstyrte sylindere. En interessant løsning kan være å bevege hele plattformdekket. 
+
+Denne utvidelsen er relevant, fordi ferdige produkter ofte blir stablet på brett før utsendelse. Eksempler på dette kan være flasker fra bryggerier som plasseres i kasser før de sendes ut. Boksene som brukes i denne oppgaven er også egnet for plassering på brett.
+
+ %\red{Hva er «endestasjonen»? Er det en robot? Vi må kalle en spade for en spade.}
+
+
+
+
+\subsubsection{Kombinasjon med andre modeller og identifikasjonsmetoder}
+
+En kombinasjon av båndene kan ligne noe på produksjonsmetoden til BMW\footnote{
+På BMWs fabrikker benyttes RFID brikker til identifikasjon av hver bil under produksjon. Hver stasjon får informasjon om hvilken bil de har med å gjøre gjennom informasjonen i RFID-brikka. Når bilen er ferdig produsert fjernes RFID-brikka fra bilen og BMW-merket settes på plass.
+}.
+Ved oppstart vil beholderne bli utstyrt med en RFID-brikke. Ved hjelp av informasjonen i RFID-brikka fylles beholderen med rett produkt, og sendes videre til neste bånd. Her erstattes RFID-brikka med en datamatrise, eller en annen visuell indikator, som kan tolkes av vision-kameraet.
+
+%
+%Dersom det ønskes enda en produksjonslinje, finnes det et transportbånd av samme type ved høgskolen. Dette båndet kan brukes som en ekstra produksjonslinje eller som et mellomledd mellom de to transportbåndene. Dette båndet er ikke koplet opp og finnes på skolens bruktlager.
+%
+%Dersom båndene skal kombineres, bør det lages et koplingsbrett eller panel. To eller flere panel vil gjøre båndene uryddige og det vil brukes mye mer materiell enn nødvendig.
+%
+%En slik utvidelse vil \red{[absolutt ikke]} være omfattende og tidkrevende\red{[, vi bruker jo BUSSYSTEM]}. Dette kan være interessant for en liten klasse, men den er uaktuell dersom mer enn en gruppe skal jobbe med modellene. 
+%
+
+
+\end{document}
+
+

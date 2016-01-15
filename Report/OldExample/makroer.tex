@@ -1,0 +1,169 @@
+
+% Fra Matte III
+
+\newcommand{\Espen}{Espen L\o kseth} 
+\newcommand{\FTint}{\ensuremath{\int_{C}{\vec{F}\cdot\vec{T}ds}}}
+\newcommand{\Greens}{\ensuremath{\varointctrclockwise_{C}{Pdx+Qdy}=\iint_{R}{\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA}}}
+\newcommand{\parDiff}[2]{\ensuremath{\frac{\partial #1}{\partial #2 }}}
+\newcommand{\dparDiff}[2]{\ensuremath{\dfrac{\partial #1}{\partial #2 }}}
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
+
+\newcommand{\mat}[2][rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr]{\left[\begin{array}{#1}#2 \\ \end{array} \right]}
+\newcommand{\detM}[2][rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr]{\left|
+\begin{array}{#1}#2 \\ 
+\end{array} \right|}
+\newcommand{\tekst}[1]{\mathrm{#1}}
+\newcommand{\hatt}{\ensuremath{\wedge}}
+\newcommand{\linjeR}{\ensuremath{\int_{C}{\vec{F}\,d\vec{r}}}}
+\newcommand{\dr}{d\vec{r}}
+\definecolor{mblue}{rgb}{0,0.08,0.45}
+\definecolor{mgreen}{rgb}{0,0.6,0}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\maple}[1]{
+
+		\noindent\newline\textit{Maple:}\\
+		\texttt{#1} \newline
+}
+\makeatletter
+\newcommand{\romertall}[1]{\romannumeral #1}
+\newcommand{\Romertall}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\newcommand{\storboks}[1]{\fbox{\parbox{\textwidth}{#1}}\vspace{3mm}}
+
+
+\newcommand{\blankLinje}{\\ \newline}
+\newcommand{\blanklinje}{\\ \newline}
+\newcounter{cteller} 
+\newcommand{\blanklines}[1]{
+\forloop{cteller}{-1}{\value{cteller} < #1}{\noindent \newline}}
+\newcommand{\blanklinjen}[1]{\blanklines{#1}}
+\newcommand{\blankLinjeN}[1]{\blanklines{#1}}
+\newcommand{\blankline}{\blanklines{1}}
+
+
+
+
+
+
+
+
+
+
+% Fra Statistikk
+
+\newcommand{\snitt}{\ensuremath{\cap}}
+\newcommand{\union}{\ensuremath{\cup}}
+\newcommand{\p}[1]{\ensuremath{P\!\left( #1 \right)}}
+\newcommand{\ptekst}[1]{\ensuremath{P\!\left(\text{\dq #1\dq}\right)}}
+
+\newcommand{\classpad}[1]{
+
+		\noindent\newline\textit{ClassPad:}\\
+		\texttt{#1} %\newline
+}
+\newcommand{\dsum}{\ensuremath{\displaystyle\sum}}
+\newcommand{\dint}{\ensuremath{\displaystyle\int}}
+\newcolumntype{x}[1]{>{\raggedright}p{#1}}
+%\newcolumntype{x}[1]{>{\raggedleft}p{#1}}
+
+\newcommand{\losning}{\noindent\newline
+        \textit{Løsning:}\\}
+        
+\newtimeformat{tidsformatTall}{\twodigit{\THEHOUR}.\twodigit{\THEMINUTE}}
+\newdateformat{datoformatTall}{\twodigit{\THEDAY}.\twodigit{\THEMONTH}.\THEYEAR}
+
+\newcommand{\talldato}{\datoformatTall\today}
+\newcommand{\tallklokke}{\tidsformatTall}
+
+\newcommand{\sistKompilert}{\footnotesize\sffamily
+    Kompilert \talldato{ } kl. \tallklokke \normalfont\normalsize}
+
+%\newcommand{\N}{\ensuremath{\text{N}}}
+\newcommand{\N}[1]{\ensuremath{\text{N}\!\left(#1\right)}}
+\newcommand{\Bin}[1]{\ensuremath{\text{Bin}\!\left(#1\right)}}
+\newcommand{\Hyp}[1]{\ensuremath{\text{Hyp}\!\left(#1\right)}}
+\newcommand{\Poisson}[1]{\ensuremath{\text{Poissin}\!\left(#1\right)}}
+\newcommand{\Geo}[1]{\ensuremath{\text{Geo}\!\left(#1\right)}}
+
+
+
+
+
+% Fra kybernetikk
+
+\newcommand{\Mat}[2][ccccccccccccccccccccccccccccccccccccccccccccc]{\left[\begin{array}{#1}#2 \\ \end{array}\right]}
+\newcommand{\sq}{\textquotesingle} %For Maple og MATLAB!!!
+\newcommand{\bs}{\textbackslash{}} 
+
+
+%Diverse
+\newcommand{\pref}[1]{\hyperref[#1]{(\ref*{#1})}}
+\newcommand{\vfantom}[1]{\vphantom{\rule{0pt}{#1}}} 
+
+
+% Fra matte 4
+\newcommand{\Lap}[1]{\ensuremath{\mathcal{L}\left\{#1\right\}}}
+\newcommand{\Fou}[1]{\ensuremath{\mathcal{F}\left\{#1\right\}}}
+
+
+
+
+% Fra Industielle programmeringssystemer
+% \mbox{} hindrer f.eks. at figur 2-1 blir splittet i "-"
+\newcommand{\reff}[1]{\hyperref[#1] {figur   \mbox{\ref*{#1}}}}
+\newcommand{\refb}[1]{\hyperref[#1] {figur   \mbox{\ref*{#1}}}}
+\newcommand{\reffo}[1]{\hyperref[#1]{formel  \mbox{(\ref*{#1})}}}
+\newcommand{\reft}[1]{\hyperref[#1] {tabell  \mbox{\ref*{#1}}}}
+\newcommand{\refv}[1]{\hyperref[#1] {ved\-legg \ref*{#1}}}
+
+\newcommand{\refF}[1]{\hyperref[#1] {Figur   \mbox{\ref*{#1}}}}
+\newcommand{\refB}[1]{\hyperref[#1] {Figur   \mbox{\ref*{#1}}}}
+\newcommand{\refFo}[1]{\hyperref[#1]{Formel  \mbox{(\ref*{#1})}}}
+\newcommand{\refT}[1]{\hyperref[#1] {Tabell  \mbox{\ref*{#1}}}}
+\newcommand{\refV}[1]{\hyperref[#1] {Ved\-legg \ref*{#1}}}
+
+%\newcommand{\refp}[1]{\hyperref[#1]{\mbox{(\ref*{#1})}}}
+
+
+\newcommand{\C}{\,\ensuremath{^\circ}C }
+
+%
+%\newcommand{\forfatter}[1]{#1.}
+%\newcommand{\publiseringsdato}[1]{(#1).}
+%\newcommand{\tittel}[1]{\emph{#1.}}
+%\newcommand{\stedForlag}[1]{#1.}
+%\newcommand{\lokaliseringsdato}[1]{Lokalisert #1:}
+%
+
+
+\newcommand{\Referanser}[1]{\clearpage
+\let\a\refname
+\renewcommand*\refname{\MakeUppercase{\a}}
+\thispagestyle{fancy}{
+\rhead{\toppfont\a}}
+\phantomsection
+\addcontentsline{toc}{section}{\a}
+}
+
+\newcommand{\Vedlegg}[1]{\clearpage
+\thispagestyle{fancy}{
+\rhead{\toppfont Vedlegg}}
+\phantomsection
+\addcontentsline{toc}{section}{Vedlegg}
+\section*{Vedlegg}}
+
+
+\newcommand{\NormalTopp}{
+\setlength{\textheight}{\normalTeksthoyde}
+\setlength{\headheight}{\normalToppteksthoyde}
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection \ ##1}{}}
+\renewcommand{\footrulewidth}{0.4pt}
+\thispagestyle{fancy}{\lhead{\toppfont\HiT}
+\chead{}\cfoot{}\rhead{\toppfont\leftmark}
+\lfoot{\toppfont\Gruppe}\rfoot{\toppfont\thepage}}
+}
+
+

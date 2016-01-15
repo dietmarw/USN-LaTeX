@@ -1,0 +1,119 @@
+\documentclass[Visionprosjekt.tex]{subfiles} 
+\NormalTopp
+\begin{document} 
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Innledning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Prosjektet er en del av faget  \Emnekode{} \Emne{} gitt våren 2011 ved \HiT.
+Målet med prosjektet er å få bedre kunnskaper innen  vision-teknologi, feltbussteknikk, sekvensprogrammering og HMI-design, i tillegg til å få en  innsikt i maskindirektivet, med fokus på sikkerhet. 
+
+
+Oppgaven går ut på å bygge  og programmere et transportbåndsystem for fylling og sortering av beholdere. Beholderne som settes på båndet skal identifiseres av et visionkamera. Gruppen har valgt å løse dette ved å avlese todimensjonale strekkoder av typen datamatrise ("<Data Matrix">), festet på beholderne. Denne identifikasjonen brukes  til å bestemme fyllingsgraden av to stoff, $A$ og $B$, samt om beholderen skal skyves ut til en siderampe vha. et luftstempel. Stoffene $A$ og $B$ er plastpellets som fylles  bulkvis  i beholderne  vha. en matestasjon. 
+
+
+Systemet skal styres av en Siemens S7-300 PLS, hvor sekvensprogrammering (SFC) skal benyttes.  En  ekstern I/O-modul skal tilknyttes PLS-en vha. feltbusstandarden Profibus DP. Frekvensomformeren som driver transportbåndmotoren skal også kommunisere over den  samme feltbussen.
+
+Et brukergrensesnitt skal utvikles i WinCC for interaksjon med operatør. Brukergrensesnittet bygges opp etter HiTs standarddokument for godt HMI-design, samt generelle tips \cite{HMIstandard,HMIMorten}. En utvidelse av  standarddokumentet skal  vurderes.
+ %Følgende hovedfunksjoner  implementeres i grensesnittet.
+%
+%\begin{itemize}
+	%\item  Oversikt over systemets status og logging av alarmer.
+	%\item  Mulighet for manuell styring.
+	%\item  Mulighet for setting av parametre -- bl.a. en tabell over ulike datamatrise-koder med korresponderende fyllingsgrader.
+     %\item  Presentere diagnosedata fra feltbusslaver.
+%\end{itemize}
+
+
+
+
+En annen viktig del av prosjektet er å ivareta sikkerheten rundt systemet. En  sikkerhetsmonitor benyttes til dette. Dersom en farlig situasjon oppstår, skal sikkerhetsmonitoren stoppe alle bevegelige deler momentant. På transportbåndet er det  montert en plasttunnel før fyllestasjonen. Ved inngangen til tunnelen, er det satt opp en sikkerhetsstråle og et sett med mutingsensorer. Mutingsensorene vil gjøre det mulig for en beholder av riktig størrelse å slippe inn i tunnelen. En "<farlig situasjon"> registreres dersom sikkerhetsstrålen blir brutt uten at mutingsensorene er aktive, eller ved at nødstoppbryteren aktiveres.
+
+
+
+
+%
+%Transportbåndsystemet kjører frem en beholder. Beholderen passerer først en sikkerhetssluse som verifiserer den som en beholder. Den skal deretter identifiseres som riktig type beholder med et vision-kamera. Videre fylles boksen med to typer materie. Om vision-kameraet mislykkes i å identifisere beholderen, skubber et stempel den av båndet.
+%\blanklinje
+
+%
+%
+%Styresystemet til prosjektet er Siemens S7-300 PLS, tilknyttet HMI i WinCC. PLS-en programmeres opp med sekvensstyring. En ABB-frekvensomformer driver transportbåndet, og denne konfigureres til dette formålet. Frekvensomformeren er tilknyttet en sikkerhetsmonitor som stopper den dersom sikkerhetsslusen eller nødstoppen angir det. Vision-kameraet settes opp med et passende objektiv. Kommunikasjon mellom instrumenteringen utføres med Profibus DP. Utover oppgaveteksten til prosjektet har gruppa valgt å montere ekstra braketter til sikkerhetsslusa for å supplere lysgitteret. 
+%\blanklinje Det utfører grunnleggende funksjoner som overvåking av prosess, manuell kjøring, endring av parametere
+%
+
+
+Videre skal det produseres  dokumentasjon av det elektriske anlegget, inkludert PLS-program og brukergrensesnitt.
+
+
+%\newpage
+Innholdet i hvert enkelt kapittel i denne rapporten er som følger.
+
+
+\begin{description}[style=multiline,leftmargin=22mm]
+     \item[Kapittel 2]   Gir en overordnet beskrivelse av sorteringssystemet.
+     \item[Kapittel 3]   Beskriver maskinvareenhetene som er brukt.
+     \item[Kapittel 4]   Dokumenterer den mekaniske konstruksjonen av systemet.
+     \item[Kapittel 5]   Beskriver feltbussystemer, med spesiell vekt på Profibus DP. 
+     \item[Kapittel 6]   Omhandler brukergrensesnittets og PLS-programmets oppbygning.
+     \item[Kapittel 7]   Presenterer prosjektgruppens konklusjon.
+\end{description}
+
+
+
+
+
+
+%
+%
+% Å lage en god innledning er vanskelig. Det er samtidig en av de viktigste kapitlene i rapporten, så
+% det anbefales å legge litt arbeid i utformingen.
+
+% -Innledningen skal først kort orientere leseren om prosjektets bakgrunn, slik at det går an å
+% orientere seg i terrenget.
+
+% -Deretter bør problemet beskrives nærmere. Hva er det i dagens
+% situasjon som ikke er tilfredsstillende? Gruppa bør prøve å formulere problemet hvordan
+% medlemmene opplever det. 
+
+% -Så bør innledningen ta for seg gruppas mål  hva gruppa ønsker som
+% resultat på prosjektet. Ulike virkemidler for å komme fram til målet kan diskuteres. 
+
+% -Gruppa må deretter konkretisere sitt arbeid i form av hvilke hjelpemidler som faktisk velges å se på i dette
+% prosjektet. Deretter beskrives eventuelle avgrensinger i arbeidsomfanget som gruppa akter å
+% utføre gjennom løsing av problemet med disse virkemidlene.
+
+% Dersom det er relevant for arbeidet så skal det refereres til andre rapporter, personer og/eller
+% miljøer som driver med lignende arbeid.
+
+% Til slutt i innledningen bør det skrives en kort leserveiledning. Dvs. en kort omtale av hva de
+% etterfølgende kapitlene handler om.
+
+% Ideelt sett bør innholdet i innledningen være skrevet til første prosjektmøte, hvor
+% prosjektavgrensingen blir vedtatt, hvis den tidligere beskrevne prosjektgjennomføringen er tatt i
+% bruk. Mye av innledningen består nemlig av problemformulering og prosjektavgrensing, men i
+% praksis er man ofte misfornøyd med innledningen etter at prosjektet er godt på vei eller
+% gjennomført, og skriver den om i etterhånd. Dette medfører av og til forviklinger i verbenes
+% bøyningsform. Hvis innledningen faktisk foreligger før gruppa starter med den praktiske
+% gjennomføringen av prosjektet (noe som er ønskelig), er den naturlige verbformen framtid
+% (futurum). Men rapporten som helhet leses jo først etter at gruppa er ferdig med prosjektet, og
+% skal innledningen gli inn som en del av en helhet, er den naturlige verbformen fortid, med
+% fagtermer preteritum eller perfektum.
+% Det anbefales å skrive innledningen i verbformene presens (nåtid) hvis den skrives allment, og
+% perfektum (avsluttet handling) hvis studentene omtaler gruppas arbeid spesielt. Da vil gruppa
+% eksempelvis kunne bruke setninger av type «rapporten tar for seg » og «arbeidet omfatter » i
+% nåtid sammen med «gruppa har avgrenset oppgaven til å gjelde » «gruppa har valgt å se på
+% » i perfektum.
+% Ulempen med å skrive i perfektum (avsluttet handling) er at det er fort å ta med momenter i
+% innledningen som egentlig hører hjemme i konklusjonen eller oppsummeringen. Det bør derfor
+% utføres en kritisk gjennomlesing av innledningen med det formålet å luke ut elementer som kan
+% avsløre at den er skrevet etter at prosjektresultatet foreligger. Det må sies å være relativt grov
+% rapportskrivingssynd å ta med punkter fra oppsummeringen i innledningskapittelet.
+%
+%
+
+
+
+
+\end{document}

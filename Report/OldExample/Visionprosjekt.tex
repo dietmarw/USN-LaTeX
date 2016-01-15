@@ -1,0 +1,356 @@
+\documentclass [12pt,norsk]{article}
+\include{innstillinger}
+\include{makroer}
+
+\newcommand{\RapportFra}{\textbf{\MakeUppercase{Rapport fra 6.-semestersprosjekt våren 2011}}}
+\newcommand{\Gruppe}{IA6-11-11}
+\newcommand{\Emne}{Industrielle programmeringssystemer}
+\newcommand{\Emnekode}{IA3106}
+\newcommand{\Tittel}{Fyllestasjon for bokser vha. vision-kamera}
+\hypersetup{pdftitle ={\Tittel},
+            pdfauthor={\Gruppe{} ved \HiT}}
+
+\newcommand{\Hovedveileder}{Morten Pedersen}
+\newcommand{\Biveileder}{}
+\newcommand{\Sensor}{}
+\newcommand{\Prosjektpartner}{}
+
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Forside
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\label{Forside}\pdfbookmark[1]{Forside}{Forside}
+\thispagestyle{fancy}{
+\lhead{\hspace*{-23mm}\includegraphics[width=54mm]{logobilder/svart_logo.jpg}\\
+\Large \textbf{Høgskolen i Telemark}\\
+\normalfont \normalsize\textbf{Avdeling for teknologiske fag}\\
+Bachelorutdanningen}
+\chead{}\lfoot{}
+\rhead{}%\sistKompilert} % Midlertidig!
+\cfoot{\includegraphics[scale=1]{logobilder/pi.jpg} \textbf{Avdeling for teknologiske fag}\\
+Adresse: Pb 203, 3901 Porsgrunn, telefon 35 02 62 00, www.hit.no/TF \\ \hrule
+Bachelorutdanning -- Masterutdanning -- Ph.D.-utdanning}
+\rfoot{}
+}
+\pagenumbering{alph}
+
+\noindent\RapportFra\\
+\Emnekode{ } \Emne \\
+\Gruppe
+
+\vspace{25mm}
+
+\begin{center}
+    \huge \textbf{\Tittel}\\
+\end{center}
+\vspace{25mm}
+\begin{center}
+    \includegraphics[scale=1]{bilder/oye.jpg}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Sammendragsside på norsk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{fancy}{
+\cfoot{\textbf{\small Høgskolen tar ikke ansvar for denne studentrapportens resultater og konklusjoner}\\
+\includegraphics[scale=1]{logobilder/pi.jpg} Avdeling for teknologiske fag}}
+
+\label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
+
+\RapportFra  \\
+\begin{tabbing}
+    \textbf{Emne: }   \= \textit{\Emnekode { } \Emne }\\
+    \textbf{Tittel: } \> \textit{\Tittel}
+\end{tabbing}
+\noindent\\
+Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
+\noindent\\
+\begin{tabbing}
+    \noindent \textbf{Prosjektgruppe: }     \=
+    \textit{\Gruppe }\hspace{35mm}          \=
+    \textbf{Tilgjengelighet: }\hspace{3mm}  \=
+    \textit{Åpen}              \\
+    \noindent                  \\
+    \textbf{Gruppedeltakere:}  \\
+    \textit{André Skare Berg}  \\
+    \textit{Espen Løkseth}     \\
+    \textit{Matias Wilhelmsen} \\
+    \textit{Kristian Torsvik}  \\
+    \noindent                  \\
+    \textbf{Hovedveileder:}    \> \textit{\Hovedveileder} \> \textbf{Sensor:}          \> \textit{\Sensor} \\
+    \textbf{Biveileder: }      \> \textit{\Biveileder}    \> \textbf{Prosjektpartner:} \> \textit{\Prosjektpartner}
+\end{tabbing}
+
+\noindent\\
+\textbf{Godkjent for arkivering: }\hrulefill \\
+
+\noindent\storboks{
+\textbf{Sammendrag:}
+
+Prosjektet i \Emne{} inneholder bygging og oppkopling av et transportbåndsystem med fyllestasjon og enkel sortering. Systemet er styrt av en Siemens S7-300 PLS med tilhørende skjermbasert brukergrensesnitt.
+%
+Datamatriser brukes for å bestemme fylling og sortering av beholderne på båndet. Det benyttes en vision-sensor av typen DVT Legend 530 til gjenkjenning av matrisene.
+%
+Oppgaven fokuserer spesielt  på maskinsikkerhet. Som følge av klemfare ved bruk av maskinen, er det benyttet en sikkerhetsmonitor med tilhørende lysgardin. Denne innretningen er montert for å hindre  at uønskede gjenstander kommer inn i farlig område.
+%
+%Transportbåndet er bygd med tanke på senere bruk og utvidelser.
+Materialvalget er av en slik kvalitet at modellen tåler lang tids bruk og ombygging. Modellen er også bygd slik at materiellet enkelt kan byttes ut eller flyttes.
+%
+Anlegget fungerer  i henhold til systembeskrivelsen.
+%
+Dataverktøy som gruppen har benyttet i prosjektet er \LaTeXe{} ved hjelp av MiK\TeX{} og \TeX nicCenter, Autodesk AutoCAD, DVT FrameWork, MS Project, Visio, Office-pakken, Siemens Simatic Step 7 og WinCC.\\
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+% Eventuell sammendragsside på engelsk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{fancy}{
+\lhead{\hspace*{-23mm}\includegraphics[width=54mm]{logobilder/svart_logo.jpg}\\
+\Large \textbf{Telemark University College}\\
+\normalfont \normalsize\textbf{Faculty of Technology}\\
+Bachelor of Science}
+\cfoot{\textbf{\small TUC takes no responsibility for the results and conclusions in this student journal}\\
+\includegraphics[scale=1]{logobilder/pi.jpg} Faculty of Technology}}
+
+\label{Summary}\pdfbookmark[1]{Summary}{Summary}
+
+\textbf{\MakeUppercase{Journal from 6$^\text{TH}$ semester project spring 2011}}  \\
+\begin{tabbing}
+    \textbf{Course: }   \= \textit{\Emnekode { } \Emne }\\
+    \textbf{Title: }    \> \textit{\Tittel}
+\end{tabbing}
+\noindent\\
+This journal is a part of the evaluation result for the course.
+\noindent\\
+\begin{tabbing}
+    \noindent \textbf{Project group: \hspace{6mm}} \= \textit{\Gruppe }\hspace{35mm}   \=
+    \textbf{Availability: \hspace{9mm}}            \= \textit{Open}            \\
+    \noindent                   \\
+    \textbf{Group participants:}\\
+    \textit{André Skare Berg}   \\
+    \textit{Espen Løkseth}      \\
+    \textit{Matias Wilhelmsen}  \\
+    \textit{Kristian Torsvik}   \\
+    \noindent                   \\
+    \textbf{Mentor:}            \> \textit{\Hovedveileder} \> \textbf{Sensor:}          \> \textit{\Sensor} \\
+    \textbf{Assisting mentor: } \> \textit{\Biveileder}    \> \textbf{Project partner:} \> \textit{\Prosjektpartner}
+\end{tabbing}
+
+\noindent\\
+\textbf{Approved: }\hrulefill \\
+
+\noindent\storboks{
+\textbf{Summary:}
+
+This project, related to the class «\Emne» involves the construction of a conveyor belt model, with a loading station for  bulk. The conveyor belt model is controlled by a Siemens S7-300 PLS with a corresponding screen-based control system.
+%
+%Anlegget fungerer tilfredsstillende  i henhold til systembeskrivelsen.
+%
+Data matrices are used to determine the type and amount of bulk to be loaded into the containers. A vision sensor, DVT Legend 530, has been used for code recognition. The code also determines which platform the containers are directed to.
+%
+%The assignment has had a particular focus on machine safety. As a result of hazardous areas, a light guard has been implemented at the entrance of the tunnel in order to prevent injury.
+The assignment has focused on machine safety.  To prevent access to hazardous areas, a safety monitor connected to a light guard has been implemented.
+%
+%Transportbåndet er bygd med tanke på senere bruk og utvidelser.
+%Materialvalget er av en slik kvalitet at modellen tåler lang tids bruk og ombygging. Modellen er også bygd slik at materiellet enkelt kan byttes ut eller flyttes.
+%
+%The conveyor belt model has been constructed with concern of later use and scalability.
+%The material and design for the model has been chosen accordingly.
+%
+All the materials used in the construction are selected for long-term use and scalability.
+%
+The project resulted in a system fulfilling the spesifictions defined by the assignment.
+%
+%
+Computer tools used in this project are \LaTeXe{} with MiK\TeX{} and \TeX nicCenter, Autodesk AutoCAD, DVT FrameWork, MS Project, Visio, the Office suite, Siemens Simatic Step 7 and WinCC.\blanklines{1}
+}
+
+
+
+
+
+\setlength{\textheight}{\normalTeksthoyde}
+\clearpage\pagenumbering{arabic}
+\NormalTopp
+\thispagestyle{fancy}{\rhead{\toppfont\currenttitle}}
+\pdfbookmark[1]{Forord}{Forord*} % Legg til i PDF-bokmerker
+\setcounter{page}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Forord}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{forord.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+\clearpage
+\NormalTopp
+\pdfbookmark[1]{Nomenklaturliste}{Nomenklaturliste}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nomenklaturliste
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{nomenklaturliste}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+\renewcommand*\contentsname{Innholdsfortegnelse}
+\let\a\contentsname
+\renewcommand*\contentsname{\MakeUppercase{\a}}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Innholdsliste
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{fancy}{
+\rhead{\toppfont\a}}
+\pdfbookmark[1]{\a}{toc} % Legg til toc i PDF-bokmerker
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\clearpage
+\renewcommand{\sectionmark}[1]{
+\markboth{\toppfont\thesection \ #1}{}}
+
+
+
+
+
+
+%################################################################################
+%###################  Hoveddelen av rapporten  ##################################
+%################################################################################
+%
+%          Alle disse subfilene har "<normal"> formatering.
+%
+%################################################################################
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{innledning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{systembeskrivelse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{maskinvare}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{mekanisk}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{feltbuss}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{vision}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{pls-og-hmi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subfile{konklusjon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%################################################################################
+%################################################################################
+%################################################################################
+
+
+
+
+
+
+%\bibliographystyle{ieeetr}
+%\bibliographystyle{unsrt}
+\bibliographystyle{logobilder/espen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \Referanser
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliography{referanser}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\Vedlegg
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{enumerate}[leftmargin=*, label={Vedlegg \Alph*}, align=left]
+    \renewcommand{\theenumi}{\Alph{enumi}}
+    \let\c\item\renewcommand{\item}[1]{\c\label{#1}}
+
+     \item{ved:framdrift}			   Framdriftsplan. % A
+     \item{ved:wbs}					   WBS.            % B
+     \item{ved:oppgavetekst}		   Oppgavetekst.   % C
+     \item{ved:ob1}                    PLS: Hovedblokk, OB1 (FBD).           % D
+     \item{ved:sfc}					   PLS: Blokk som styrer automatisk sekvens, FB1 (SFC).    % E
+	\item{ved:hjelp}	               PLS: Blokk som håndterer sikkerhetsmodus, kamerasignaler og manuell kjøring, FC1 (FBD).  % F
+	\item{ved:frekvensomformerprogram} PLS: Blokk for styring av frekvensomformer, FB2 (FBD).  % G
+	\item{ved:skjema}	               Koplingsskjema med tilhørende koplingstabeller.         % H
+	\item{ved:materialliste}	       Materialliste.         % I
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\end{document}

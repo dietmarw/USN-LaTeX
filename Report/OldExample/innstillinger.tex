@@ -1,0 +1,168 @@
+% \batchmode
+\usepackage[utf8]{inputenc}
+\usepackage[norsk]{babel}
+
+% Tips: http://folk.uio.no/tobiasvl/latex.html
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[sc]{mathpazo}
+\linespread{1.05}
+%\usepackage{lmodern}
+
+\usepackage[pdftex]{graphicx}
+%\usepackage{epstopdf}
+\usepackage[vmargin=27mm,hmargin=22mm]{geometry}
+\usepackage[usenames]{color}
+\usepackage{array,booktabs}
+\newcommand{\espen}{Espen L\o kseth}
+\usepackage{amsmath}
+
+\usepackage{datetime}
+
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{clock}
+\usepackage{tabularx}
+
+\usepackage{wrapfig}
+\usepackage{forloop}
+
+% Forbudt Ã¥ bruke (!!):
+%\usepackage{titleref}
+
+\usepackage{xfrac}
+
+\usepackage{chngcntr}
+
+\usepackage[nocfg]{nomencl}
+\makenomenclature
+\setlength{\nomitemsep}{-\parsep}
+\addtolength{\nomitemsep}{2mm}
+
+%*Fjerne advarsel om for ny PDF-versjon
+%\pdfoptionpdfminorversion=6
+
+% Kule stiler
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% VIKTIG VIKTIG VIKTIG
+\usepackage{subfiles}
+
+
+% FÃ¥ alle fotnoter pÃ¥ bunnen av siden, upÃ¥virket av foats.
+\usepackage[bottom]{footmisc}
+
+
+%Tegne digitale timingdiagrammer
+\usepackage{tikz-timing}
+
+
+% FÃ¥ nummerering til Ã¥ inkludere section-nummer: <section-figurnummer>
+\usepackage{caption}
+\captionsetup{figurewithin=section,
+tablewithin=section
+}
+\renewcommand\thefigure{\arabic{section}-\arabic{figure}}
+\renewcommand\thetable{\arabic{section}-\arabic{table}}
+
+\counterwithin{equation}{section}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+
+\usepackage[disable]{todonotes}
+\reversemarginpar
+
+
+
+% Stroe bokstaver og Helvetica-font i section
+\usepackage{sectsty}
+\newcommand{\changefont}[3]{
+\fontfamily{#1} \fontseries{#2} \fontshape{#3}
+\selectfont}
+
+\sectionfont{\changefont{phv}{b}{n}\uppercase}
+\subsectionfont{\changefont{phv}{b}{n}}
+\subsubsectionfont{\changefont{phv}{b}{n}}
+
+\newcommand{\toppfont}{\footnotesize\changefont{phv}{m}{n}}
+\newcommand{\HiT}{H\o gskolen i Telemark}
+
+
+
+
+% Ny side for alle section
+\let\stdsection\section
+\renewcommand\section{\newpage\clearpage\stdsection}
+
+
+% MARGINER :S
+\setlength{\headheight}{29mm}
+\setlength{\voffset}{-2mm}
+\setlength{\headsep}{7mm}
+\setlength{\textheight}{200mm}
+\setlength{\hoffset}{5mm}
+\setlength{\textwidth}{169mm}
+
+\newcommand{\normalTeksthoyde}{230mm}
+\newcommand{\normalToppteksthoyde}{6mm}
+
+% Forbanna innrykk og avsnitt-avstand
+\setlength{\parindent}{0mm}
+%http://stackoverflow.com/questions/3159606/latex-have-new-line-between-paragraphs-no-indentation
+\usepackage{parskip}
+
+
+% For Ã¥ fÃ¥ luft mellom caption og tabell nÃ¥r caption stÃ¥r over tabellen.
+\setlength{\belowcaptionskip}{\abovecaptionskip}
+
+% Ingen ekstra linjeavstand i item-lister
+\setlength{\itemsep}{0pt}
+
+
+
+% FÃ¥ LaTeX til Ã¥ roe seg net nÃ¥r den plasserer figurer!
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.10}
+
+
+% Ikke ekstra mellomrom etter punktum.
+\frenchspacing
+
+
+
+
+% Global endring av liste-avstand
+\let\oldtabular\itemize
+\let\endoldtabular\enditemize
+\renewenvironment{itemize}{\bgroup\oldtabular\setlength{\itemsep}{0pt}}%
+                          {\endoldtabular\egroup}
+
+
+
+
+
+
+
+
+
+
+
+
+\usepackage[hyperfootnotes=false]{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+	pdfstartview=FitH,
+    bookmarksopen=true,
+    bookmarksnumbered=true,
+	bookmarksopenlevel=2,
+    pdftitle =  {Dokument laget av \espen},
+    pdfauthor = {\espen},
+    pdfproducer={\espen}
+    }

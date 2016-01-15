@@ -1,0 +1,72 @@
+\documentclass[Visionprosjekt.tex]{subfiles} 
+\NormalTopp
+\begin{document} 
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Konklusjon}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Det har i løpet av prosjektperioden blitt bygd  en transportbåndmodell for fylling og sortering av beholdere. Transportbåndmodellen er styrt av en Siemens S7-300 PLS. PLS-programmet består av en automatisk sekvens programmert i SFC, i tillegg til hjelpefunksjoner programmert i   FBD.  
+
+Kommunikasjonen mellom PLS, ekstern I/O-modul og frekvensomformer foregår via feltbusstandarden Profibus DP. Bruk av feltbuss gir fordeler som enklere kabling, skalerbarhet og bedre støyimmunitet. Kapittel \ref{sec:feltbuss} beskriver feltbussystemer nærmere.
+
+
+En viktig del av oppgaven har vært å få innblikk i vision-teknologi og benytte  dette til gjenkjenning av beholdere.  Beholderene blir identifisert ved avlesning av datamatriser. 
+%Det viste seg at en vision-sensor var uegnet til denne oppgaven, fordi det er laget for å gi tilbakemeldinger om enheten tilfredsstiller et gitt krav eller ikke.
+Vision-sensoren   ble programmert til å gjenkjenne tre ulike datamatriser, som tilsvarer tre ulike "<produkter">. Fyllingsgraden av de to stoffene $A$ og $B$, samt om beholderen skal skyves ut med stempelet, bestemmes individuelt for de tre produktene. %, men det klarer ikke mer enn en prosessering om gangen og prosesseringen tar derfor lenger tid enn nødvendig.
+
+
+
+
+
+I Siemens WinCC er det laget et funksjonelt og oversiktlig brukergrensesnitt for anlegget. Brukergrensesnittet er utviklet i tråd med  høgskolens standarddokument  for godt HMI-design \cite{HMIstandard}.  De viktigste funksjonene er en oversiktlig anleggstegning med nødvendige sensorer og motorer, alarmhåndtering og -logging og valg av automatisk eller manuell modus. I manuell modus kan stempelet og hver enkelt motor  tvangskjøres. 
+
+
+
+
+
+Det er gjort en vurdering av høgskolens HMI standarddokument. Konklusjonen er at dokumentet bør utvides og forbedres. Dette gjelder  blant annet  spesifisering av farger, skriftstørrelser, skriftjustering og konkrete eksempler. Underkapittel \ref{subsec:HMI-vurdering} gir en nærmere beskrivelse av dette.
+
+
+
+%HMI-designet er utviklet etter det standarddokumentet som høgskolen har utviklet for formålet. 
+%På grunn av mangler i dette dokumentet, er det kun brukt som et utgangspunkt for designet. Ved uklarheter er designet utviklet ved bruk av skjønn. Innenfor områdene \red{ghj} bør dokumentet ytterligere forbedres.
+
+Prosjektet har fokusert på  maskinsikkerhet. For å tilfredsstille  krav  maskindirektivet setter, har det blitt  tatt i bruk en egen sikkerhetsmonitor med tilhørende lysgardin. Oppstår en farlig situasjon, vil sikkerhetsmonitoren stoppe  alle bevegelige deler momentant. PLS-programmet sørger for at anlegget forblir stoppet inntil årsaken til situasjonen er fjernet, og det er gitt en bekreftelse på tilbakestilling via brukergrensesnittet. For å gi denne bekreftelsen kreves det et passord. %Årsaken til at en farlig situasjon er registrert, er enten at sikkerhetsstrålen er brutt uten at muting er aktivert, eller at nødstoppbryteren er  inntrykt.
+
+
+
+%Ved oppkobling av transportbåndsystemet er normer for fastmonterte elektriske anlegg fulgt. Modellen tilfredsstiller også normer for flyttbare anlegg. \cite{NEK400} 
+Oppkopling av transportbåndsystemet er utført i henhold til normer for fastmonterte elektriske anlegg \cite{NEK400}.  Med dette vil modellen tilfredsstille krav gitt i forskrift for elektriske lavspenningsanlegg \cite{FEL}. 
+
+
+%Modellen tilfredsstiller også normer for flyttbare anlegg. 
+
+% Dette skyldes 
+
+
+ %Transportbåndmodellen er laget etter krav til fastmonterte elektriske anlegg, selv om modellen er flyttbar. Alle nødvendige dokumenter for modellen er utarbeidet.
+
+
+
+
+%Ved produksjon av styresystemet til transportbåndet, har det vært nødvendig å trilfrestille krav til elektriske anlegg. 
+
+Et viktig fokus under hele prosjektet har vært å ha riktig kvalitet på den mekaniske delen av oppgaven.  Fester og stativer til de forskjellige komponentene er laget i riktig kvalitet, med tanke på fremtidig bruk. 
+
+
+
+
+Transportbåndsystemet fungerer slik det var beskrevet i oppgaveteksten. 
+%Alle funksjoner virker slik de ble beskrevet ved prosjektstart. 
+Det elektriske anlegget, PLS-programmet og brukergrensesnittet er dokumentert gjennom denne rapporten, med vedlegg. 
+Resultatet av prosjektet stemmer godt overens med målformuleringen, og læringsutbyttet for deltakerne har vært betydelig.
+
+
+
+
+
+
+
+\end{document}

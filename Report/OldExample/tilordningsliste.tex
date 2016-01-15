@@ -1,0 +1,64 @@
+\begin{table}[ht]
+\footnotesize    \renewcommand\arraystretch{1.2}
+    \centering
+    \caption{Tilordningsliste for PLS}
+    \label{tab:tilordning}
+    %\begin{tabularx}{1.0\textwidth}{>{\ttfamily}lrlX}
+    \begin{tabular}{>{\ttfamily}lrll}
+            \toprule   
+        \multicolumn{4}{c}{Utgangsmodul PLS2}\\ 
+            \midrule
+            \normalfont Utg.  &  Skrue  & Ref. &  Beskrivelse	\\ 
+            \midrule 
+            Q0.0  &  2  &  SB1  & Resett SafeBox (dobbel kortvarig impuls)	\\ 
+            Q0.1  &  3  &  K1  & Start relé 1 -- skruemotor fyllstoff A	\\ 
+            Q0.2  &  4  &  K2  & Start relé 2 -- skruemotor fyllstoff B	\\ 
+            Q0.3  &  5  &  MV1 & Skyv ut stempel (går automatisk tilbake når spenning forsvinner)	\\
+            %Q0.4  &  6  &	\\
+            %Q0.5  &  7  &	\\
+            %Q0.6  &  8  &	\\
+            %Q0.7  &  9  &	\\
+							\\
+			Q1.0  &  12  &  DVB1   & Trigg kamera (ta bilde)	\\ 
+            %Q1.1  &  13  &  \\
+            %Q1.2  &  14  &  \\
+            %Q1.3  &  15  & 	\\
+            %Q1.4  &  16  & 	\\
+            %Q1.5  &  17  & 	\\
+            %Q1.6  &  18  & 	\\
+            %Q1.7  &  19  & 	\\
+            \midrule
+        \multicolumn{4}{c}{Inngangsmodul PLS4}\\ 
+            \midrule
+            \normalfont Inng.  &  Skrue  & Ref. &   Beskrivelse\\ 
+            \midrule
+            I0.0  &  2  &  LZ7 & Sensor ved materampe			\\  	 
+            I0.1  &  3  &  FC2 & Sensor ved kamera				\\  	 
+            I0.2  &  4  &  FC3 & Sensor ved fyllestasjon		\\  	 
+            I0.3  &  5  &  LZ1 & Tomt for stoff A (invertert)	\\ 
+            I0.4  &  6  &  LZ2 & Tomt for stoff B (invertert)	\\ 
+            I0.5  &  7  &  LZ3 & Bulkteller stoff A (impuls)	\\ 
+            I0.6  &  8  &  LZ4 & Bulkteller stoff B (impuls)	\\ 
+            I0.7  &  9  &  LZ5 & Stempel helt ute				\\ 
+            \\ 
+            I1.0  &  12  & LZ6 & Stempel inne -- normalposisjon \\ 
+            I1.1  &  13  & SB1  & SafeBox har gått i sikkerhetsmodus pga. lysgitter (invertert) 	 \\ 
+            I1.2  &  14  & SB1  & SafeBox har gått i sikkerhetsmodus pga. nødstopp (invertert) 	 \\ 
+            %I1.3  &  15  &	\\ 
+            %I1.4  &  16  &	\\ 
+            %I1.5  &  17  &	\\ 
+            %I1.6  &  18  & 	\\ 
+            %I1.7  &  19  & 	\\ 
+            \\ 
+            I2.0  &  22  & DVB1 & Digital utgang fra kamera -- produkt 1	\\ 
+            I2.1  &  23  & DVB1 & Digital utgang fra kamera -- produkt 2	\\ 
+            I2.2  &  24  & DVB1 & Digital utgang fra kamera --  produkt 3	\\ 
+            I2.3  &  25  & DVB1 & Digital utgang fra kamera  			\\ 
+            I2.4  &  26  & DVB1 & Digital utgang fra kamera 	 			\\ 
+            I2.5  &  27  & DVB1 & Digital utgang fra kamera 				\\ 
+            I2.6  &  28  & DVB1 & Digital utgang fra kamera -- opptatt				\\ 
+            \\ 
+        \bottomrule
+    %\end{tabularx}
+    \end{tabular}
+\end{table}

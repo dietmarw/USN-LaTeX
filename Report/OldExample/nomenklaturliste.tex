@@ -1,0 +1,38 @@
+\documentclass[Visionprosjekt.tex]{subfiles} 
+\NormalTopp
+\begin{document} 
+
+
+\renewcommand{\nomname}{Nomenklaturliste}
+\let\k\nomname
+\renewcommand*\nomname{\MakeUppercase{\k}}
+
+\setlength{\nomlabelwidth}{45mm}
+\renewcommand{\nomlabel}[1]{#1 \hfil \hspace{2mm} --\hspace{10mm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nomenklaturliste som blir automatisk sortert!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nomenclature{HiT}{Høgskolen i Telemark}
+\nomenclature{DIP}{Dual In-line Package}
+\nomenclature{Profibus DP}{Process Field Bus Decentralized Peripherals}
+\nomenclature{MBP}{Manchester Bus Power}
+\nomenclature{FFB}{Flange Focal Distance -- Avstanden fra bildebrikken til bakkant av objektivet}
+\nomenclature{FBD}{Function Block Diagram -- PLS-programmeringsspråk bestående av logiske porter mm.}
+\nomenclature{SFC}{Sequential Function Charts -- PLS-programmeringsspråk bestående av trinn, aksjoner og overgangbetingelser for sekvensprogrammering}
+%\nomenclature{dpcm}{Dots per centimetre -- Oppløsning på utskrift}
+\nomenclature{OB}{Organization Block -- Programblokk i Siemens Step 7}
+\nomenclature{FC}{Function  -- Programblokk i Siemens Step 7}
+\nomenclature{FB}{Function Block -- Programblokk i Siemens Step 7}
+\nomenclature{PSU}{Power Sypply Unit -- Strømforsyningsenhet}
+\nomenclature{CPU}{Central Processing Unit -- Prosessor}
+\nomenclature{I/O}{Input/Output}
+
+\printnomenclature
+\thispagestyle{fancy}{
+\rhead{\toppfont\k}}
+\noindent{} % SUPER-viktig
+\clearpage
+
+\end{document}
