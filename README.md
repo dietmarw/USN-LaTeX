@@ -4,9 +4,9 @@ This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* tem
 
 ## Installation and usage of the project template
 Currently only the PhDThesis template is in a usable state and can be found
-inside the `PhDThesis` folder.
+inside the [`PhDThesis`](PhDThesis) folder.
 
-The `Report` folder is still a work in progress.
+The [`Report`](Report) folder is still a work in progress.
 
 ## License
 
@@ -21,7 +21,7 @@ and version 1.3 or later is part of all distributions of LaTeX
 version 2005/12/01 or later.
 
 ## Development and contribution
-The templates are developed my [Dietmar Winkler](http://www.hit.no/eng/ansatte/vis/dietmar.winkler)
+The templates are developed by [@dietmarw](https://github.com/dietmarw)
 
 You may report any issues with using the [Issues](../../issues) button.
 
