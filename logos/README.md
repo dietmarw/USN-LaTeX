@@ -15,12 +15,13 @@ under the `logos` subdirectory.
 
 > For those of you still dependent on Microsoft PowerPoint, which does neither support SVG nor PDF, there is also an [EMF](https://en.wikipedia.org/wiki/Windows_Metafile#Variants) format available. Or better even try using [LibreOffice](https://www.libreoffice.org/) instead which supports **all** formats.
 
-File name        | Image
------------------|---------------------------------------------------------------------------------------------
-`HSN_logo.*`     | ![HSN_logo.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo.svg)
-`HSN_logo_en.*`  | ![HSN_logo_en.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_en.svg)
-`HSN_logo_nn.*`  | ![HSN_logo_nn.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_nn.svg)
-`HSN_logotype.*` | ![HSN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logotype.svg)
+File name              | Image
+-----------------------|---------------------------------------------------------------------------------------------
+`HSN_logo.*`           | ![HSN_logo.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo.svg)
+`HSN_logo_en.*`        | ![HSN_logo_en.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_en.svg)
+`HSN_logo_nn.*`        | ![HSN_logo_nn.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_nn.svg)
+`HSN_logotype.*`       | ![HSN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logotype.svg)
+`HSN_logotype_vert_.*` | ![HSN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_vert_en.svg)
 
 
 
