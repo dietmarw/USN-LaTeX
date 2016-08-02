@@ -17,62 +17,72 @@
 %%% then comment the line above and use
 %\usepackage[style=alphabetic]{biblatex}
 %%% instead.
+%\geometry{showframe}
 
 %% load the bib file:
 \addbibresource{thesis.bib}
-
-
 \usepackage{lipsum} % just for providing fill text used in this template
 
+% --- general setup ---
+\newcommand{\mytitle}{%
+% title:
+<prosjektets tittel>
+}
+
+\newcommand{\mysubtitle}{%
+% subject code:
+<emnekode og emnenavn>
+}
+
+\newcommand{\myauthor}{%
+% group code:
+<gruppekode>
+}
+
+\newcommand{\supervisor}{%
+% supervisor:
+<veildeder>
+}
+
+\newcommand{\examiner}{%
+% examiner:
+<sensor>
+}
 
 \begin{document}
 
-\subject{Rapport fra <x.> semesters <Bachelorprosjekt> \the\year}
-\title{<Prosjektets tittel>}
-\subtitle{<Emnekode>\vfill
+\USNtitlepage%
+% Please provide the following information:
+% #1 semster:
+{1}
+% #2 optional figure (set to {} if not wanted)
+{~\vfill
    \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
-\author{<Gruppekode> \and \emph{eller} \and  <forfatter1> \and <forfatter2>}
-\date{\today}
-\publishers{\url{www.usn.no}\\
-     Bachelor -- Master -- PhD}
+% #3 date
+{\today}
+% #4 group members
+{%
+<første deltaker, NB! Ingen signatur her>\\
+<andre deltaker, NB! Ingen signatur her>\\
+<tredje deltaker, NB! Ingen signatur her>\\
+<fjerde deltaker, NB! Ingen signatur her>\\
+<femte deltaker, NB! Ingen signatur her>\\
+<sjette deltaker, NB! Ingen signatur her>
+}
+% #5 confidential?:
+{yes} % anything other then {yes} means open to public
+% #6 Project partner:
+{<Prosjektpartner}
+% #7 Norwegian Summary:
+{%
+\lipsum[6]
+}
+% #8 English Summary:
+{%
+\lipsum[7]
+}
 
-\maketitle
-
-
-
-% \begin{titlepage}
-%   \vspace*{\stretch{1}}
-%   % Title
-%   \begin{center}
-%     \Huge{The Title of the PhD thesis}
-%   \end{center}
-%   \vspace*{\stretch{0.5}}
-%   % Author
-%   \begin{center}
-%     \Large{John Smith}
-%   \end{center}
-%   \vspace*{\stretch{0.5}}
-%   % Submission statement (DO NOT CHANGE)
-%   \begin{center}
-%     \large{Thesis submitted to the University College of Southeast Norway\\ for the degree of philosophiae doctor~(PhD)}
-%   \end{center}
-%   \vspace*{\stretch{2}}
-% \end{titlepage}\cleardoublepage
-% \maketitle\thispagestyle{empty} %% We don't want a page number on the title page
-\pdfbookmark[0]{Titlepage}{title} % Sets a PDF bookmark for the title page
-
-% Dedication page if wished:
-\vspace*{\stretch{1}}
-\pdfbookmark[0]{Dedication}{dedication} % Sets a PDF bookmark for the dedication
-\begin{flushright}
-  \large{\emph{Dedicated to the teachers of TUC ;-)}}
-
-\end{flushright}
-\vspace*{\stretch{2}}
-
-
-
-\chapter*{Prefaceøåæ}
+\chapter*{Preface}
 \label{sec:preface}
 %\addcontentsline{toc}{chapter}{Preface}
 \lipsum[1-3]
@@ -92,7 +102,6 @@
 
 \chapter*{Nomenclature}
 \label{sec:nomenclature}
-bla
 
 \begin{longtable}{ll}
   \textbf{Symbol} & \textbf{Explanation}\endhead\\

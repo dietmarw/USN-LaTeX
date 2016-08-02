@@ -19,7 +19,7 @@
   \renewcommand{\RequireIndex}{\RequirePackage{makeidx}\makeindex}%
 }%
 
-% english option
+% norsk option
 \newif\if@norsk
 \@norskfalse
 \DeclareOption{norsk}{\@norsktrue}
@@ -33,7 +33,7 @@
 
 % --- execution of options ---
 \ProcessOptions\relax
-\LoadClass[12pt, openright, DIV=calc]{scrbook}
+\LoadClass[12pt, openright]{scrbook}
 \KOMAoptions{cleardoublepage=plain}
 
 % --- package loading ---
@@ -55,13 +55,17 @@
 \RequirePackage{parskip}          %% no indent but line skip between paragrahps
 \RequirePackage{sectsty}          %% for setting some headings
   \allsectionsfont{\sffamily}       %% --> set all headings to san-serif fonts
+\RequirePackage{framed}           %% provides framebox
+\RequirePackage{nth}           %% Generate English ordinal numbers
 
 % --- header and footer setup ---
 %\renewcommand*{\chapterpagestyle}{plain}
 
 
 % --- title page setup
-\newcommand{\USNlogo}{%
+%\pdfbookmark[0]{\@title}{title}    %% set the correct PDF bookmark
+
+\newcommand{\USNlogo}{%            %% lang dependent logo
   \if@norsk%
     \includegraphics[width=\textwidth]{HSN_logo}%
   \else%
@@ -69,246 +73,147 @@
   \fi%
 }
 
-\titlehead{%
+\newcommand{\USNtitlehead}{%        %% define the USN title head
   \begin{minipage}{.5\textwidth}%
     \USNlogo
   \end{minipage}%
   ~
   \begin{minipage}{.49\textwidth}%
     \begin{flushright}
-     \textsf{%
+      \textsf{Bachelor -- Master -- PhD}\\
+      \url{www.usn.no}
+     \end{flushright}
+  \end{minipage}%
+}
+\titlehead{\USNtitlehead}
+
+
+\publishers{\textsf{%
        \if@norsk%
-         {\Large Fakultet for teknologiske fag}
+         {\Large Fakultet for teknologi, naturvitenskap og maritime fag}
        \else%
          {\Large Faculty of Technology}
        \fi%
-       \\{Campus Porsgrunn}}
-    \end{flushright}
-  \end{minipage}%
-}
-
-
-
-%Redefinitionen---------------------------------
-%Literaturverzeichnis statt nur Literatur
-%\renewcommand{\refname}{Literaturverzeichnis}
-%\if@english \else \AtBeginDocument{\renewcommand*\figurename{Bild}}\fi
-
-% %Umgebungen------------------------------------
-% \newcommand{\includeBild}[3]%
-% {\ifthenelse%
-%         {\equal{#1}{}}%
-%         {\mbox{\parbox[b][5cm][c]{0.7\textwidth}{\begin{center}no picture\end{center}}}}%
-%         {\ifpdfoutput%
-%             {\mbox{\includegraphics[#3]{#1}}}%
-%             {\IfFileExists%
-%                 {bilder/#1.eps}%
-%                 {\mbox{\includegraphics[#3]{#1}}}%
-%                 {\fbox{\parbox[b][5cm][c]{0.7\textwidth}{%
-%                     \begin{center}%
-%                         \path{#1.eps} nicht gefunden,\bigskip\\
-%                         {\footnotesize\path{#1.{pdf,png,jpg}}\\
-%                         (\ldots wird nicht in \jobname.dvi angezeigt!)}%
-%                     \end{center}%
-%                         }%
-%                 }%
-%             }%
-%         }%
-% }%
-%     \captionsetup{indent=0pt,width=.9\textwidth}%
-%     \caption{#2}%
-%           \ifthenelse%
-%         {\equal{#1}{}}%
-%         {}%
-%         {\label{fig:#1}}%
-% }
-
-% \newcommand{\bild}[4][htb]{%
-% \begin{figure}[#1]%
-%     \centering%
-%     \includeBild{#2}{#3}{#4}
-% \end{figure}%
-% }
-
-% \newcommand{\bildhier}[3]{%
-% \begin{figure}[!ht]%
-%     \centering%
-%     \includeBild{#1}{#2}{#3}
-% \end{figure}%
-% }
-
-
-% \newcommand{\doppelbild}[7][htb]{%
-% \begin{figure}[#1]%
-% \begin{minipage}[t]{.45\textwidth}%
-% \centering%
-%   \includeBild{#2}{#3}{#4}%
-% \end{minipage}%
-% ~\hfill~%
-% \begin{minipage}[t]{.45\textwidth}%
-%   \includeBild{#5}{#6}{#7}%
-% \end{minipage}%
-% \end{figure}%
-% }
-
-%\newcommand{\maxHight}{0.925\textheight}
-%\newcommand{\maxWidth}{0.5\textheight}
-
-%\newcommand{\var}[1]{'\texttt{#1}'}
-%\newcommand{\myitem}[1]{\item \textbf{#1}}
-
-% Zähler für Zeilennnummerierungen in Tablellen
-\newcounter{internal_tbl_cnt}[table]
-\newcommand{\tblrow}{\refstepcounter{internal_tbl_cnt}\arabic{internal_tbl_cnt}.}
-
-% #1 Autor
-% #2 Matrikelnummer
-% #3 Titel
-% #4 Untertitel
-% #5 Abgabedatum
-% #6 Betreuer
-\newcommand{\titelseite}[6]{%
-% pdf document settings:
-      \hypersetup{%
-        pdftitle = {#3},%
-        pdfsubject = {#4},%
-        pdfauthor = {#1},%
-        pdfcreator = {\LaTeX\ with package \flqq hyperref\frqq}%
+       \\{\large Campus Porsgrunn}}
     }%
-    \extraBookmark{Titelseite}{titleanc}%
-    \thispagestyle{empty}%
-    \begin{titlepage}%
-        \MDTlogo\hfill\TUlogo\\%
-    \vfill%
-    \begin{center}%
-      %Titel und Untertitel%
-     \begin{spacing}{2.5}
-         {\textbf{{\Huge #3}\ifthenelse{\equal{#4}{}}{}{\\{\vspace*{3ex}\LARGE #4}}}}%
-         \\[6ex]%
-     \end{spacing}%
-         {\Large #1\\ \# #2}\\%
-        \vfill%
-        \vfill%
-            {\LARGE #5}\\%
-        \vfill%
-        \begin{minipage}[t]{0.25\textwidth}%
-            \flushright\Large%
-            \if@english Supervisor\else Betreuer\fi:~%
-        \end{minipage}%
-        \vspace{0pt}~%
-        \begin{minipage}[t]{0.45\textwidth}%
-            \flushleft\Large%
-            #6%
-        \end{minipage}%
-                \vfill%
-                    {\Large%
-                    \if@english
-                        Technische Universität Berlin\\%
-                        School of Electrical Engineering and Computer Science\\%
-                        Department of Energy and Automation Technology\\%
-                        Chair of Electronic Measurement and Diagnostic Technology%
-                    \else
-                        Technische Universität Berlin\\%
-                        Fakultät IV -- Elektrotechnik und Informatik\\%
-                        Institut für Energie- und Automatisierungstechnik\\%
-                        Fachgebiet Elektronische Mess- und Diagnosetechnik\\%
-                    \fi%
-                    }%
-        \end{center}%
+
+\newcommand{\mysubject}[1]{%
+  \if@norsk%
+  {Rapport fra #1. semesters <Bachelorprosjekt> \the\year}
+  \else%
+  {Report from \nth{#1} semester Bachelor project \the\year}
+  \fi%
+}
+
+\newcommand{\USNtitlepage}[8]{%
+% #1 subject
+% #2 optional figure
+% #3 date
+% #4 authors
+% #5 confidential
+% #6 Project partner
+% #7 Norwegian Summary
+% #8 English Summary
+  \subject{\large \mysubject{#1}}
+  \title{\mytitle}
+  \subtitle{\mysubtitle\\#2}
+  \author{\large \myauthor}
+  \date{#3}
+% pdf document settings:
+  \hypersetup{%
+    pdftitle = {\mytitle},%
+    pdfsubject = {\mysubject{#1}},%
+    pdfauthor = {#4}
+  }%
+\pdfbookmark[0]{\@title}{title}    %% set the correct PDF bookmark
+\maketitle%
 %
-        \end{titlepage}%
-    \cleardoublepage
-    \makeHead{#1, \#\,#2}%
-}
+\clearpage
+\if@norsk%           %% only display Norwegian summary page for norsk
+{% --- norwegian abstract page ---
+\label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
+\USNtitlehead
+\par\bigskip
+{\large \textbf{\mysubject{#1}}}
 
-% Eidesstattliche Erklärung
-\newcommand{\eidesstatt}[1][Berlin, den \today]
-{%
-    ~
-    \vspace{.3\textheight}
-    \begin{center}
-    \section*{Eidesstattliche Erklärung}
-    \end{center}
-    Die selbständige und eigenhändige Anfertigung versichere ich an Eides Statt.\\
+\begin{tabbing}
+    \textbf{Emne:~}   \= \textit{\mysubtitle} \\
+    \textbf{Tittel:~} \> \textit{\mytitle}
+\end{tabbing}
 
-    \bigskip
-    #1
-}
+Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
-% Inhaltsverzeichnis
-\newcommand{\inhaltsverzeichnis}
-{%
-    \tableofcontents%
-    \extraBookmark{\if@english Contents\else Inhaltsverzeichnis\fi}{tocanc}%
-    \if@onlytoc\clearmydoublepage\else\fi%
-}
+\textbf{Prosjektgruppe:~} \textit{myauthor}
+\hfill \textbf{Tilgjengelighet:~}
+\textit{\ifthenelse{\equal{#5}{yes}}{Fortrolig}{Åpen}}
 
-\newcommand{\makeHead}[1]
-{%
-    \clearscrheadfoot%
-    %\renewcommand{\headfont}{\normalfont\sffamily\bfseries}%
-    \lehead{\leftmark}%
-        \rohead{\rightmark}%
-        \ifoot{#1}
-    \ofoot{\pagemark}%
-    %\setheadsepline{.4pt}%
-    %\automark{subsection}%
-    \pagestyle{scrheadings}%
-    \deftripstyle{myChapterStyle}{}{}{}{#1}{}{\pagemark}
-    \renewcommand*{\chapterpagestyle}{myChapterStyle}
-}
+\begin{tabbing}
+  \textbf{Gruppedeltakere:~}  \=
+  \begin{minipage}[t]{0.5\textwidth}
+    \textit{#4}
+  \end{minipage}\\
+  ~\\
+  \textbf{Veileder:~} \> \textit{\supervisor} \\
+  \textbf{Sensor:~}   \> \textit{\examiner}\\
+  \textbf{Prosjektpartner:~} \>\textit{#6}
+\end{tabbing}
 
-\newcommand{\clearmydoublepage}{\newpage{\pagestyle{myChapterStyle}\cleardoublepage}}
+\vfill
+\textbf{Godkjent for arkivering: }\hrulefill \\
 
-\newlength{\FormelTabellenWeite}
-\newenvironment{formelzeichen}[1][0.1]
-{%
-    \@openrightfalse%
-    \setlength{\FormelTabellenWeite}{\textwidth}%
-    \addtolength{\FormelTabellenWeite}{-#1\textwidth}%
-    \addchap*{\if@english Symbols\else Formelzeichen\fi}%
-    \extraBookmark{\if@english Symbols\else Formelzeichen\fi}{formulaanc}%
-    \begin{longtable}{p{#1\textwidth}p{\FormelTabellenWeite}}
-}{%
-    \end{longtable}%
-    \@openrighttrue%
-    \clearmydoublepage
-}%
+\begin{framed}
+\textbf{Sammendrag:}\\
+#7
+\end{framed}
 
-\newenvironment{abkuerzungen}[1][0.2]
-{%
-    \@openrightfalse%
-    \setlength{\FormelTabellenWeite}{\textwidth}%
-    \addtolength{\FormelTabellenWeite}{-#1\textwidth}%
-    \addchap*{\if@english Glossary\else Glossar\fi}%
-    \extraBookmark{\if@english Glossary\else Glossar\fi}{abranc}%
-    \begin{longtable}{p{#1\textwidth}p{\FormelTabellenWeite}}
-}{%
-    \end{longtable}%
-    \@openrighttrue%
-    \clearmydoublepage
-}%
-
-\newenvironment{literaturverzeichnis}
-{\begin{thebibliography}{99}%
-    \addcontentsline{toc}{chapter}{\if@english Bibliography\else Literatur\fi}%
-%	\extraBookmark{\if@english Bibliography\else Literatur\fi}{litanc}
-}
-{\end{thebibliography}}
-
-\newcommand{\indexverzeichnis}{%
-    %\ifthenelse{\equal{\RequireIndex}{}}
-        %{Fehler erzeugen, oder nix}
-        %{untenstehende Befehle}
-    \cleardoublepage%
-    \phantomsection%
-    \addcontentsline{toc}{chapter}{Index}%
-    \printindex%
-}
-
-% Abstand der Paragraphen
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{1.5mm }
-
-%erste Version (abgeleitet von wise/ TU Dresden).
+\vfill
+\begin{center}
+\textbf{\small Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.}
+\end{center}
 %
+\clearpage
+}
+\else%
+{}
+\fi%
+% --- english abstract page ---
+\label{Summary}\pdfbookmark[1]{Summary}{Summary}
+\USNtitlehead
+\par\bigskip
+{\large \textbf{\mysubject{#1}}}
+
+\begin{tabbing}
+    \textbf{Course:~}   \= \textit{\mysubtitle} \\
+    \textbf{Titel:~} \> \textit{\mytitle}
+\end{tabbing}
+
+This report forms part of the basis for assessing the student's performance on the course.
+
+\textbf{Projekt group:} \textit{\myauthor}
+\hfill \textbf{Availability:~}
+\textit{\ifthenelse{\equal{#5}{yes}}{Confidential}{Open}}
+
+\begin{tabbing}
+  \textbf{Group participants:~}  \=
+  \begin{minipage}[t]{0.5\textwidth}
+    \textit{#4}
+  \end{minipage}\\
+  ~\\
+  \textbf{Supervisor:~} \> \textit{\supervisor} \\
+  \textbf{Examiner:~}   \> \textit{\examiner}\\
+  \textbf{Project partner:~} \> \textit{#6}
+\end{tabbing}
+
+\vfill
+\textbf{Approved for archiving: }\hrulefill \\
+
+\begin{framed}
+\textbf{Summary:}\\
+#8
+\end{framed}
+
+\vfill
+\begin{center}
+\textbf{\small  The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.}
+\end{center}
+}
