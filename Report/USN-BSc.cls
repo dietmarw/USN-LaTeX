@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2016/08/01 Template class for Bachelor reports and thesis]
+\ProvidesClass{USN-BSc}[2016/08/01 Template class for reports and theses]
 
 % --- definitions of options ---
 
@@ -19,17 +19,27 @@
   \renewcommand{\RequireIndex}{\RequirePackage{makeidx}\makeindex}%
 }%
 
+% english option
+\newif\if@norsk
+\@norskfalse
+\DeclareOption{norsk}{\@norsktrue}
+\PassOptionsToClass{\if@norsk norsk \else british\fi}{scrbook}
+
 % All other options are passed on to the book class
 \DeclareOption*{%
-    \typeout{Option \CurrentOption\space is passed to package book!}
-    \PassOptionsToClass{\CurrentOption}{book}
+    \typeout{Option \CurrentOption\space is passed to package scrbook!}
+    \PassOptionsToClass{\CurrentOption}{scrbook}
 }%
 
 % --- execution of options ---
 \ProcessOptions\relax
-\LoadClass[12pt, openright, a4paper]{book}
+\LoadClass[12pt, openright, DIV=calc]{scrbook}
+\KOMAoptions{cleardoublepage=plain}
 
 % --- package loading ---
+\RequirePackage{geometry}          %% manual set the page size
+  \geometry{margin=25mm,includeheadfoot}
+\RequirePackage[\if@norsk norsk \else british\fi]{babel}  %% adapt to NO or EN
 \RequirePackage[utf8]{inputenc}   %% allow direct input of utf8 chars
 \RequirePackage{lmodern}          %% use vector fonts
 \RequirePackage[T1]{fontenc}      %% recommended for real glyphs in PDF
@@ -47,17 +57,36 @@
   \allsectionsfont{\sffamily}       %% --> set all headings to san-serif fonts
 
 % --- header and footer setup ---
-\RequirePackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancyhead{} % clear all header fields
-  \fancyhead[C]{\bfseries \leftmark}
-  \fancyfoot{} % clear all footer fields
-  \fancyfoot[C]{\thepage}
-  \renewcommand{\headrulewidth}{0pt} %% no head rule
-  \renewcommand{\footrulewidth}{0pt} %% no foot rule
-  \renewcommand{\chaptermark}[1]{%
-    \markboth{\chaptername\ \thechapter.\ #1}{}}
-\RequirePackage{emptypage}         %% removes headers and footers on empty pages
+%\renewcommand*{\chapterpagestyle}{plain}
+
+
+% --- title page setup
+\newcommand{\USNlogo}{%
+  \if@norsk%
+    \includegraphics[width=\textwidth]{HSN_logo}%
+  \else%
+    \includegraphics[width=\textwidth]{HSN_logo_en}%
+  \fi%
+}
+
+\titlehead{%
+  \begin{minipage}{.5\textwidth}%
+    \USNlogo
+  \end{minipage}%
+  ~
+  \begin{minipage}{.49\textwidth}%
+    \begin{flushright}
+     \textsf{%
+       \if@norsk%
+         {\Large Fakultet for teknologiske fag}
+       \else%
+         {\Large Faculty of Technology}
+       \fi%
+       \\{Campus Porsgrunn}}
+    \end{flushright}
+  \end{minipage}%
+}
+
 
 
 %Redefinitionen---------------------------------

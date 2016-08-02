@@ -1,10 +1,9 @@
 %% sample template file for a BSc Thesis
-\documentclass{USN-BSc}
-\usepackage[margin=25mm,includeheadfoot]{geometry}
+\documentclass[norsk]{USN-BSc}
+%\documentclass{USN-BSc}
 
-\usepackage[british]{babel}   %% some british specific settings
 
-%% Bibliography setup %%
+% --- Bibliography setup ---
 %%% default is the "numberic" style
 \usepackage[style=numeric, sorting=none]{biblatex}
 %%% If you want to use "author-year" style
@@ -25,29 +24,19 @@
 
 \usepackage{lipsum} % just for providing fill text used in this template
 
+
 \begin{document}
-%\frontmatter  %% switches to roman page numbers
 
+\subject{Rapport fra <x.> semesters <Bachelorprosjekt> \the\year}
+\title{<Prosjektets tittel>}
+\subtitle{<Emnekode>\vfill
+   \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
+\author{<Gruppekode> \and \emph{eller} \and  <forfatter1> \and <forfatter2>}
+\date{\today}
+\publishers{\url{www.usn.no}\\
+     Bachelor -- Master -- PhD}
 
-\begin{titlepage}
-%	\centering
-	\includegraphics[width=0.8\textwidth]{HSN_logo_en}\par\vspace{1cm}
-	{\scshape\LARGE Columbidae University \par}
-	\vspace{1cm}
-	{\scshape\Large Final year project\par}
-	\vspace{1.5cm}
-	{\huge\bfseries Pigeons love doves\par}
-	\vspace{2cm}
-	{\Large\itshape John Birdwatch\par}
-	\vfill
-	supervised by\par
-	Dr.~Mark \textsc{Brown}
-
-	\vfill
-
-% Bottom of the page
-	{\large \today\par}
-\end{titlepage}
+\maketitle
 
 
 
@@ -94,12 +83,12 @@
 \lipsum[1-3]
 
 {\sffamily\tableofcontents}
-\addcontentsline{toc}{chapter}{Contents}
+%\addcontentsline{toc}{chapter}{Contents}
 \listoffigures % out-comment when not wished
-\addcontentsline{toc}{section}{List of Figures}
+%\addcontentsline{toc}{section}{List of Figures}
 
 \listoftables  % out-comment when not wished
-\addcontentsline{toc}{section}{List of Tables}
+%\addcontentsline{toc}{section}{List of Tables}
 
 \chapter*{Nomenclature}
 \label{sec:nomenclature}
@@ -115,7 +104,7 @@ bla
 
 
 %\mainmatter
-\part{Overview}  %% DO NOT USE \part FOR MONOGRAPHY
+%\part{Overview}  %% DO NOT USE \part FOR MONOGRAPHY
 %\label{part:overview}
 \chapter{Introduction}
 \label{ch:intro}
@@ -215,7 +204,7 @@ Note: $\oint$ is used to specify a closed loop integral, also known as a line in
 \appendix
 \renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
 
-\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPH
+%\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPH
 %\label{part:papers}
 
 
