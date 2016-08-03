@@ -44,23 +44,32 @@
 \RequirePackage{longtable}        %% for long tables that might break over pages
 \RequirePackage{graphicx}         %% needed for inclusion of graphics
   \graphicspath{{fig/}}           %% this is were the images reside
-\RequirePackage[hidelinks=true]{hyperref} %% generate links in the PDF (but no boxes around them)
+\RequirePackage[hidelinks]{hyperref} %% generate links in the PDF (but no boxes around them)
 \RequirePackage{pdfpages}         %% for inclusion of PDF documents
 \RequirePackage{framed}           %% provides framebox
 \RequirePackage{nth}              %% Generate English ordinal numbers
 
-% --- header and footer setup ---
-%\renewcommand*{\chapterpagestyle}{plain}
+%--- special footer setup
 
+ % footer for summary page
+\newpagestyle{summary}{}{
+ \cfoot{\begin{center}%
+     The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.
+   \end{center}}
+}
+
+\newpagestyle{sammendrag}{}{
+ \cfoot{\begin{center}%
+     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+   \end{center}}
+}
 
 % --- title page setup
-%\pdfbookmark[0]{\@title}{title}    %% set the correct PDF bookmark
-
 \newcommand{\USNlogo}{%            %% lang dependent logo
   \if@norsk%
-    \includegraphics[width=\textwidth]{HSN_logo}%
+    \includegraphics[height=15mm]{HSN_logo}%
   \else%
-    \includegraphics[width=\textwidth]{HSN_logo_en}%
+    \includegraphics[height=15mm]{HSN_logo_en}%
   \fi%
 }
 
@@ -77,7 +86,6 @@
   \end{minipage}%
 }
 \titlehead{\USNtitlehead}
-
 
 \publishers{\textsf{%
        \if@norsk%
@@ -119,18 +127,15 @@
 \pdfbookmark[0]{\@title}{title}    %% set the correct PDF bookmark
 \maketitle%
 %
-\clearpage
 \if@norsk%           %% only display Norwegian summary page for norsk
-{% --- norwegian abstract page ---
-% \setkomafont{pageheadfoot}{\bfseries}
-% \ifoot*{}
-% \ofoot*{}
-% \cfoot*{Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.}
-
-% \thispagestyle{plain-scrheadings}
+{% --- norwegian summary page ---
+\clearpage
+~
+%\clearpage
+%\thispagestyle{summary}
 
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
-\USNtitlehead
+\USNtitlehead%
 \par\bigskip
 {\large \textbf{\mysubject{#1}}}
 
@@ -141,7 +146,7 @@
 
 Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
-\textbf{Prosjektgruppe:~} \textit{myauthor}
+\textbf{Prosjektgruppe:~} \textit{\myauthor}
 \hfill \textbf{Tilgjengelighet:~}
 \textit{\ifthenelse{\equal{#5}{yes}}{Fortrolig}{Åpen}}
 
@@ -162,26 +167,24 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 \textbf{Sammendrag:}\\
 {\small #7}
 \end{framed}
-\vfill
-\begin{center}
-\textbf{\small Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.}
-\end{center}
-%
-\clearpage
+
 }
 \else%
 {}
 \fi%
 % --- english abstract page ---
-\thispagestyle{empty}
+\clearpage
+
+%\thispagestyle{sammendrag}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
+\@norskfalse  % make sure to use the english versions
 \USNtitlehead
 \par\bigskip
 {\large \textbf{\mysubject{#1}}}
 
 \begin{tabbing}
-    \textbf{Course:~}   \= \textit{\mysubtitle} \\
-    \textbf{Titel:~} \> \textit{\mytitle}
+  \textbf{Course:~}   \= \textit{\mysubtitle} \\
+  \textbf{Titel:~} \> \textit{\mytitle}
 \end{tabbing}
 
 This report forms part of the basis for assessing the student's performance on the course.
@@ -204,11 +207,9 @@ This report forms part of the basis for assessing the student's performance on t
 \textbf{Approved for archiving: }\hrulefill
 \vfill
 \begin{framed}
-\textbf{Summary:}\\
-{\small #8}
+  \textbf{Summary:}\\
+  {\small #8}
 \end{framed}
-\vfill
-\begin{center}
-\textbf{\small  The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.}
-\end{center}
+%
+\clearpage
 }
