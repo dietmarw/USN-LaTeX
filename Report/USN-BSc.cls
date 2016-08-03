@@ -14,7 +14,7 @@
 \newif\if@norsk
 \@norskfalse
 \DeclareOption{norsk}{\@norsktrue}
-\PassOptionsToClass{\if@norsk norsk \else british\fi}{scrbook}
+\PassOptionsToClass{\if@norsk norsk \else english\fi}{scrbook}
 
 % All other options are passed on to the book class
 \DeclareOption*{%
@@ -127,13 +127,11 @@
 \pdfbookmark[0]{\@title}{title}    %% set the correct PDF bookmark
 \maketitle%
 %
+\cleardoubleemptypage              %% fillpage without page number
+%
 \if@norsk%           %% only display Norwegian summary page for norsk
 {% --- norwegian summary page ---
-\clearpage
-~
-%\clearpage
-%\thispagestyle{summary}
-
+\thispagestyle{sammendrag}
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
 \USNtitlehead%
 \par\bigskip
@@ -167,15 +165,14 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 \textbf{Sammendrag:}\\
 {\small #7}
 \end{framed}
-
+%
+\cleardoubleemptypage              %% fillpage without page number
 }
 \else%
 {}
 \fi%
 % --- english abstract page ---
-\clearpage
-
-%\thispagestyle{sammendrag}
+\thispagestyle{summary}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \@norskfalse  % make sure to use the english versions
 \USNtitlehead
@@ -211,5 +208,5 @@ This report forms part of the basis for assessing the student's performance on t
   {\small #8}
 \end{framed}
 %
-\clearpage
+\cleardoubleemptypage              %% fillpage without page number
 }

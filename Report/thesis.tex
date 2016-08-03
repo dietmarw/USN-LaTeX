@@ -19,35 +19,35 @@
 %%% then comment the line above and use
 %\usepackage[style=alphabetic]{biblatex}
 %%% instead.
-%\geometry{showframe}
-
 %% load the bib file:
 \addbibresource{thesis.bib}
+
 \usepackage{lipsum} % just for providing fill text used in this template
 
 % --- general setup ---
+%% Please fill in the following parameters:
 \newcommand{\mytitle}{%
-% title:
+%% title:
 <prosjektets tittel>
 }
 
 \newcommand{\mysubtitle}{%
-% subject code:
+%% subject code:
 <emnekode og emnenavn>
 }
 
 \newcommand{\myauthor}{%
-% group code:
+%% group code:
 <gruppekode>
 }
 
 \newcommand{\supervisor}{%
-% supervisor:
+%% supervisor:
 <veildeder>
 }
 
 \newcommand{\examiner}{%
-% examiner:
+%% examiner:
 <sensor>
 }
 
@@ -56,15 +56,15 @@
 
 % --- title page setup ---
 \USNtitlepage%
-% Please provide the following information:
-% #1 semster:
+%% Please provide the following information:
+%% #1 semster:
 {1}
-% #2 optional figure (set to {} if not wanted)
+%% #2 optional figure (set to {} if not wanted)
 {~%\vfill
    \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
-% #3 date
-{}  % leave this empty to deactivate display
-% #4 group members
+%% #3 date
+{\today}  % leave this empty to deactivate display
+%% #4 group members
 {%
 <første deltaker, NB! Ingen signatur her>\\
 <andre deltaker, NB! Ingen signatur her>\\
@@ -73,15 +73,15 @@
 <femte deltaker, NB! Ingen signatur her>\\
 <sjette deltaker, NB! Ingen signatur her>
 }
-% #5 confidential?:
+%% #5 confidential?:
 {yes} % anything other then {yes} means open to public
 % #6 Project partner:
 {<Prosjektpartner>}
-% #7 Norwegian Summary:
+%% #7 Norwegian Summary:
 {%
 \lipsum[6-7]
 }
-% #8 English Summary:
+%% #8 English Summary:
 {%
 \lipsum[6-7]
 }
