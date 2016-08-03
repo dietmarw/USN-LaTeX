@@ -90,8 +90,23 @@
 \chapter*{\USNpreface}
 \label{sec:preface}
 \addcontentsline{toc}{chapter}{\USNpreface}
-\lipsum[1-3]
+<Skriv forordet her
 
+\lipsum[1]>
+
+\bigskip
+
+% Fill in your names in the table:
+\begin{center}
+    \begin{tabular}{ll}
+      \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+      <deltaker>                                  & <deltaker> \\[20mm]
+      \makebox[50mm]{\hrulefill}  \hspace{40mm}   & \makebox[50mm]{\hrulefill} \\
+      <deltaker>                & <deltaker>
+    \end{tabular}
+\end{center}
+
+%% table of contents
 \tableofcontents
 \addcontentsline{toc}{chapter}{\contentsname}
 
@@ -113,12 +128,13 @@
 \end{longtable}
 
 
-%\mainmatter
-%\part{Overview}  %% DO NOT USE \part FOR MONOGRAPHY
-%\label{part:overview}
-\chapter{Introduction}
+
+\chapter{Innledning}
 \label{ch:intro}
 
+<Skriv innledningen her
+Disposisjon: Bakgrunn – detaljbeskrivelse – mål – metoder – avgrensinger – leserveiledning.
+>
 
 \lipsum[4]
 \begin{figure}[!ht]
@@ -138,7 +154,7 @@
 
 
 
-\section{Background}
+\section{Bakgrunn}
 \label{sec:back}
 \lipsum[4]
 \begin{equation}
@@ -146,11 +162,16 @@
 \end{equation}
 \lipsum
 
-\chapter{Theory}
-\label{ch:theory}
+\chapter{Hovedkapitlene}
+\label{ch:main}
+<Begynn hvert hovedkapittel med å fortelle hva kapittelet dreier seg om>
 
-\section{Maxwell's Equations}
+\section{Underkapittel}
 \label{sec:theory}
+
+<Her følger eksempler på objekter som ofte brukes i en rapport og hvordan de skal nummereres.>
+Under er det en tabell som benevnes Tabell~\ref{tab:number}. OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen og midtstilt (som tabellen).
+
 \indent The differential forms of Maxwell's equations as found by Heaviside, while completely valid, are now considered somewhat archaic, and have been replaced by the more useful (equivalent) integral forms. Each law is named according to the person(s) who originally discovered the connections represented by the equation. Here are the four equations:
 \begin{eqnarray}
   \text{Gauss' law for electricity:}& \displaystyle \oint{\vec{E}\cdot\mathrm{d}\vec{A}}&=\frac{Q_{enc}}{\epsilon_0}\\
@@ -160,11 +181,18 @@
 \end{eqnarray}
 Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
 
+
+
 \section{Mathematical model}
 \label{sec:mathmodel}
+
+<Her følger eksempler på objekter som ofte brukes i en rapport og hvordan de skal nummereres.>
+Under er det en tabell som benevnes Tabell  2 .1. OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen og midtstilt (som tabellen).
+
 \lipsum[8]
 \begin{table}[!ht]
   \caption{The different number systems}
+  \label{tab:number}
   \centering
   \begin{tabular}{|r|l|}
     \hline
