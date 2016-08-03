@@ -86,23 +86,20 @@
 \lipsum[6-7]
 }
 
-\chapter*{Preface}
+%% The chapter name for preface is set depending on language
+\chapter*{\USNpreface}
 \label{sec:preface}
-%\addcontentsline{toc}{chapter}{Preface}
+\addcontentsline{toc}{chapter}{\USNpreface}
 \lipsum[1-3]
 
-\chapter*{Summary}
-\label{sec:summary}
-\addcontentsline{toc}{chapter}{Summary}
-\lipsum[1-3]
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
 
-{\sffamily\tableofcontents}
-%\addcontentsline{toc}{chapter}{Contents}
-\listoffigures % out-comment when not wished
-%\addcontentsline{toc}{section}{List of Figures}
+\listoffigures % out-comment if unwanted
+\addcontentsline{toc}{section}{\listfigurename}
 
-\listoftables  % out-comment when not wished
-%\addcontentsline{toc}{section}{List of Tables}
+\listoftables  % out-comment if unwanted
+\addcontentsline{toc}{section}{\listtablename}
 
 \chapter*{Nomenclature}
 \label{sec:nomenclature}

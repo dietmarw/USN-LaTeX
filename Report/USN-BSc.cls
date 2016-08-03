@@ -50,19 +50,22 @@
 \RequirePackage{nth}              %% Generate English ordinal numbers
 
 %--- special footer setup
-
- % footer for summary page
+% norsk:
+\newpagestyle{sammendrag}{}{
+ \cfoot{\begin{center}%
+     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+   \end{center}}
+}
+% english
 \newpagestyle{summary}{}{
  \cfoot{\begin{center}%
      The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.
    \end{center}}
 }
 
-\newpagestyle{sammendrag}{}{
- \cfoot{\begin{center}%
-     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
-   \end{center}}
-}
+% --- useful commands
+\newcommand{\USNpreface}{\if@norsk Forord\else Preface\fi}
+
 
 % --- title page setup
 \newcommand{\USNlogo}{%            %% lang dependent logo
