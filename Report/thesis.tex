@@ -1,7 +1,9 @@
 %% sample template file for a BSc Thesis
-\documentclass[norsk]{USN-BSc}
-%\documentclass{USN-BSc}
-
+%% The default is the norsk version with two sided setup:
+\documentclass[%
+    norsk,  % comment for english version
+%    oneside % uncomment for onesided layout
+]{USN-BSc}
 
 % --- Bibliography setup ---
 %%% default is the "numberic" style
@@ -49,17 +51,19 @@
 <sensor>
 }
 
+
 \begin{document}
 
+% --- title page setup ---
 \USNtitlepage%
 % Please provide the following information:
 % #1 semster:
 {1}
 % #2 optional figure (set to {} if not wanted)
-{~\vfill
+{~%\vfill
    \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
 % #3 date
-{\today}
+{}  % leave this empty to deactivate display
 % #4 group members
 {%
 <første deltaker, NB! Ingen signatur her>\\
@@ -75,7 +79,7 @@
 {<Prosjektpartner}
 % #7 Norwegian Summary:
 {%
-\lipsum[6]
+\lipsum[6-7]
 }
 % #8 English Summary:
 {%

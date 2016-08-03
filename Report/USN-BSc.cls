@@ -10,15 +10,6 @@
 
 % --- definitions of options ---
 
-% index-option
-\newcommand{\RequireIndex}{}
-\newif\if@index
-\@indexfalse
-\DeclareOption{index} {%
-  \@indextrue%
-  \renewcommand{\RequireIndex}{\RequirePackage{makeidx}\makeindex}%
-}%
-
 % norsk option
 \newif\if@norsk
 \@norskfalse
@@ -34,11 +25,15 @@
 % --- execution of options ---
 \ProcessOptions\relax
 \LoadClass[12pt, openright]{scrbook}
-\KOMAoptions{cleardoublepage=plain}
+\KOMAoptions{%
+  cleardoublepage=plain,
+  parskip=half
+}
 
 % --- package loading ---
-\RequirePackage{geometry}          %% manual set the page size
-  \geometry{margin=25mm,includeheadfoot}
+\RequirePackage{scrlayer-scrpage}
+\RequirePackage{geometry}         %% manual set the page size
+   \geometry{margin=25mm, includeheadfoot}
 \RequirePackage[\if@norsk norsk \else british\fi]{babel}  %% adapt to NO or EN
 \RequirePackage[utf8]{inputenc}   %% allow direct input of utf8 chars
 \RequirePackage{lmodern}          %% use vector fonts
@@ -47,16 +42,12 @@
 \RequirePackage{ifthen}           %% provides simple if-then functionality
 \RequirePackage{url}              %% helps displaying URLs
 \RequirePackage{longtable}        %% for long tables that might break over pages
-\RequirePackage{caption}          %% advanced caption options
 \RequirePackage{graphicx}         %% needed for inclusion of graphics
   \graphicspath{{fig/}}           %% this is were the images reside
 \RequirePackage[hidelinks=true]{hyperref} %% generate links in the PDF (but no boxes around them)
 \RequirePackage{pdfpages}         %% for inclusion of PDF documents
-\RequirePackage{parskip}          %% no indent but line skip between paragrahps
-\RequirePackage{sectsty}          %% for setting some headings
-  \allsectionsfont{\sffamily}       %% --> set all headings to san-serif fonts
 \RequirePackage{framed}           %% provides framebox
-\RequirePackage{nth}           %% Generate English ordinal numbers
+\RequirePackage{nth}              %% Generate English ordinal numbers
 
 % --- header and footer setup ---
 %\renewcommand*{\chapterpagestyle}{plain}
@@ -80,8 +71,8 @@
   ~
   \begin{minipage}{.49\textwidth}%
     \begin{flushright}
-      \textsf{Bachelor -- Master -- PhD}\\
-      \url{www.usn.no}
+      \textsf{\Large Bachelor -- Master -- PhD}\\
+      {\large \url{www.usn.no}}
      \end{flushright}
   \end{minipage}%
 }
@@ -119,7 +110,7 @@
   \subtitle{\mysubtitle\\#2}
   \author{\large \myauthor}
   \date{#3}
-% pdf document settings:
+% --- pdf document settings ---
   \hypersetup{%
     pdftitle = {\mytitle},%
     pdfsubject = {\mysubject{#1}},%
@@ -131,6 +122,13 @@
 \clearpage
 \if@norsk%           %% only display Norwegian summary page for norsk
 {% --- norwegian abstract page ---
+% \setkomafont{pageheadfoot}{\bfseries}
+% \ifoot*{}
+% \ofoot*{}
+% \cfoot*{Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.}
+
+% \thispagestyle{plain-scrheadings}
+
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
 \USNtitlehead
 \par\bigskip
@@ -157,15 +155,13 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
   \textbf{Sensor:~}   \> \textit{\examiner}\\
   \textbf{Prosjektpartner:~} \>\textit{#6}
 \end{tabbing}
-
+~\\
+\textbf{Godkjent for arkivering: }\hrulefill
 \vfill
-\textbf{Godkjent for arkivering: }\hrulefill \\
-
 \begin{framed}
 \textbf{Sammendrag:}\\
-#7
+{\small #7}
 \end{framed}
-
 \vfill
 \begin{center}
 \textbf{\small Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.}
@@ -177,6 +173,7 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 {}
 \fi%
 % --- english abstract page ---
+\thispagestyle{empty}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \USNtitlehead
 \par\bigskip
@@ -203,15 +200,13 @@ This report forms part of the basis for assessing the student's performance on t
   \textbf{Examiner:~}   \> \textit{\examiner}\\
   \textbf{Project partner:~} \> \textit{#6}
 \end{tabbing}
-
+~\\
+\textbf{Approved for archiving: }\hrulefill
 \vfill
-\textbf{Approved for archiving: }\hrulefill \\
-
 \begin{framed}
 \textbf{Summary:}\\
-#8
+{\small #8}
 \end{framed}
-
 \vfill
 \begin{center}
 \textbf{\small  The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.}
