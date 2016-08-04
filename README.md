@@ -3,10 +3,20 @@ This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* tem
 [University College of Southeast Norway - USN (Høgskolen i Sørøst-Norge - *HSN*)](http://www.usn.no)
 
 ## Installation and usage of the project template
-Currently only the PhDThesis template is in a usable state and can be found
+Currently only the BScThesis template is up to date (Autumn 2016).
+The PhDThesis template is in a usable state and can be found
 inside the [`PhDThesis`](PhDThesis) folder.
 
-The [`Report`](Report) folder is still a work in progress.
+Content:
+* [`Theses`](Theses):
+  * *BScThesis* is a current template for BSc project reports and theses. It uses:
+    * [`BScThesis.tex`](Theses/BScThesis.tex): Example LaTeX file for editing
+    * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `BScThesis.tex`
+    * [`USN-BSc.cls`](Theses/BScThesis.tex): Special LaTeX Class file used by `BScThesis.tex` (**Do not edit!**)
+  * *MScThesis* is missing at the moment but will come soon.
+
+  * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template. This will hopfully be updated soon.
+  * [`oldBScExample`](Theses/oldBScExample): is kept for historical references. It's an example report done by students and parts were used for the new *BScThesis* template
 
 ## License
 
