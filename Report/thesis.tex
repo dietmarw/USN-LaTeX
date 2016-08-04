@@ -60,10 +60,11 @@
 %% #1 semster:
 {1}
 %% #2 optional figure (set to {} if not wanted)
-{~%\vfill
+{\vfill
+  {\normalsize <Eventuell figur>}
    \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
 %% #3 date
-{\today}  % leave this empty to deactivate display
+{}  % leave this empty to deactivate display
 %% #4 group members
 {%
 <første deltaker, NB! Ingen signatur her>\\
@@ -135,61 +136,25 @@
 <Skriv innledningen her
 Disposisjon: Bakgrunn – detaljbeskrivelse – mål – metoder – avgrensinger – leserveiledning.
 >
-
-\lipsum[4]
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.8\textwidth]{HSN_logo}
-  \caption{Norwegian (bokmål) variant of the HSN logo}
-  \label{fig:hsn-logo}
-\end{figure}
-\lipsum[4]
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.8\textwidth]{HSN_logo_en}
-  \caption{English variant of the HSN logo.}
-  \label{fig:hsn-logo-en}
-\end{figure}
-\lipsum
-
-
-
 \section{Bakgrunn}
 \label{sec:back}
 \lipsum[4]
 \begin{equation}
   e = m c^2
 \end{equation}
-\lipsum
+\lipsum[5]
 
 \chapter{Hovedkapitlene}
 \label{ch:main}
 <Begynn hvert hovedkapittel med å fortelle hva kapittelet dreier seg om>
 
 \section{Underkapittel}
-\label{sec:theory}
+\label{sec:underkappittel}
 
 <Her følger eksempler på objekter som ofte brukes i en rapport og hvordan de skal nummereres.>
-Under er det en tabell som benevnes Tabell~\ref{tab:number}. OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen og midtstilt (som tabellen).
 
-\indent The differential forms of Maxwell's equations as found by Heaviside, while completely valid, are now considered somewhat archaic, and have been replaced by the more useful (equivalent) integral forms. Each law is named according to the person(s) who originally discovered the connections represented by the equation. Here are the four equations:
-\begin{eqnarray}
-  \text{Gauss' law for electricity:}& \displaystyle \oint{\vec{E}\cdot\mathrm{d}\vec{A}}&=\frac{Q_{enc}}{\epsilon_0}\\
-  \text{Gauss' law for magnetism:}& \displaystyle \oint{\vec{B}\cdot\mathrm{d}\vec{A}}&=0\\
-  \text{Faraday's law:}& \displaystyle\oint{\vec{E}\cdot\mathrm{d}\vec{s}}&=-\frac{\emph{d}\phi_b}{\mathrm{d}t}\\
-  \text{Ampere-Maxwell law:}& \displaystyle\oint{\vec{B}\cdot\mathrm{d}\vec{s}}&=\mu_0\epsilon_0\frac{\emph{d}\phi_e}{\mathrm{d}t}+\mu_0 i_{enc}
-\end{eqnarray}
-Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
+Under er det en tabell som benevnes \tabref{tab:number} (\LaTeX-kode: \verb#\tabref{tab:number}#). OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen.
 
-
-
-\section{Mathematical model}
-\label{sec:mathmodel}
-
-<Her følger eksempler på objekter som ofte brukes i en rapport og hvordan de skal nummereres.>
-Under er det en tabell som benevnes Tabell  2 .1. OBS! Legg merke til at tabellteksten skal være på oversiden av tabellen og midtstilt (som tabellen).
-
-\lipsum[8]
 \begin{table}[!ht]
   \caption{The different number systems}
   \label{tab:number}
@@ -205,7 +170,46 @@ Under er det en tabell som benevnes Tabell  2 .1. OBS! Legg merke til at tabellt
   \end{tabular}
 \end{table}
 
-\lipsum[4]
+\section{Enda en underkapittel}
+\label{sec:endaunderkappittel}
+
+Under følger en figur og medfølgende figurtekst, \figref{fig:hsn-logo} (\LaTeX-kode: \verb#\figref{fig:hsn-logo}#), som skal plasseres under bildet/figuren. Figuren og figurteksten skal være midtstilt.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{HSN_logo}
+  \caption{Norwegian (bokmål) variant of the HSN logo}
+  \label{fig:hsn-logo}
+\end{figure}
+
+\lipsum
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{HSN_logo_en}
+  \caption{English variant of the HSN logo.}
+  \label{fig:hsn-logo-en}
+\end{figure}
+
+\lipsum[9]
+
+\chapter{Diskusjon}
+\label{sec:diskusjon}
+
+<Utfør diskusjonen her>
+
+The differential forms of Maxwell's equations as found by Heaviside, while completely valid, are now considered somewhat archaic, and have been replaced by the more useful (equivalent) integral forms. Each law is named according to the person(s) who originally discovered the connections represented by the equation. Here are the four equations\eqref{eq:gaussele} to \eqref{eq:max}
+\begin{eqnarray}
+  \text{Gauss' law for electricity:}& \displaystyle \oint{\vec{E}\cdot\mathrm{d}\vec{A}}&=\frac{Q_{enc}}{\epsilon_0}\label{eq:gaussele}\\
+  \text{Gauss' law for magnetism:}& \displaystyle \oint{\vec{B}\cdot\mathrm{d}\vec{A}}&=0\label{eq:gaussmag}\\
+  \text{Faraday's law:}& \displaystyle\oint{\vec{E}\cdot\mathrm{d}\vec{s}}&=-\frac{\emph{d}\phi_b}{\mathrm{d}t}\label{eq:fara}\\
+  \text{Ampere-Maxwell law:}& \displaystyle\oint{\vec{B}\cdot\mathrm{d}\vec{s}}&=\mu_0\epsilon_0\frac{\emph{d}\phi_e}{\mathrm{d}t}+\mu_0 i_{enc}\label{eq:max}
+\end{eqnarray}
+Note: $\oint$ is used to specify a closed loop integral, also known as a line integral. It simply means that in the calculations, we must go all the way around the loop; we can't stop part way through or the equations won't be valid.
+
+\chapter{Konklusjon}
+\label{sec:konklusjon}
+<Skriv konklusjonen her>
 
 \begin{table}[!ht]
  \caption{The weather forecast}
@@ -240,7 +244,7 @@ Under er det en tabell som benevnes Tabell  2 .1. OBS! Legg merke til at tabellt
 
 
 \appendix
-\renewcommand{\appendixname}{Paper} %% So we get 'Paper X' displayed instead
+%\renewcommand{\appendixname}{NEWNAME} %% You can change the name of the appendix chapter
 
 %\part{Published and Submitted Papers}  %% DO NOT USE \part FOR MONOGRAPH
 %\label{part:papers}

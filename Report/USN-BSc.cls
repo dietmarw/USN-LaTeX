@@ -27,7 +27,9 @@
 \LoadClass[12pt, openright]{scrbook}
 \KOMAoptions{%
   cleardoublepage=plain,
-  parskip=half
+  parskip=half,
+  numbers=noendperiod,
+  appendixprefix=true
 }
 
 % --- package loading ---
@@ -64,7 +66,9 @@
 }
 
 % --- useful commands
-\newcommand{\USNpreface}{\if@norsk Forord\else Preface\fi}
+\newcommand*{\USNpreface}{\if@norsk Forord\else Preface\fi}
+\newcommand*{\figref}[1]{\figurename~\ref{#1}}
+\newcommand*{\tabref}[1]{\tablename~\ref{#1}}
 
 
 % --- title page setup
