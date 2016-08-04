@@ -82,7 +82,7 @@
 
 \newcommand{\USNtitlehead}{%        %% define the USN title head
   \begin{minipage}{.5\textwidth}%
-    \USNlogo
+    \USNlogo%
   \end{minipage}%
   ~
   \begin{minipage}{.49\textwidth}%
@@ -105,7 +105,7 @@
 
 \newcommand{\mysubject}[1]{%
   \if@norsk%
-  {Rapport fra #1. semesters <Bachelorprosjekt> \the\year}
+  {Rapport fra #1\@. semesters <Bachelorprosjekt> \the\year}
   \else%
   {Report from \nth{#1} semester Bachelor project \the\year}
   \fi%
@@ -181,7 +181,7 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 % --- english abstract page ---
 \thispagestyle{summary}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
-\USNtitlehead
+\USNtitlehead%
 \par\bigskip
 \if@norsk{%
   \@norskfalse  % make sure to use the english versions
