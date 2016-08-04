@@ -7,7 +7,7 @@ Currently only the BScThesis template is up to date (Autumn 2016).
 The PhDThesis template is in a usable state and can be found
 inside the [`oldPhDThesis`](Theses/oldPhDThesis) folder.
 
-Content:
+### Content:
 * [`Theses`](Theses):
   * *BScThesis* is a current template for BSc project reports and theses. It uses:
     * [`BScThesis.tex`](Theses/BScThesis.tex): Example LaTeX file for editing
