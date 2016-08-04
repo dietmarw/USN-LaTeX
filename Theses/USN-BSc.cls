@@ -28,19 +28,8 @@
 % --- load other classes
 \LoadClass{USN-base}  %% we reuse the USN-base class
 
-%--- special footer setup
-% norsk:
-\newpagestyle{sammendrag}{}{
- \cfoot{\begin{center}%
-     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
-   \end{center}}
-}
-% english:
-\newpagestyle{summary}{}{
- \cfoot{\begin{center}%
-     The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.
-   \end{center}}
-}
+% --- useful commands
+\newcommand*{\USNpreface}{\if@norsk Forord\else Preface\fi}
 
 \newcommand{\mysubject}[1]{%
   \if@norsk%

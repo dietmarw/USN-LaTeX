@@ -18,10 +18,8 @@
 
 % --- execution of options ---
 \ProcessOptions* % process the options in calling order
-\LoadClass{scrbook}
+\LoadClass[12pt, openright]{scrbook}
 \KOMAoptions{%
-  12pt,
-  openright,
   cleardoublepage=plain,
   parskip=half,
   numbers=noendperiod,
@@ -48,10 +46,8 @@
 \RequirePackage{nth}              %% Generate English ordinal numbers
 
 % --- useful commands
-\newcommand*{\USNpreface}{\if@norsk Forord\else Preface\fi}
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
 \newcommand*{\tabref}[1]{\tablename~\ref{#1}}
-
 
 % --- title page setup
 \newcommand{\USNlogo}{%            %% lang dependent logo
@@ -84,3 +80,17 @@
        \fi%
        \\{\large Campus Porsgrunn}}
     }%
+
+%--- special footer setup
+% norsk:
+\newpagestyle{sammendrag}{}{
+ \cfoot{\begin{center}%
+     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+   \end{center}}
+}%
+% english:
+\newpagestyle{summary}{}{
+ \cfoot{\begin{center}%
+     The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.
+   \end{center}}
+}%
