@@ -10,11 +10,6 @@
 \ProvidesClass{USN-BSc}[2016/08/01 Template class for BSc reports and theses]
 
 % --- definitions of options ---
-% norsk option:
-\newif\if@norsk
-\@norskfalse
-\DeclareOption{norsk}{\@norsktrue}
-\PassOptionsToClass{\if@norsk norsk \else english\fi}{USN-base}
 
 % All other options are passed on to the book class
 \DeclareOption*{%
