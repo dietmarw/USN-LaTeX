@@ -12,7 +12,7 @@ Content:
   * *BScThesis* is a current template for BSc project reports and theses. It uses:
     * [`BScThesis.tex`](Theses/BScThesis.tex): Example LaTeX file for editing
     * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `BScThesis.tex`
-    * [`USN-BSc.cls`](Theses/BScThesis.tex): Special LaTeX Class file used by `BScThesis.tex` (**Do not edit!**)
+    * [`USN-BSc.cls`](Theses/USN-BSc.cls): Special LaTeX Class file used by `BScThesis.tex` (**Do not edit!**)
   * *MScThesis* is missing at the moment but will come soon.
 
   * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template. This will hopfully be updated soon.
