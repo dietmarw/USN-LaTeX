@@ -5,7 +5,7 @@ This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* tem
 ## Installation and usage of the project template
 Currently only the BScThesis template is up to date (Autumn 2016).
 The PhDThesis template is in a usable state and can be found
-inside the [`PhDThesis`](PhDThesis) folder.
+inside the [`oldPhDThesis`](Theses/oldPhDThesis) folder.
 
 Content:
 * [`Theses`](Theses):
