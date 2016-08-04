@@ -21,7 +21,7 @@ inside the [`oldPhDThesis`](Theses/oldPhDThesis) folder.
     * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-MSc.cls` (**Do not edit!**)
   * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template. This will hopfully be updated soon.
   * [`oldBScExample`](Theses/oldBScExample): is kept for historical references. It's an example report done by students and parts were used for the new *BScThesis* template
-* [`logos`](logos)]: A repository of the offical USN logos in proper vector formats.
+* [`logos`](logos): A repository of the offical USN logos in proper vector formats.
 
 ## License
 
