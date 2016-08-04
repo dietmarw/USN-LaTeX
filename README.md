@@ -16,8 +16,8 @@ inside the [`oldPhDThesis`](Theses/oldPhDThesis) folder.
     * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-BSc.cls` (**Do not edit!**)
   * *MScThesis* is a current template for MSc project reports and theses. It uses:
     * [`MScThesis.tex`](Theses/MScThesis.tex): Example LaTeX file for editing
-    * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `BScThesis.tex`
-    * [`USN-MSc.cls`](Theses/USN-MSc.cls): Special LaTeX class file used by `BScThesis.tex` (**Do not edit!**)
+    * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `MScThesis.tex`
+    * [`USN-MSc.cls`](Theses/USN-MSc.cls): Special LaTeX class file used by `MScThesis.tex` (**Do not edit!**)
     * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-MSc.cls` (**Do not edit!**)
   * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template. This will hopfully be updated soon.
   * [`oldBScExample`](Theses/oldBScExample): is kept for historical references. It's an example report done by students and parts were used for the new *BScThesis* template
