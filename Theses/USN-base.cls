@@ -49,6 +49,7 @@
 \RequirePackage{pdfpages}         %% for inclusion of PDF documents
 \RequirePackage{framed}           %% provides framebox
 \RequirePackage{nth}              %% Generate English ordinal numbers
+\RequirePackage{lastpage}         %% to calculate the number of pages
 
 % --- useful commands
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
@@ -96,6 +97,6 @@
 % english:
 \newpagestyle{summary}{}{
  \cfoot{\begin{center}%
-     The University College of Southeast Norway takes no responsibility for the results and conclusions in this student report.
+     The University College of Southeast Norway accepts no responsibility for the results and conclusions presented in this report.
    \end{center}}
 }%
