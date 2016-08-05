@@ -24,8 +24,6 @@
 \LoadClass{USN-base}  %% we reuse the USN-base class
 
 % --- useful commands
-\newcommand*{\mysubject}{Master's Thesis}
-
 \newcommand{\USNtitlepage}[5]{%
 % #1 optional figure
 % #2 date
