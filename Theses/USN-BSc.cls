@@ -104,14 +104,16 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 % --- english abstract page ---
 \thispagestyle{summary}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
-\USNtitlehead%
-\par\bigskip
 \if@norsk{%
   \@norskfalse  % make sure to use the english versions
+  \USNtitlehead%
+  \par\bigskip
   {\large \textbf{\mysubject{#1}}}
   \@norsktrue  % back to norsk
 }
 \else%
+\USNtitlehead%
+\par\bigskip
 {\large \textbf{\mysubject{#1}}}
 \fi%
 
