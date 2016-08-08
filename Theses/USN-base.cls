@@ -36,7 +36,6 @@
 \RequirePackage{geometry}         %% manual set the page size
    \geometry{margin=25mm, includeheadfoot}
 \RequirePackage[\if@norsk norsk \else british\fi]{babel}  %% adapt to NO or EN
-\RequirePackage[utf8]{inputenc}   %% allow direct input of utf8 chars
 \RequirePackage{lmodern}          %% use vector fonts
 \RequirePackage[T1]{fontenc}      %% recommended for real glyphs in PDF
 \RequirePackage{amsmath,mathptmx} %% we need lots of math features
@@ -50,6 +49,12 @@
 \RequirePackage{framed}           %% provides framebox
 \RequirePackage{nth}              %% Generate English ordinal numbers
 \RequirePackage{lastpage}         %% to calculate the number of pages
+\RequirePackage{fontspec}         %% needed to set up custom fonts
+
+%% --- font setup
+\setsansfont{Carlito}  %% Carlito is the metric-compatible free alternative to Calibri font
+\setkomafont{subject}{\large\fontspec{Carlito}}
+\setkomafont{author}{\large\fontspec{Carlito}}
 
 % --- useful commands
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
@@ -65,14 +70,16 @@
 }
 
 \newcommand{\USNtitlehead}{%        %% define the USN title head
-  \begin{minipage}{.5\textwidth}%
+  \begin{minipage}[t]{.5\textwidth}%
+    \vspace{0pt}  %% this is needed for the top alignment
     \USNlogo%
   \end{minipage}%
-  ~
-  \begin{minipage}{.49\textwidth}%
+  \begin{minipage}[t]{.5\textwidth}%
+    \vspace{0pt}  %% this is needed for the top alignment
     \begin{flushright}
       \textsf{\Large Bachelor -- Master -- PhD}\\
-      {\large \url{www.usn.no}}
+%      {\large \url{www.usn.no}}
+      {\fontspec{Carlito}\large \href{http://www.usn.no}{www.usn.no}}
      \end{flushright}
   \end{minipage}%
 }

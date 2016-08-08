@@ -43,10 +43,10 @@
 % #6 Project partner
 % #7 Norwegian Summary
 % #8 English Summary
-  \subject{\large \mysubject{#1}}
+  \subject{\mysubject{#1}}
   \title{\mytitle}
   \subtitle{\mysubtitle\\#2}
-  \author{\large \myauthor}
+  \author{\myauthor}
   \date{#3}
 % --- pdf document settings ---
   \hypersetup{%

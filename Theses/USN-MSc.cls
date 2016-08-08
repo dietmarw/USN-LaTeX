@@ -30,10 +30,10 @@
 % #3 confidential
 % #4 Project partner
 % #5 summary
-  \subject{\large \mysubject}
+  \subject{\mysubject}
   \title{\mytitle}
   \subtitle{\mysubtitle\\#1}
-  \author{\large \myauthor}
+  \author{\myauthor}
   \date{\large #2}
 % --- pdf document settings ---
   \hypersetup{%
