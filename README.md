@@ -3,23 +3,32 @@ This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* tem
 [University College of Southeast Norway - USN (Høgskolen i Sørøst-Norge - *HSN*)](http://www.usn.no)
 
 ## Installation and usage of the project template
-Currently only the *BScThesis* and *MScThesis* templates are up to date (Autumn 2016).
-The PhDThesis template is in a usable state and can be found
-inside the [`oldPhDThesis`](Theses/oldPhDThesis) folder.
+All current templates now **need** to be processed using either [LuaLaTeX](https://en.wikipedia.org/wiki/LuaTeX) or [XeLaTeX](https://en.wikipedia.org/wiki/XeTeX) engines.
+Processing with the deprecated `latex` or `pdflatex` commands will not work.
+Both, *XeLaTeX* and *LuaLaTeX*, are shipped with all major LaTeX distributions (e.g., MiKTeX, MacTeX, TeXLive) and you just need to configure your system  to use one of them.
 
 ### Content:
 * [`Theses`](Theses):
-  * *BScThesis* is a current template for BSc project reports and theses. It uses:
+  * *BScThesis* is a current template for BSc project reports and theses. It consists of:
+    * [`BScThesis.pdf`](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/Theses/BScThesis.pdf): Example PDF file created using `BScThesis.tex`.
     * [`BScThesis.tex`](Theses/BScThesis.tex): Example LaTeX file for editing
     * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `BScThesis.tex`
     * [`USN-BSc.cls`](Theses/USN-BSc.cls): Special LaTeX class file used by `BScThesis.tex` (**Do not edit!**)
     * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-BSc.cls` (**Do not edit!**)
-  * *MScThesis* is a current template for MSc project reports and theses. It uses:
+  * *MScThesis* is a current template for MSc project reports and theses. It consists of:
+    * [`MScThesis.pdf`](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/Theses/MScThesis.pdf): Example PDF file created using `MScThesis.tex`.
     * [`MScThesis.tex`](Theses/MScThesis.tex): Example LaTeX file for editing
     * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `MScThesis.tex`
     * [`USN-MSc.cls`](Theses/USN-MSc.cls): Special LaTeX class file used by `MScThesis.tex` (**Do not edit!**)
     * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-MSc.cls` (**Do not edit!**)
-  * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template. This will hopfully be updated soon.
+  * *PhDThesis* is a current template for PhD theses. It consists of:
+    * [`PhDThesis.pdf`](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/Theses/PhDThesis.pdf): Example PDF file created using `PhDThesis.tex`.
+    * [`PhDThesis.tex`](Theses/PhDThesis.tex): Example LaTeX file for editing
+    * [`thesis.bib`](Theses/thesis.bib): Example BibTeX file used by `PhDThesis.tex`
+    * [`USN-MSc.cls`](Theses/USN-MSc.cls): Special LaTeX class file used by `PhDThesis.tex` (**Do not edit!**)
+    * [`USN-base.cls`](Theses/USN-base.cls): Special LaTeX base class file used by `USN-PhD.cls` (**Do not edit!**)
+
+  * [`oldPhDThesis`](Theses/oldPhDThesis): Working but outdated PhDThesis template.
   * [`oldBScExample`](Theses/oldBScExample): is kept for historical references. It's an example report done by students and parts were used for the new *BScThesis* template
 * [`logos`](logos): A repository of the offical USN logos in proper vector formats.
 
