@@ -24,7 +24,7 @@
 \LoadClass{USN-base}  %% we reuse the USN-base class
 
 % --- useful commands
-\newcommand{\mysubject}{Process-, Energy- and Automation Engineering}
+\newcommand{\mysubject}{Process, Energy and Automation Engineering}
 
 \newcommand{\USNtitlepage}[5]{%
 % #1 optional figure
