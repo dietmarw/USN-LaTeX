@@ -51,10 +51,23 @@
 \RequirePackage{lastpage}         %% to calculate the number of pages
 \RequirePackage{fontspec}         %% needed to set up custom fonts
 
-%% --- font setup
-\setsansfont{Carlito}  %% Carlito is the metric-compatible free alternative to Calibri font
-\setkomafont{subject}{\large\fontspec{Carlito}}
-\setkomafont{author}{\large\fontspec{Carlito}}
+% --- font setup
+%% Carlito is the metric-compatible free alternative to Calibri font
+%% We use the local version shipped with the class:
+\defaultfontfeatures[LocalCarlito]
+  {
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = Carlito-Regular,
+  BoldFont       = Carlito-Bold,
+  ItalicFont     = Carlito-Italic,
+  BoldItalicFont = Carlito-BoldItalic
+  }
+
+\newfontfamily\CarlitoFont{LocalCarlito}
+\setsansfont{LocalCarlito}
+\setkomafont{subject}{\CarlitoFont\large}
+\setkomafont{author}{\CarlitoFont\large}
 
 % --- useful commands
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
@@ -79,7 +92,7 @@
     \begin{flushright}
       \textsf{\Large Bachelor -- Master -- PhD}\\
 %      {\large \url{www.usn.no}}
-      {\fontspec{Carlito}\large \href{http://www.usn.no}{www.usn.no}}
+      {\CarlitoFont\large \href{http://www.usn.no}{www.usn.no}}
      \end{flushright}
   \end{minipage}%
 }
