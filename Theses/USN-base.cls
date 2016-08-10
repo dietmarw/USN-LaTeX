@@ -36,8 +36,6 @@
 \RequirePackage{geometry}         %% manual set the page size
    \geometry{margin=25mm, includeheadfoot}
 \RequirePackage[\if@norsk norsk \else british\fi]{babel}  %% adapt to NO or EN
-\RequirePackage{lmodern}          %% use vector fonts
-\RequirePackage[T1]{fontenc}      %% recommended for real glyphs in PDF
 \RequirePackage{amsmath,mathptmx} %% we need lots of math features
 \RequirePackage{ifthen}           %% provides simple if-then functionality
 \RequirePackage{url}              %% helps displaying URLs
@@ -49,7 +47,7 @@
 \RequirePackage{framed}           %% provides framebox
 \RequirePackage{nth}              %% Generate English ordinal numbers
 \RequirePackage{lastpage}         %% to calculate the number of pages
-\RequirePackage{fontspec}         %% needed to set up custom fonts
+\RequirePackage{fontspec}         %% needed to set up custom fonts and lmodern fonts
 
 % --- font setup
 %% Carlito is the metric-compatible free alternative to Calibri font
