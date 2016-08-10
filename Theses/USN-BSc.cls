@@ -28,9 +28,9 @@
 
 \newcommand{\mysubject}[1]{%
   \if@norsk%
-  {Rapport fra #1\@. semesters <Bachelorprosjekt> \the\year}
+  {Rapport fra #1\@. semesters prosjekt \the\year}
   \else%
-  {Report from \nth{#1} semester Bachelor project \the\year}
+  {Report from \nth{#1} semester project \the\year}
   \fi%
 }
 
@@ -43,9 +43,9 @@
 % #6 Project partner
 % #7 Norwegian Summary
 % #8 English Summary
-  \subject{\mysubject{#1}}
+  \subject{\mysubtitle}
   \title{\mytitle}
-  \subtitle{\mysubtitle\\#2}
+  \subtitle{#2}
   \author{\myauthor}
   \date{#3}
 % --- pdf document settings ---
@@ -65,14 +65,14 @@
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
 \USNtitlehead%
 \par\bigskip
-{\large \textbf{\mysubject{#1}}}
+%{\large \textbf{\mysubject{#1}}}
 
 \begin{tabbing}
     \textbf{Emne:~}   \= \textit{\mysubtitle} \\
     \textbf{Tittel:~} \> \textit{\mytitle}
 \end{tabbing}
-
-Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
+%
+Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
 \textbf{Prosjektgruppe:~} \textit{\myauthor}
 \hfill \textbf{Tilgjengelighet:~}
@@ -85,12 +85,15 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
   \end{minipage}\\
   ~\\
   \textbf{Veileder:~} \> \textit{\supervisor} \\
-  \textbf{Sensor:~}   \> \textit{\examiner}\\
+ % \textbf{Sensor:~}   \> \textit{\examiner}\\
   \textbf{Prosjektpartner:~} \>\textit{#6}
 \end{tabbing}
-~\\
-\textbf{Godkjent for arkivering: }\hrulefill
-\vfill
+
+\begin{tabular}{lp{20em}}
+\textbf{Godkjent for arkivering: } & \hrulefill\\
+                                   & (\supervisor)
+\end{tabular}
+
 \begin{framed}
 \textbf{Sammendrag:}\\
 {\small #7}
@@ -108,13 +111,13 @@ Rapporten utgjør en del av vurderingsgrunnlaget i emnet.
   \@norskfalse  % make sure to use the english versions
   \USNtitlehead%
   \par\bigskip
-  {\large \textbf{\mysubject{#1}}}
+%  {\large \textbf{\mysubject{#1}}}
   \@norsktrue  % back to norsk
 }
 \else%
 \USNtitlehead%
 \par\bigskip
-{\large \textbf{\mysubject{#1}}}
+%{\large \textbf{\mysubject{#1}}}
 \fi%
 
 \begin{tabbing}
@@ -134,13 +137,15 @@ This report forms part of the basis for assessing the student's performance on t
     \textit{#4}
   \end{minipage}\\
   ~\\
-  \textbf{Supervisor:~} \> \textit{\supervisor} \\
-  \textbf{Examiner:~}   \> \textit{\examiner}\\
+  \textbf{Supervisor:~}      \> \textit{\supervisor} \\
   \textbf{Project partner:~} \> \textit{#6}
 \end{tabbing}
-~\\
-\textbf{Approved for archiving: }\hrulefill
-\vfill
+
+\begin{tabular}{lp{20em}}
+\textbf{Approved for archiving: } & \hrulefill\\
+                                  & (\supervisor)
+\end{tabular}
+
 \begin{framed}
   \textbf{Summary:}\\
   {\small #8}

@@ -81,15 +81,11 @@
 }
 
 \newcommand{\USNtitlehead}{%        %% define the USN title head
-  \begin{minipage}[t]{.5\textwidth}%
-    \vspace{0pt}  %% this is needed for the top alignment
+  \begin{minipage}[c]{.5\textwidth}%
     \USNlogo%
   \end{minipage}%
-  \begin{minipage}[t]{.5\textwidth}%
-    \vspace{0pt}  %% this is needed for the top alignment
+  \begin{minipage}[c]{.5\textwidth}%
     \begin{flushright}
-      \textsf{\Large Bachelor -- Master -- PhD}\\
-%      {\large \url{www.usn.no}}
       {\CarlitoFont\large \href{http://www.usn.no}{www.usn.no}}
      \end{flushright}
   \end{minipage}%
@@ -100,7 +96,7 @@
        \if@norsk%
          {\Large Fakultet for teknologi, naturvitenskap og maritime fag}
        \else%
-         {\Large Faculty of Technology}
+         {\Large Faculty of Technology, Natural Sciences and Maritime Sciences}
        \fi%
        \\{\large Campus Porsgrunn}}
     }%

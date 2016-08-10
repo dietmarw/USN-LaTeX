@@ -30,9 +30,9 @@
 % #3 confidential
 % #4 Project partner
 % #5 summary
-  \subject{\mysubject}
+  \subject{\mysubject\\\mysubtitle}
   \title{\mytitle}
-  \subtitle{\mysubtitle\\#1}
+  \subtitle{#1}
   \author{\myauthor}
   \date{\large #2}
 % --- pdf document settings ---
@@ -62,17 +62,21 @@
   \textbf{Student:~}   \> \textit{\myauthor}
 \end{tabbing}
 %
-\textbf{Date, Signature:~}#2,~\hrulefill
+\textbf{Date, Signature:~}~\hrulefill
 %
 \begin{tabbing}
-  \textbf{Supervisor:~~~~~~~~~~~} \= \textit{\supervisor}\\
-  \textbf{Examiner:~}             \> \textit{\examiner}\\
-  \textbf{External partner:~}     \> \textit{#4}\\
-  \textbf{Availability:~}         \> \textit{
+  \textbf{Supervisor:~~~~~~~~~} \= \textit{\supervisor}\\
+%  \textbf{Examiner:~}          \> \textit{\examiner}\\
+  \textbf{External partner:~}   \> \textit{#4}\\
+  \textbf{Availability:~}       \> \textit{
     \ifthenelse{\equal{3}{yes}}{\textbf{Confidential}}{Open}}
 \end{tabbing}
-\textbf{Approved for archiving: }\hrulefill
-\vfill
+
+\begin{tabular}{lp{20em}}
+\textbf{Approved for archiving: } & \hrulefill\\
+                                  & (\supervisor)
+\end{tabular}
+
 \begin{framed}
   \textbf{Summary:}\\
    {\small #5}
