@@ -55,8 +55,8 @@
 {\large \textbf{\mysubject, \mysubtitle}}
 
 \begin{tabbing}
-  \textbf{Course Code:~} \= \textit{FMH606}\\
-  \textbf{Titel:~}     \> \textit{\mytitle}\\
+  \textbf{Course code:~} \= \textit{FMH606}\\
+  \textbf{Title:~}     \> \textit{\mytitle}\\
   \textbf{Pages:~}     \> \textit{\pageref{LastPage}}\\
   \textbf{Keywords:~}  \> \textit{\mykeywords}\\
   \textbf{Student:~}   \> \textit{\myauthor}
@@ -66,7 +66,6 @@
 %
 \begin{tabbing}
   \textbf{Supervisor:~~~~~~~~~} \= \textit{\supervisor}\\
-%  \textbf{Examiner:~}          \> \textit{\examiner}\\
   \textbf{External partner:~}   \> \textit{#4}\\
   \textbf{Availability:~}       \> \textit{
     \ifthenelse{\equal{3}{yes}}{\textbf{Confidential}}{Open}}
