@@ -7,9 +7,13 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2016/08/04 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2016/08/16 Template class MSc reports and theses]
 
 % --- definitions of options ---
+% project option:
+\newif\if@project
+\@projectfalse
+\DeclareOption{project}{\@projecttrue}
 
 % All other options are passed on to the book class
 \DeclareOption*{%
@@ -24,17 +28,25 @@
 \LoadClass{USN-base}  %% we reuse the USN-base class
 
 % --- useful commands
+\newcommand{\mysubject}{%
+  \if@project%
+  SCE4006 Project \the\year%
+  \else%
+  FMH606 Master's Thesis \the\year%
+  \fi%
+}
+
 \newcommand{\USNtitlepage}[5]{%
 % #1 optional figure
-% #2 date
-% #3 confidential
-% #4 Project partner
-% #5 summary
-  \subject{\mysubject\\\mysubtitle}
+% #2 confidential
+% #3 Project partner
+% #4 summary
+  \subject{%
+    \if@project\mysubject\else\mysubject\\\mysubtitle\fi}
   \title{\mytitle}
-  \subtitle{#1}
+  \subtitle{\vfill #1}
   \author{\myauthor}
-  \date{\large #2}
+  \date{}  %% no date on title page
 % --- pdf document settings ---
   \hypersetup{%
     pdftitle = {\mytitle},%
@@ -52,24 +64,46 @@
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \USNtitlehead%
 \par\bigskip
-{\large \textbf{\mysubject, \mysubtitle}}
 
-\begin{tabbing}
-  \textbf{Course code:~} \= \textit{FMH606}\\
-  \textbf{Title:~}     \> \textit{\mytitle}\\
-  \textbf{Pages:~}     \> \textit{\pageref{LastPage}}\\
-  \textbf{Keywords:~}  \> \textit{\mykeywords}\\
-  \textbf{Student:~}   \> \textit{\myauthor}
-\end{tabbing}
-%
-\textbf{Date, Signature:~}~\hrulefill
-%
-\begin{tabbing}
-  \textbf{Supervisor:~~~~~~~~~} \= \textit{\supervisor}\\
-  \textbf{External partner:~}   \> \textit{#4}\\
-  \textbf{Availability:~}       \> \textit{
-    \ifthenelse{\equal{3}{yes}}{\textbf{Confidential}}{Open}}
-\end{tabbing}
+\if@project%
+  {
+    \begin{tabular}{rl}
+      \textbf{Course:}   &\mysubject\\
+      \textbf{Title:}    &\textit{\mytitle}\\
+      \textbf{Pages:}    &\textit{\pageref{LastPage}}\\
+      \textbf{Keywords:} &\textit{\mykeywords}
+    \end{tabular}
+
+    \begin{tabular}{rl}
+      \textbf{Prosject group:} &\textit{\myauthor}\\
+      \textbf{Group participants:} & \begin{minipage}[t]{0.5\textwidth}
+                                     \textit{\myparticipants}\end{minipage}\\
+      \textbf{Supervisor:}      & \textit{\supervisor}\\
+      \textbf{External partner:}& \textit{#3}\\
+      \textbf{Availability:}    & \textit{%
+      \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
+    \end{tabular}
+  }
+\else
+{
+    \begin{tabular}{rl}
+      \textbf{Course:}   &\mysubject\\
+      \textbf{Title:}    &\textit{\mytitle}\\
+      \textbf{Pages:}    &\textit{\pageref{LastPage}}\\
+      \textbf{Keywords:} &\textit{\mykeywords}
+    \end{tabular}
+
+    \begin{tabular}{rl}
+      \textbf{Student:}         & \textit{\myauthor}\\
+      \textbf{Supervisor:}      & \textit{\supervisor}\\
+      \textbf{External partner:}& \textit{#3}\\
+      \textbf{Availability:}    & \textit{%
+      \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
+    \end{tabular}
+}
+\fi
+
+~\\
 
 \begin{tabular}{lp{20em}}
 \textbf{Approved for archiving: } & \hrulefill\\
@@ -78,7 +112,7 @@
 
 \begin{framed}
   \textbf{Summary:}\\
-   {\small #5}
+   {\small #4}
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number

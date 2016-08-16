@@ -1,7 +1,8 @@
 %% sample template file for a MSc Thesis
 %% The default is with two sided setup:
 \documentclass[%
-%    oneside % uncomment for onesided layout
+%    oneside, %% uncomment for onesided layout
+%project     %% uncomment not thesis but project report
 ]{USN-MSc}
 
 % --- Bibliography setup ---
@@ -25,45 +26,41 @@
 
 % --- general setup ---
 %% Please fill in the following parameters:
-\newcommand{\mysubject}{
-%% Subject. Either
-Master's Thesis \the\year
-%% or
-%Master Project
-}
-
 \newcommand{\mytitle}{%
 %% title:
 <Title>
 }
 
+\newcommand{\mysubtitle}{%
+%% master programme (for thesis only)
+%% uncomment the appropriate one:
+Electrical Power Engineering
+%Energy and Environmental Technology
+%Industrial IT and Automation
+%Process Technology
+}
+
 \newcommand{\mykeywords}{%
-%% keywords:
+%% keywords (for thesis only):
 <keyword one, keyword two, \ldots>
 }
 
-\newcommand{\mysubtitle}{%
-%% master programm uncomment the appropriate one:
-Electrical Power Engineering
-%Industrial IT and Automation
-%Process Technology
-%Energy and Environmental Technology
+\newcommand{\myauthor}{%
+%% author(thesis) or group code (project):
+<Author's Name> or <group code>
 }
 
-\newcommand{\myauthor}{%
-%% author:
-<Author's Name>
+\newcommand{\myparticipants}{
+%% group participants (for project only)
+<First participant>\\
+<Second participant>\\
+<Third participant>\\
+<Fourth participant>
 }
 
 \newcommand{\supervisor}{%
 %% supervisor:
 <Supervisor's Name>}
-
-\newcommand{\examiner}{%
-%% examiner:
-<Examiner's Name (if known)>
-}
-
 
 \begin{document}
 
@@ -71,16 +68,14 @@ Electrical Power Engineering
 \USNtitlepage%
 %% Please provide the following information:
 %% #1 optional figure (set to {} if not wanted)
-{\vfill
+{%
   {\normalsize <optional figure>}
    \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
-%% #2 date
-{} % no date
-%% #3 confidential?:
+%% #2 confidential?:
 {yes} % anything other then {yes} means open to public
-%% #4 Project partner:
+%% #3 Project partner:
 {<Project partner>}
-%% #5 Summary:
+%% #4 Summary:
 {%
 \lipsum[6-7]
 }
@@ -89,11 +84,12 @@ Electrical Power Engineering
 \label{sec:preface}
 \addcontentsline{toc}{chapter}{Preface}
 \lipsum[1-3]
+\bigskip
+Porsgrunn, \today
 
-\chapter*{Summary}
-\label{sec:summary}
-\addcontentsline{toc}{chapter}{Summary}
-\lipsum[1-3]
+\myauthor %% for thesis
+%\myparticipants %% for project
+
 
 %% table of contents
 \tableofcontents
