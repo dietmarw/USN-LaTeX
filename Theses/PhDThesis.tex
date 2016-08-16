@@ -30,56 +30,30 @@
 <Title>
 }
 
-\newcommand{\mykeywords}{%
-%% keywords (used in the PDF document properties for indexing):
-<keyword one, keyword two, \ldots>
-}
-
-\newcommand{\mysubtitle}{%
-%%
-Thesis submitted to the University College of Southeast Norway\\ for the degree of philosophiae doctor~(PhD)
-}
-
 \newcommand{\myauthor}{%
 %% author:
 <Author's Name>
 }
 
-\newcommand{\supervisor}{%
-%% supervisor:
-<Supervisor's Name>
+\newcommand{\mykeywords}{%
+%% keywords (used in the PDF document properties for indexing):
+<keyword one, keyword two, \ldots>
 }
-
-\newcommand{\examiner}{%
-%% examiner:
-<Examiner's Name (if known)>
-}
-
 
 \begin{document}
 
-% --- title page setup ---
+%% Create title page with the parameters given in the preamble above
 \USNtitlepage%
-%% Please provide the following information:
-%% #1 optional figure (set to {} if not wanted)
-{\vfill
-  {\normalsize <optional figure>}
-   \includegraphics[draft,width=\textwidth]{HSN_logo_en}}
-%% #2 date
-{\today} % change if you want a fixed date
-%% #3 confidential?:
-{yes} % anything other then {yes} means open to public
-%% #4 Project partner:
-{<Project partner>}
-%% #5 Summary:
-{%
-\lipsum[6-7]
-}
 
 \chapter*{Preface}
 \label{sec:preface}
 \addcontentsline{toc}{chapter}{Preface}
+%% Add your preface below
 \lipsum[1-3]
+
+Porsgrunn, \today
+
+\myauthor
 
 \chapter*{Summary}
 \label{sec:summary}
