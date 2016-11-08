@@ -67,6 +67,9 @@
 \setkomafont{subject}{\CarlitoFont\large}
 \setkomafont{author}{\CarlitoFont\large}
 
+% --- set figure and table captions to footnotesize
+\setkomafont{caption}{\footnotesize}
+
 % --- useful commands
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
 \newcommand*{\tabref}[1]{\tablename~\ref{#1}}
