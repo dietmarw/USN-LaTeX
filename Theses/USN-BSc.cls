@@ -86,7 +86,8 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
   ~\\
   \textbf{Veileder:~} \> \textit{\supervisor} \\
  % \textbf{Sensor:~}   \> \textit{\examiner}\\
-  \textbf{Prosjektpartner:~} \>\textit{#6}
+  \textbf{Prosjektpartner:~} \>\begin{minipage}[t]{0.7\textwidth}
+                                     \textit{#6}\end{minipage}
 \end{tabbing}
 
 \begin{tabular}{lp{20em}}
