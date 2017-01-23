@@ -96,7 +96,8 @@
     \begin{tabular}{rl}
       \textbf{Student:}         & \textit{\myauthor}\\
       \textbf{Supervisor:}      & \textit{\supervisor}\\
-      \textbf{External partner:}& \textit{#3}\\
+      \textbf{External partner:}& \begin{minipage}[t]{0.7\textwidth}
+                                     \textit{#3}\end{minipage}\\
       \textbf{Availability:}    & \textit{%
       \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
     \end{tabular}
