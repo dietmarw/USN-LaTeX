@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-base}[2016/08/01 Template base class for reports and theses]
+\ProvidesClass{USN-base}[2017/05/09 Template base class for reports and theses]
 
 % --- definitions of options ---
 % norsk option:
@@ -48,24 +48,8 @@
 \RequirePackage{nth}              %% Generate English ordinal numbers
 \RequirePackage{lastpage}         %% to calculate the number of pages
 \RequirePackage{fontspec}         %% needed to set up custom fonts and lmodern fonts
-
-% --- font setup
-%% Carlito is the metric-compatible free alternative to Calibri font
-%% We use the local version shipped with the class:
-\defaultfontfeatures[LocalCarlito]
-  {
-  Path           = fonts/,
-  Extension      = .ttf,
-  UprightFont    = Carlito-Regular,
-  BoldFont       = Carlito-Bold,
-  ItalicFont     = Carlito-Italic,
-  BoldItalicFont = Carlito-BoldItalic
-  }
-
-\newfontfamily\CarlitoFont{LocalCarlito}
-\setsansfont{LocalCarlito}
-\setkomafont{subject}{\CarlitoFont\large}
-\setkomafont{author}{\CarlitoFont\large}
+\RequirePackage{carlito}          %% Carlito is the metric-compatible free alternative
+                                  %% to Calibri font
 
 % --- set figure and table captions to footnotesize
 \setkomafont{caption}{\footnotesize}
@@ -89,7 +73,7 @@
   \end{minipage}%
   \begin{minipage}[c]{.5\textwidth}%
     \begin{flushright}
-      {\CarlitoFont\large \href{http://www.usn.no}{www.usn.no}}
+      {\sffamily\large\href{http://www.usn.no}{www.usn.no}}
      \end{flushright}
   \end{minipage}%
 }
