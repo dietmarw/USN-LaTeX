@@ -123,12 +123,12 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
 \begin{tabbing}
   \textbf{Course:~}   \= \textit{\mysubtitle} \\
-  \textbf{Titel:~} \> \textit{\mytitle}
+  \textbf{Title:~} \> \textit{\mytitle}
 \end{tabbing}
 
 This report forms part of the basis for assessing the student's performance on the course.
 
-\textbf{Projekt group:} \textit{\myauthor}
+\textbf{Project group:} \textit{\myauthor}
 \hfill \textbf{Availability:~}
 \textit{\ifthenelse{\equal{#5}{yes}}{Confidential}{Open}}
 
