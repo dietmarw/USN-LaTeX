@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2016/08/16 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2017/11/21 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:
@@ -106,10 +106,10 @@
 
 ~\\
 
-\begin{tabular}{lp{20em}}
-\textbf{Approved for archiving: } & \hrulefill\\
-                                  & (\supervisor)
-\end{tabular}
+% \begin{tabular}{lp{20em}}
+% \textbf{Approved for archiving: } & \hrulefill\\
+%                                   & (\supervisor)
+% \end{tabular}
 
 \begin{framed}
   \textbf{Summary:}\\

@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2016/08/01 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2017/11/21 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 
@@ -90,10 +90,10 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
                                      \textit{#6}\end{minipage}
 \end{tabbing}
 
-\begin{tabular}{lp{20em}}
-\textbf{Godkjent for arkivering: } & \hrulefill\\
-                                   & (\supervisor)
-\end{tabular}
+% \begin{tabular}{lp{20em}}
+% \textbf{Godkjent for arkivering: } & \hrulefill\\
+%                                    & (\supervisor)
+% \end{tabular}
 
 \begin{framed}
 \textbf{Sammendrag:}\\
@@ -142,10 +142,10 @@ This report forms part of the basis for assessing the student's performance on t
   \textbf{Project partner:~} \> \textit{#6}
 \end{tabbing}
 
-\begin{tabular}{lp{20em}}
-\textbf{Approved for archiving: } & \hrulefill\\
-                                  & (\supervisor)
-\end{tabular}
+% \begin{tabular}{lp{20em}}
+% \textbf{Approved for archiving: } & \hrulefill\\
+%                                   & (\supervisor)
+% \end{tabular}
 
 \begin{framed}
   \textbf{Summary:}\\
