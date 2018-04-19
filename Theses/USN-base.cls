@@ -54,6 +54,16 @@
 % --- set figure and table captions to footnotesize
 \setkomafont{caption}{\footnotesize}
 
+% --- set the fonts of all toc entries to san-serif
+% from https://tex.stackexchange.com/questions/360135/koma-change-font-of-toc-section-entries
+\newcommand*\tocentryformat[1]{{\sffamily#1}}
+\RedeclareSectionCommands
+  [
+    tocentryformat=\tocentryformat,
+    tocpagenumberformat=\tocentryformat
+  ]
+  {section,subsection,subsubsection,paragraph,subparagraph}
+
 % --- useful commands
 \newcommand*{\figref}[1]{\figurename~\ref{#1}}
 \newcommand*{\tabref}[1]{\tablename~\ref{#1}}
