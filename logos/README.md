@@ -1,10 +1,10 @@
 # Logos
 
-## University College of Southeast Norway / Høgskolen i Sørøst-Norge
+## University of South-Eastern Norway / Universitetet i Sørøst-Norge
 
 These logos are converted from the original Adobe Illustrator format file from:
 
-* https://www.usn.no/om-hsn/presserom/logo-design-og-grafiske-elementer/
+* https://www.usn.no/om-usn/presserom/logo-design-og-grafiske-elementer/
 
 Converting them to [SVG](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 and [PDF](https://en.wikipedia.org/wiki/Portable_Document_Format) meant a huge
@@ -17,14 +17,16 @@ under the `logos` subdirectory.
 
 File name              | Image
 -----------------------|---------------------------------------------------------------------------------------------
-`HSN_logo.*`           | ![HSN_logo.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo.svg)
-`HSN_logo_en.*`        | ![HSN_logo_en.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_en.svg)
-`HSN_logo_nn.*`        | ![HSN_logo_nn.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_nn.svg)
-`HSN_logotype.*`       | ![HSN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logotype.svg)
-`HSN_logotype_vert_.*` | ![HSN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/HSN_logo_vert_en.svg)
+`USN_logo.*`           | ![USN_logo.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/USN_logo.svg)
+`USN_logo_en.*`        | ![USN_logo_en.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/USN_logo_en.svg)
+`USN_logo_nn.*`        | ![USN_logo_nn.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/USN_logo_nn.svg)
+`USN_logotype.*`       | ![USN_logotype.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/USN_logotype.svg)
+`USN_logo_en_vert_.*` | ![USN_logo_en_vert.svg](https://cdn.rawgit.com/dietmarw/USN-LaTeX/master/logos/USN_logo_en_vert.svg)
 
 
+## University College of Southeast Norway/ Høgskolen i Sørøst-Norge
 
+These old logos are kept for reference in the [`HSN`](HSN) subfolder.
 
 ## Telemark University College / Høgskolen i Telemark
 
