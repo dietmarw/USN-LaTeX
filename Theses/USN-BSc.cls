@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2017/11/21 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2018/05/05 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 

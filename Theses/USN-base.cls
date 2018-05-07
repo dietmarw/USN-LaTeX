@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-base}[2017/05/09 Template base class for reports and theses]
+\ProvidesClass{USN-base}[2018/05/04 Template base class for reports and theses]
 
 % --- definitions of options ---
 % norsk option:
@@ -71,9 +71,9 @@
 % --- title page setup
 \newcommand{\USNlogo}{%            %% lang dependent logo
   \if@norsk%
-    \includegraphics[height=15mm]{HSN_logo}%
+    \includegraphics[height=15mm]{USN_logo}%
   \else%
-    \includegraphics[height=15mm]{HSN_logo_en}%
+    \includegraphics[height=15mm]{USN_logo_en}%
   \fi%
 }
 
@@ -102,12 +102,12 @@
 % norsk:
 \newpagestyle{sammendrag}{}{
  \cfoot{\begin{center}%
-     Høgskolen i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+     Universitetet i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
    \end{center}}
 }%
 % english:
 \newpagestyle{summary}{}{
  \cfoot{\begin{center}%
-     The University College of Southeast Norway accepts no responsibility for the results and conclusions presented in this report.
+     The University of South-Eastern Norway accepts no responsibility for the results and conclusions presented in this report.
    \end{center}}
 }%

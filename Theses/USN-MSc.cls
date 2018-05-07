@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2017/11/21 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2018/05/04 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:

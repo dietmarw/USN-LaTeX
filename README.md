@@ -1,6 +1,6 @@
 # USN-LaTeX file repository
 This repository is used for the development of *L<sup>A</sup>T<sub>E</sub>X* templates for the use at the
-[University College of Southeast Norway - USN (Høgskolen i Sørøst-Norge - *HSN*)](http://www.usn.no)
+[University of South-Eastern Norway - USN](http://www.usn.no)
 
 ## Installation and usage of the project template
 All current templates now **need** to be processed using either [LuaLaTeX](https://en.wikipedia.org/wiki/LuaTeX) or [XeLaTeX](https://en.wikipedia.org/wiki/XeTeX) engines.

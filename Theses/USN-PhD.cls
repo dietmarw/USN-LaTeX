@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-PhD}[2016/08/16 Template class for PhD theses]
+\ProvidesClass{USN-PhD}[2018/05/04 Template class for PhD theses]
 
 % --- definitions of options ---
 
@@ -30,7 +30,7 @@
   \subject{\mysubject}
   \title{\mytitle}
   \subtitle{\normalsize
-    Thesis submitted to the University College of Southeast Norway\\
+    Thesis submitted to the University of South-Eastern Norway\\
     for the degree of philosophiae doctor~(PhD)}
   \author{\myauthor}
   \date{}
