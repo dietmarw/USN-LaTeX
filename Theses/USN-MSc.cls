@@ -68,37 +68,39 @@
 \if@project%
   {
     \begin{tabular}{rl}
-      \textbf{Course:}   &\mysubject\\
-      \textbf{Title:}    &\textit{\mytitle}\\
-      \textbf{Pages:}    &\textit{\pageref{LastPage}}\\
-      \textbf{Keywords:} &\textit{\mykeywords}
+      \textbf{Course:}   & \mysubject                        \\
+      \textbf{Title:}    & \begin{minipage}[t]{0.8\textwidth}
+                             \textit{\mytitle}\end{minipage} \\
+      \textbf{Pages:}    & \textit{\pageref{LastPage}}       \\
+      \textbf{Keywords:} & \textit{\mykeywords}
     \end{tabular}
 
     \begin{tabular}{rl}
-      \textbf{Prosject group:} &\textit{\myauthor}\\
+      \textbf{Prosject group:}     & \textit{\myauthor}                       \\
       \textbf{Group participants:} & \begin{minipage}[t]{0.5\textwidth}
-                                     \textit{\myparticipants}\end{minipage}\\
-      \textbf{Supervisor:}      & \textit{\supervisor}\\
-      \textbf{External partner:}& \textit{#3}\\
-      \textbf{Availability:}    & \textit{%
+                                       \textit{\myparticipants}\end{minipage} \\
+      \textbf{Supervisor:}         & \textit{\supervisor}                     \\
+      \textbf{External partner:}   & \textit{#3}                              \\
+      \textbf{Availability:}       & \textit{%
       \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
     \end{tabular}
   }
 \else
 {
     \begin{tabular}{rl}
-      \textbf{Course:}   &\mysubject\\
-      \textbf{Title:}    &\textit{\mytitle}\\
-      \textbf{Pages:}    &\textit{\pageref{LastPage}}\\
-      \textbf{Keywords:} &\textit{\mykeywords}
+      \textbf{Course:}   & \mysubject                        \\
+      \textbf{Title:}    & \begin{minipage}[t]{0.8\textwidth}
+                             \textit{\mytitle}\end{minipage} \\
+      \textbf{Pages:}    & \textit{\pageref{LastPage}}       \\
+      \textbf{Keywords:} & \textit{\mykeywords}
     \end{tabular}
 
     \begin{tabular}{rl}
-      \textbf{Student:}         & \textit{\myauthor}\\
-      \textbf{Supervisor:}      & \textit{\supervisor}\\
-      \textbf{External partner:}& \begin{minipage}[t]{0.7\textwidth}
-                                     \textit{#3}\end{minipage}\\
-      \textbf{Availability:}    & \textit{%
+      \textbf{Student:}          & \textit{\myauthor}          \\
+      \textbf{Supervisor:}       & \textit{\supervisor}        \\
+      \textbf{External partner:} & \begin{minipage}[t]{0.7\textwidth}
+                                     \textit{#3}\end{minipage} \\
+      \textbf{Availability:}     & \textit{%
       \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
     \end{tabular}
 }
