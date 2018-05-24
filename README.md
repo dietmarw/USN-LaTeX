@@ -41,7 +41,7 @@ A current template for PhD theses. It consists of:
 
 ### Logos:
 
-A repository of the offical USN logos in proper vector formats can.
+A repository of the offical USN logos in proper vector formats:
   * [`logos`](logos)
 
 ## License
