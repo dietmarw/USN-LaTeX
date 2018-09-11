@@ -80,7 +80,8 @@
       \textbf{Group participants:} & \begin{minipage}[t]{0.5\textwidth}
                                        \textit{\myparticipants}\end{minipage} \\
       \textbf{Supervisor:}         & \textit{\supervisor}                     \\
-      \textbf{External partner:}   & \textit{#3}                              \\
+      \textbf{External partner:}   & \begin{minipage}[t]{0.7\textwidth}
+                                       \textit{#3}\end{minipage}              \\
       \textbf{Availability:}       & \textit{%
       \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
     \end{tabular}
