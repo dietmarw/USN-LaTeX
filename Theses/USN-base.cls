@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-base}[2018/05/04 Template base class for reports and theses]
+\ProvidesClass{USN-base}[2018/09/11 Template base class for reports and theses]
 
 % --- definitions of options ---
 % norsk option:
@@ -14,6 +14,11 @@
 \@norskfalse
 \DeclareOption{norsk}{\@norsktrue}
 \PassOptionsToClass{\if@norsk norsk \else english\fi}{scrbook}
+
+% nosummary option:
+\newif\if@summary
+\@summarytrue
+\DeclareOption{nosummary}{\@summaryfalse}
 
 % All other options are passed on to the book class
 \DeclareOption*{%

@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2018/05/04 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2018/09/11 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:
@@ -59,7 +59,9 @@
 \cleardoubleemptypage              %% fillpage without page number
 %
 
-% % --- english summary page ---
+%% --- summary page ---
+\if@summary%
+{
 \thispagestyle{summary}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \USNtitlehead%
@@ -120,4 +122,8 @@
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number
+}
+\else
+{}
+\fi % end if@summary
 }

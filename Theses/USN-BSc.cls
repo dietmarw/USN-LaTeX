@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2018/05/05 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2018/09/11 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 
@@ -59,6 +59,9 @@
 %
 \cleardoubleemptypage              %% fillpage without page number
 %
+%% --- summary page ---
+\if@summary%
+{
 \if@norsk%           %% only display Norwegian summary page for norsk
 {% --- norwegian summary page ---
 \thispagestyle{sammendrag}
@@ -153,4 +156,8 @@ This report forms part of the basis for assessing the student's performance on t
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number
+}
+\else
+{}
+\fi % end if@summary
 }
