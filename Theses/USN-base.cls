@@ -55,6 +55,7 @@
 \RequirePackage{fontspec}         %% needed to set up custom fonts and lmodern fonts
 \RequirePackage{carlito}          %% Carlito is the metric-compatible free alternative
                                   %% to Calibri font
+\RequirePackage{csquotes}
 
 % --- set figure and table captions to footnotesize
 \setkomafont{caption}{\footnotesize}
