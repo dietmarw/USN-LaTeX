@@ -13,7 +13,6 @@
 \newif\if@norsk
 \@norskfalse
 \DeclareOption{norsk}{\@norsktrue}
-\PassOptionsToClass{\if@norsk norsk \else english\fi}{scrbook}
 
 % nosummary option:
 \newif\if@summary
