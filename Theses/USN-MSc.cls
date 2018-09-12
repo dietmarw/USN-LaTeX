@@ -63,6 +63,7 @@
 \if@summary%
 {
 \thispagestyle{summary}
+\setlength{\footheight}{52pt}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \USNtitlehead%
 \par\bigskip

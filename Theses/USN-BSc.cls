@@ -65,6 +65,7 @@
 \if@norsk%           %% only display Norwegian summary page for norsk
 {% --- norwegian summary page ---
 \thispagestyle{sammendrag}
+\setlength{\footheight}{52pt}
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
 \USNtitlehead%
 \par\bigskip
@@ -110,6 +111,7 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 \fi%
 % --- english abstract page ---
 \thispagestyle{summary}
+\setlength{\footheight}{52pt}
 \label{Summary}\pdfbookmark[1]{Summary}{Summary}
 \if@norsk{%
   \@norskfalse  % make sure to use the english versions
