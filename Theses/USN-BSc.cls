@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2018/09/11 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2019/04/09 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 
@@ -73,7 +73,8 @@
 
 \begin{tabbing}
     \textbf{Emne:~}   \= \textit{\mysubtitle} \\
-    \textbf{Tittel:~} \> \textit{\mytitle}
+    \textbf{Tittel:~} \> \begin{minipage}[t]{0.8\textwidth}
+                            \textit{\mytitle}\end{minipage}
 \end{tabbing}
 %
 Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
@@ -128,7 +129,8 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
 \begin{tabbing}
   \textbf{Course:~}   \= \textit{\mysubtitle} \\
-  \textbf{Title:~} \> \textit{\mytitle}
+  \textbf{Title:~} \> \begin{minipage}[t]{0.8\textwidth}
+                         \textit{\mytitle}\end{minipage}
 \end{tabbing}
 
 This report forms part of the basis for assessing the student's performance on the course.
