@@ -1,0 +1,129 @@
+% this style is based on the theme "Dreuw" created by Philippe Dreuw and Thomas Deselaers, only minor changes on the logo and the colour palette were made.
+\ProvidesPackage{beamerthemeusnposter}[2019/04/09]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{usncolours}
+\RequirePackage[british]{babel}
+\RequirePackage{mathptmx}
+\RequirePackage{carlito}
+\RequirePackage[super]{nth}
+\graphicspath{{fig/}}
+\RequirePackage{hyperref}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamercolor{headline}{fg=PMS2369U,bg=PMS538U}
+\setbeamercolor{footline}{fg=PMS2369U, bg=PMS538U}
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=PMS2369U}
+\setbeamercolor{title in headline}{fg=PMS2369U}
+\setbeamercolor{author in headline}{fg=PMS2369U}
+\setbeamercolor{institute in headline}{fg=PMS2369U}
+
+\setbeamercolor{author in head/foot}{fg=PMS2369U, bg=PMS538U}
+\setbeamercolor{title in head/foot}{fg=PMS2369U, bg=PMS538U}
+
+\setbeamercolor*{normal text}{fg=black, bg=white}
+\setbeamercolor*{block body}{fg=black, bg=PMS434U}
+\setbeamercolor*{block title}{fg=PMS2369U,bg=PMS442U}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+\setbeamercolor{upper separation line head}{fg=PMS2369U}
+
+\setbeamercolor{alerted text}{fg=PMS200U}
+\setbeamercolor{structure}{fg=PMS2369U}
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+
+     \begin{columns}[T]
+      \begin{column}{.02\paperwidth}
+      \end{column}
+      \begin{column}{.27\paperwidth}
+        \begin{center}
+%          \includegraphics[width=\textwidth]{usnlogo}
+          \insertlogo
+        \end{center}
+        \vskip1ex
+%        \usebeamercolor{institute in headline}{\color{fg}\normalsize{\insertinstitute}}
+        \normalsize{\insertinstitute}\\[1ex]
+        \vskip1ex
+      \end{column}
+      \begin{column}{.7\paperwidth}
+        \vskip4ex
+        \raggedleft
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \vskip1ex
+     %   \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+      \end{column}
+      \begin{column}{.01\paperwidth}
+        \vskip1cm
+        % \begin{center}
+        %   \insertlogo
+        % \end{center}
+        \vskip1cm
+      \end{column}
+      \begin{column}{.03\paperwidth}
+      \end{column}
+    \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \insertdate
+    \hfill
+    \texttt{\insertshortauthor}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Prevents the logo being printed in the default location
+\defbeamertemplate*{sidebar right}{sidebar theme}
+{%
+    \vfill%
+    \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+    \vskip2pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
