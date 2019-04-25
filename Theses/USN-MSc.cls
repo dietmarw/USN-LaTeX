@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2019/03/07 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2019/04/25 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:
@@ -75,7 +75,8 @@
       \textbf{Title:}    & \begin{minipage}[t]{0.8\textwidth}
                              \textit{\mytitle}\end{minipage} \\
       \textbf{Pages:}    & \textit{\pageref{LastPage}}       \\
-      \textbf{Keywords:} & \textit{\mykeywords}
+      \textbf{Keywords:} & \begin{minipage}[t]{0.8\textwidth}
+                           \textit{\mykeywords}\end{minipage}
     \end{tabular}
 
     \begin{tabular}{rl}
