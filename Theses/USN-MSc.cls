@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2019/04/25 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2019/04/26 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:
@@ -80,7 +80,7 @@
     \end{tabular}
 
     \begin{tabular}{rl}
-      \textbf{Prosject group:}     & \textit{\myauthor}                       \\
+      \textbf{Project group:}     & \textit{\myauthor}                       \\
       \textbf{Group participants:} & \begin{minipage}[t]{0.5\textwidth}
                                        \textit{\myparticipants}\end{minipage} \\
       \textbf{Supervisor:}         & \textit{\supervisor}                     \\
