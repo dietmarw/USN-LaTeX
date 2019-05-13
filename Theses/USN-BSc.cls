@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2019/04/09 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2019/05/13 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 
@@ -62,8 +62,7 @@
 %% --- summary page ---
 \if@summary%
 {
-\if@norsk%           %% only display Norwegian summary page for norsk
-{% --- norwegian summary page ---
+% --- norwegian summary page ---
 \thispagestyle{sammendrag}
 \setlength{\footheight}{52pt}
 \label{Sammendrag}\pdfbookmark[1]{Sammendrag}{Sammendrag}
@@ -106,10 +105,7 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number
-}
-\else%
-{}
-\fi%
+
 % --- english abstract page ---
 \thispagestyle{summary}
 \setlength{\footheight}{52pt}
