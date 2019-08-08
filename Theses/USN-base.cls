@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-base}[2018/09/11 Template base class for reports and theses]
+\ProvidesClass{USN-base}[2019/08/08 Template base class for reports and theses]
 
 % --- definitions of options ---
 % norsk option:
@@ -49,7 +49,7 @@
 \RequirePackage[hidelinks]{hyperref} %% generate links in the PDF (but no boxes around them)
 \RequirePackage{pdfpages}         %% for inclusion of PDF documents
 \RequirePackage{framed}           %% provides framebox
-\RequirePackage{nth}              %% Generate English ordinal numbers
+\RequirePackage[super]{nth}       %% Generate English ordinal numbers
 \RequirePackage{lastpage}         %% to calculate the number of pages
 \RequirePackage{fontspec}         %% needed to set up custom fonts and lmodern fonts
 \RequirePackage{carlito}          %% Carlito is the metric-compatible free alternative
@@ -105,14 +105,34 @@
 
 %--- special footer setup
 % norsk:
-\newpagestyle{sammendrag}{}{
- \cfoot{\begin{center}%
-     Universitetet i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
-   \end{center}}
+\newpagestyle{sammendrag}
+{}%header
+{%footer
+  {}%left page two-side
+  {%right page two-side
+    \begin{center}
+      Universitetet i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+    \end{center}
+  }%
+  {%all pages one-side
+    \begin{center}
+      Universitetet i Sørøst-Norge tar ikke ansvar for denne studentrapportens resultater og konklusjoner.
+    \end{center}
+  }%
 }%
 % english:
-\newpagestyle{summary}{}{
- \cfoot{\begin{center}%
-     The University of South-Eastern Norway accepts no responsibility for the results and conclusions presented in this report.
-   \end{center}}
+\newpagestyle{summary}
+{}%header
+{%footer
+  {}%left page two-side
+  {%right page two-side
+    \begin{center}
+      The University of South-Eastern Norway accepts no responsibility for the results and conclusions presented in this report.
+    \end{center}
+  }%
+  {%all pages one-side
+    \begin{center}
+      The University of South-Eastern Norway accepts no responsibility for the results and conclusions presented in this report.
+    \end{center}
+  }%
 }%
