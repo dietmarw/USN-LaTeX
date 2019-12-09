@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-MSc}[2019/04/26 Template class MSc reports and theses]
+\ProvidesClass{USN-MSc}[2019/12/09 Template class MSc reports and theses]
 
 % --- definitions of options ---
 % project option:
@@ -38,9 +38,8 @@
 
 \newcommand{\USNtitlepage}[5]{%
 % #1 optional figure
-% #2 confidential
-% #3 Project partner
-% #4 summary
+% #2 Project partner
+% #3 summary
   \subject{%
     \if@project\mysubject\else\mysubject\\\mysubtitle\fi}
   \title{\mytitle}
@@ -85,9 +84,7 @@
                                        \textit{\myparticipants}\end{minipage} \\
       \textbf{Supervisor:}         & \textit{\supervisor}                     \\
       \textbf{External partner:}   & \begin{minipage}[t]{0.7\textwidth}
-                                       \textit{#3}\end{minipage}              \\
-      \textbf{Availability:}       & \textit{%
-      \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
+                                       \textit{#2}\end{minipage}
     \end{tabular}
   }
 \else
@@ -105,9 +102,7 @@
       \textbf{Student:}          & \textit{\myauthor}          \\
       \textbf{Supervisor:}       & \textit{\supervisor}        \\
       \textbf{External partner:} & \begin{minipage}[t]{0.7\textwidth}
-                                     \textit{#3}\end{minipage} \\
-      \textbf{Availability:}     & \textit{%
-      \ifthenelse{\equal{#2}{yes}}{\textbf{Confidential}}{Open}}
+                                     \textit{#2}\end{minipage}
     \end{tabular}
 }
 \fi
@@ -121,7 +116,7 @@
 
 \begin{framed}
   \textbf{Summary:}\\
-   {\small #4}
+   {\small #3}
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number

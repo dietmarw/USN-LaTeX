@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-BSc}[2019/05/13 Template class for BSc reports and theses]
+\ProvidesClass{USN-BSc}[2019/12/09 Template class for BSc reports and theses]
 
 % --- definitions of options ---
 
@@ -39,10 +39,9 @@
 % #2 optional figure
 % #3 date
 % #4 authors
-% #5 confidential
-% #6 Project partner
-% #7 Norwegian Summary
-% #8 English Summary
+% #5 Project partner
+% #6 Norwegian Summary
+% #7 English Summary
   \subject{\mysubtitle}
   \title{\mytitle}
   \subtitle{#2}
@@ -79,8 +78,6 @@
 Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
 \textbf{Prosjektgruppe:~} \textit{\myauthor}
-\hfill \textbf{Tilgjengelighet:~}
-\textit{\ifthenelse{\equal{#5}{yes}}{Fortrolig}{Åpen}}
 
 \begin{tabbing}
   \textbf{Gruppedeltakere:~}  \=
@@ -91,7 +88,7 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
   \textbf{Veileder:~} \> \textit{\supervisor} \\
  % \textbf{Sensor:~}   \> \textit{\examiner}\\
   \textbf{Prosjektpartner:~} \>\begin{minipage}[t]{0.7\textwidth}
-                                     \textit{#6}\end{minipage}
+                                     \textit{#5}\end{minipage}
 \end{tabbing}
 
 % \begin{tabular}{lp{20em}}
@@ -101,7 +98,7 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 
 \begin{framed}
 \textbf{Sammendrag:}\\
-{\small #7}
+{\small #6}
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number
@@ -132,8 +129,6 @@ Denne rapporten utgjør en del av vurderingsgrunnlaget i emnet.
 This report forms part of the basis for assessing the student's performance on the course.
 
 \textbf{Project group:} \textit{\myauthor}
-\hfill \textbf{Availability:~}
-\textit{\ifthenelse{\equal{#5}{yes}}{Confidential}{Open}}
 
 \begin{tabbing}
   \textbf{Group participants:~}  \=
@@ -142,7 +137,7 @@ This report forms part of the basis for assessing the student's performance on t
   \end{minipage}\\
   ~\\
   \textbf{Supervisor:~}      \> \textit{\supervisor} \\
-  \textbf{Project partner:~} \> \textit{#6}
+  \textbf{Project partner:~} \> \textit{#5}
 \end{tabbing}
 
 % \begin{tabular}{lp{20em}}
@@ -152,7 +147,7 @@ This report forms part of the basis for assessing the student's performance on t
 
 \begin{framed}
   \textbf{Summary:}\\
-  {\small #8}
+  {\small #7}
 \end{framed}
 %
 \cleardoubleemptypage              %% fillpage without page number
