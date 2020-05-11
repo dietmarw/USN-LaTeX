@@ -6,7 +6,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-base}[2019/08/08 Template base class for reports and theses]
+\ProvidesClass{USN-base}[2020/05/11 Template base class for reports and theses]
 
 % --- definitions of options ---
 % norsk option:
@@ -47,6 +47,8 @@
 \RequirePackage{graphicx}         %% needed for inclusion of graphics
   \graphicspath{{fig/}}           %% this is were the images reside
 \RequirePackage[hidelinks]{hyperref} %% generate links in the PDF (but no boxes around them)
+%% use parenthesis in autoref for equations
+  \AtBeginDocument{\def\equationautorefname~#1\null{Equation~(#1)\null}}
 \RequirePackage{pdfpages}         %% for inclusion of PDF documents
 \RequirePackage{framed}           %% provides framebox
 \RequirePackage[super]{nth}       %% Generate English ordinal numbers
