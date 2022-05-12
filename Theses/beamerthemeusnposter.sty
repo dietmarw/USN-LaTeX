@@ -1,5 +1,5 @@
 % this style is based on the theme "Dreuw" created by Philippe Dreuw and Thomas Deselaers, only minor changes on the logo and the colour palette were made.
-\ProvidesPackage{beamerthemeusnposter}[2019/04/09]
+\ProvidesPackage{beamerthemeusnposter}[2022/05/12]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{usncolours}
@@ -58,36 +58,29 @@
   \begin{beamercolorbox}[wd=\paperwidth]{headline}
 
      \begin{columns}[T]
-      \begin{column}{.02\paperwidth}
+      \begin{column}{.02\paperwidth} % padding left
       \end{column}
-      \begin{column}{.27\paperwidth}
+      \begin{column}{.26\paperwidth}
         \begin{center}
-%          \includegraphics[width=\textwidth]{usnlogo}
           \insertlogo
         \end{center}
-        \vskip1ex
-%        \usebeamercolor{institute in headline}{\color{fg}\normalsize{\insertinstitute}}
+      \end{column}
+      \begin{column}{.4\paperwidth}
+        \vskip2ex
+        \begin{center}
         \normalsize{\insertinstitute}\\[1ex]
-        \vskip1ex
+        \end{center}
+        \vskip2ex
       \end{column}
-      \begin{column}{.7\paperwidth}
-        \vskip4ex
+      \begin{column}{.3\paperwidth}
         \raggedleft
-        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
-        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
-        \vskip1ex
-     %   \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+        \includegraphics[width=.7\textwidth]{expo}
       \end{column}
-      \begin{column}{.01\paperwidth}
-        \vskip1cm
-        % \begin{center}
-        %   \insertlogo
-        % \end{center}
-        \vskip1cm
+      \begin{column}{.02\paperwidth} % padding right
       \end{column}
-      \begin{column}{.03\paperwidth}
-      \end{column}
+
     \end{columns}
+    \vskip2ex
   \end{beamercolorbox}
 
   \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
