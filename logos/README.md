@@ -18,12 +18,9 @@ under the `logos` subdirectory.
 
 ## Symbol
 
-<style>
-table {background-color: lightgrey;}
-</style>
-
 | Folder                 | File name           | black | white | purple |
 | - | - | - | - | - |
+|  |  |  |  |  |
 | [`symbol`](symbol)     | `USN_logo_symbol_*` |  <img src="symbol/USN_logo_symbol_black.png" height="90"> | <img src="symbol/USN_logo_symbol_white.png" height="90"> | <img src="symbol/USN_logo_symbol_purple.png" height="90"> |
 
 ## Main and Vertical
