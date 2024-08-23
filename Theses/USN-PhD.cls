@@ -7,7 +7,7 @@
 
 % ---Identification----
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{USN-PhD}[2018/05/04 Template class for PhD theses]
+\ProvidesClass{USN-PhD}[2024/08/23 Template class for PhD theses]
 
 % --- definitions of options ---
 
@@ -24,7 +24,7 @@
 \LoadClass{USN-base}  %% we reuse the USN-base class
 
 % --- useful commands
-\newcommand{\mysubject}{Process, Energy and Automation Engineering}
+\newcommand{\mysubject}{Technology}
 
 \newcommand{\USNtitlepage}{%
   \subject{\mysubject}
