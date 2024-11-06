@@ -27,9 +27,9 @@ under the `logos` subdirectory.
 
 | Folder                 | File name           | Colour       | Norwegian Bokmål                                              | Norwegian Nynorsk                                             | English                                                        |
 | - | - | - | - | - | - |
-| [`main`](main)         | `USN_logo_main_*`   | black/sort   | <img src="main/USN_logo_main_nb_sort.png" height="90">    | <img src="main/USN_logo_main_nn_sort.png" height="90">    | <img src="main/USN_logo_main_en_black.png" height="90">    |
-| [`main`](main)         | `USN_logo_main_*`   | white/hvit   | <img src="main/USN_logo_main_nb_hvit.png" height="90">    | <img src="main/USN_logo_main_nn_hvit.png" height="90">    | <img src="main/USN_logo_main_en_white.png" height="90">    |
-| [`main`](main)         | `USN_logo_main_*`   | purple/lilla | <img src="main/USN_logo_main_nb_lilla.png" height="90">   | <img src="main/USN_logo_main_nn_lilla.png" height="90">   | <img src="main/USN_logo_main_en_purple.png" height="90">   |
+| [`main`](main)         | `USN_logo_main_*`   | black/sort   | <img src="main/USN_logo_main_nb_sort.png">    | <img src="main/USN_logo_main_nn_sort.png">    | <img src="main/USN_logo_main_en_black.png">    |
+| [`main`](main)         | `USN_logo_main_*`   | white/hvit   | <img src="main/USN_logo_main_nb_hvit.png">    | <img src="main/USN_logo_main_nn_hvit.png">    | <img src="main/USN_logo_main_en_white.png">    |
+| [`main`](main)         | `USN_logo_main_*`   | purple/lilla | <img src="main/USN_logo_main_nb_lilla.png">   | <img src="main/USN_logo_main_nn_lilla.png">   | <img src="main/USN_logo_main_en_purple.png">   |
 | [`vertical`](vertical) | `USN_logo_vert_*`   | black/sort   | <img src="vertical/USN_logo_vert_nb_sort.png" height="90">    | <img src="vertical/USN_logo_vert_nn_sort.png" height="90">    | <img src="vertical/USN_logo_vert_en_black.png" height="90">    |
 | [`vertical`](vertical) | `USN_logo_vert_*`   | purple/lilla | <img src="vertical/USN_logo_vert_nb_lilla.png" height="90">   | <img src="vertical/USN_logo_vert_nn_lilla.png" height="90">   | <img src="vertical/USN_logo_vert_en_purple.png" height="90">   |
 | [`vertical`](vertical) | `USN_logo_vert_*`   | white/hvit   | <img src="vertical/USN_logo_vert_nb_hvit.png" height="90">    | <img src="vertical/USN_logo_vert_nn_hvit.png" height="90">    | <img src="vertical/USN_logo_vert_en_white.png" height="90">    |
